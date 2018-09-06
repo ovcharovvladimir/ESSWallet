@@ -43,12 +43,12 @@ Network.prototype.render = function () {
   } else if (providerName === 'mainnet') {
     hoverText = 'Main Ethereum Network'
     iconName = 'ethereum-network'
-  } else if (providerName === 'ropsten') {
-    hoverText = 'Ropsten Test Network'
-    iconName = 'ropsten-test-network'
+  } else if (providerName === 'essentia') {
+    hoverText = 'Essentia Test Network'
+    iconName = 'essentia-test-network'
   } else if (parseInt(networkNumber) === 3) {
-    hoverText = 'Ropsten Test Network'
-    iconName = 'ropsten-test-network'
+    hoverText = 'Essentia Test Network'
+    iconName = 'essentia-test-network'
   } else if (providerName === 'kovan') {
     hoverText = 'Kovan Test Network'
     iconName = 'kovan-test-network'
@@ -78,14 +78,14 @@ Network.prototype.render = function () {
               'Main Network'),
               props.onClick && h('i.fa.fa-caret-down.fa-lg'),
             ])
-          case 'ropsten-test-network':
+          case 'essentia-test-network':
             return h('.network-indicator', [
               h('.menu-icon.red-dot'),
               h('.network-name', {
                 style: {
                   color: '#ff6666',
                 }},
-              'Ropsten Test Net'),
+              'Essentia Test Net'),
               props.onClick && h('i.fa.fa-caret-down.fa-lg'),
             ])
           case 'kovan-test-network':

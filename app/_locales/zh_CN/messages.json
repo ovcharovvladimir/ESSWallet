@@ -667,8 +667,8 @@
   "rinkeby": {
     "message": "Rinkeby 测试网络"
   },
-  "ropsten": {
-    "message": "Ropsten 测试网络"
+  "essentia": {
+    "message": "essentia 测试网络"
   },
   "currentRpc": {
     "message": "当前 RPC"
@@ -676,8 +676,8 @@
   "connectingToMainnet": {
     "message": "正在连接到以太坊主网"
   },
-  "connectingToRopsten": {
-    "message": "正在连接到Ropsten测试网络"
+  "connectingToEssentia": {
+    "message": "正在连接到essentia测试网络"
   },
   "connectingToKovan": {
     "message": "正在连接到Kovan测试网络"

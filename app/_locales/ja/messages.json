@@ -562,8 +562,8 @@
   "rinkeby": {
     "message": "Rinkebyテストネットワーク"
   },
-  "ropsten": {
-    "message": "Ropstenテストネットワーク"
+  "essentia": {
+    "message": "essentiaテストネットワーク"
   },
   "sampleAccountName": {
     "message": "例.新しいマイアカウント",

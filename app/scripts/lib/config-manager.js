@@ -2,7 +2,7 @@ const ethUtil = require('ethereumjs-util')
 const normalize = require('eth-sig-util').normalize
 const {
   MAINNET_RPC_URL,
-  ROPSTEN_RPC_URL,
+  ESSENTIA_RPC_URL,
   KOVAN_RPC_URL,
   RINKEBY_RPC_URL,
 } = require('../controllers/network/enums')
@@ -155,8 +155,8 @@ ConfigManager.prototype.getCurrentRpcAddress = function () {
     case 'mainnet':
       return MAINNET_RPC_URL
 
-    case 'ropsten':
-      return ROPSTEN_RPC_URL
+    case 'essentia':
+      return ESSENTIA_RPC_URL
 
     case 'kovan':
       return KOVAN_RPC_URL

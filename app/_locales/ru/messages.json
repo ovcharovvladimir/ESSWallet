@@ -637,8 +637,8 @@
   "rinkeby": {
     "message": "Тестовая сеть Rinkeby"
   },
-  "ropsten": {
-    "message": "Тестовая сеть Ropsten"
+  "essentia": {
+    "message": "Тестовая сеть essentia"
   },
   "currentRpc": {
     "message": "Current RPC"

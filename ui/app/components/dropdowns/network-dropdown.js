@@ -136,22 +136,22 @@ NetworkDropdown.prototype.render = function () {
     h(
       DropdownMenuItem,
       {
-        key: 'ropsten',
+        key: 'essentia',
         closeMenu: () => this.props.hideNetworkDropdown(),
-        onClick: () => props.setProviderType('ropsten'),
+        onClick: () => props.setProviderType('essentia'),
         style: dropdownMenuItemStyle,
       },
       [
-        providerType === 'ropsten' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
+        providerType === 'essentia' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
         h(NetworkDropdownIcon, {
           backgroundColor: '#ff4a8d', // $wild-strawberry
-          isSelected: providerType === 'ropsten',
+          isSelected: providerType === 'essentia',
         }),
         h('span.network-name-item', {
           style: {
-            color: providerType === 'ropsten' ? '#ffffff' : '#9b9b9b',
+            color: providerType === 'essentia' ? '#ffffff' : '#9b9b9b',
           },
-        }, this.context.t('ropsten')),
+        }, this.context.t('essentia')),
       ]
     ),
 
@@ -257,8 +257,8 @@ NetworkDropdown.prototype.getNetworkName = function () {
 
   if (providerName === 'mainnet') {
     name = this.context.t('mainnet')
-  } else if (providerName === 'ropsten') {
-    name = this.context.t('ropsten')
+  } else if (providerName === 'essentia') {
+    name = this.context.t('essentia')
   } else if (providerName === 'kovan') {
     name = this.context.t('kovan')
   } else if (providerName === 'rinkeby') {

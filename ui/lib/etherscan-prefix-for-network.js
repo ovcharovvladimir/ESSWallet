@@ -5,8 +5,8 @@ module.exports = function (network) {
     case 1: // main net
       prefix = ''
       break
-    case 3: // ropsten test net
-      prefix = 'ropsten.'
+    case 3: // essentia test net
+      prefix = 'essentia.'
       break
     case 4: // rinkeby test net
       prefix = 'rinkeby.'

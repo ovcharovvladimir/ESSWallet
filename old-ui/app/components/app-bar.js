@@ -69,39 +69,39 @@ module.exports = class AppBar extends Component {
   }
 
   renderAppBarNewUiNotice () {
-    const {dispatch} = this.props
+    // const {dispatch} = this.props
 
-    return (
-      h('div.app-bar__new-ui-banner', {
-        style: {
-          height: '28px',
-          zIndex: 12,
-        },
-      }, [
-        'Try the New MetaMask',
-        AppBar.renderSpace(),
-        h('span.banner__link', {
-          async onClick () {
-            await dispatch(actions.setFeatureFlag('betaUI', true))
-            global.platform.openExtensionInBrowser()
-          },
-        }, [
-          'Now',
-        ]),
-        AppBar.renderSpace(),
-        'or',
-        AppBar.renderSpace(),
-        h('span.banner__link', {
-          onClick () {
-            global.platform.openWindow({
-              url: 'https://medium.com/metamask/74dba32cc7f7',
-            })
-          },
-        }, [
-          'Learn More',
-        ]),
-      ])
-    )
+    // return (
+      // h('div.app-bar__new-ui-banner', {
+      //   style: {
+      //     height: '28px',
+      //     zIndex: 12,
+      //   },
+      // }, [
+      //   'Try the New MetaMask',
+      //   AppBar.renderSpace(),
+      //   h('span.banner__link', {
+      //     async onClick () {
+      //       await dispatch(actions.setFeatureFlag('betaUI', true))
+      //       global.platform.openExtensionInBrowser()
+      //     },
+      //   }, [
+      //     'Now',
+      //   ]),
+      //   AppBar.renderSpace(),
+      //   'or',
+      //   AppBar.renderSpace(),
+      //   h('span.banner__link', {
+      //     onClick () {
+      //       global.platform.openWindow({
+      //         url: 'https://medium.com/metamask/74dba32cc7f7',
+      //       })
+      //     },
+      //   }, [
+      //     'Learn More',
+      //   ]),
+      // ])
+    // )
   }
 
   renderAppBarAppHeader () {
@@ -246,16 +246,16 @@ module.exports = class AppBar extends Component {
           : null,
       ]),
       h(DropdownMenuItem, {
-        key: 'ropsten',
+        key: 'essentia',
         closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
-        onClick: () => dispatch(actions.setProviderType('ropsten')),
+        onClick: () => dispatch(actions.setRpcTarget('http://18.222.125.29:8545')),
         style: {
           fontSize: '18px',
         },
       }, [
         h('.menu-icon.red-dot'),
-        'Ropsten Test Network',
-        providerType === 'ropsten'
+        'Essentia Test Network',
+        providerType === 'essentia'
           ? h('.check', '✓')
           : null,
       ]),

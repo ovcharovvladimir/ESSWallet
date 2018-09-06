@@ -631,8 +631,8 @@
   "rinkeby": {
     "message": "Rinkeby Testnetzwerk"
   },
-  "ropsten": {
-    "message": "Ropsten Testnetzwerk"
+  "essentia": {
+    "message": "essentia Testnetzwerk"
   },
   "currentRpc": {
     "message": "Aktueller RPC"
@@ -640,8 +640,8 @@
   "connectingToMainnet": {
     "message": "Verbinde zum Ethereum Main Net"
   },
-  "connectingToRopsten": {
-    "message": " Verbinde zum Ropsten Testnetzwerk"
+  "connectingToEssentia": {
+    "message": " Verbinde zum essentia Testnetzwerk"
   },
   "connectingToKovan": {
     "message": " Verbinde zum Kovan Testnetzwerk"

@@ -472,8 +472,8 @@
   "rinkeby": {
     "message": "Rinkeby Test Network"
   },
-  "ropsten": {
-    "message": "Ropsten Test Network"
+  "essentia": {
+    "message": "Essentia Test Network"
   },
   "sampleAccountName": {
     "message": "Halimbawa: Ang aking bagong account",

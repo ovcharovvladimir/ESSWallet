@@ -601,8 +601,8 @@
   "rinkeby": {
     "message": "Rete di test Rinkeby"
   },
-  "ropsten": {
-    "message": "Rete di test Ropsten"
+  "essentia": {
+    "message": "Rete di test Essentia"
   },
   "sampleAccountName": {
     "message": "Es: Il mio nuovo account",

@@ -601,8 +601,8 @@
   "rinkeby": {
     "message": "Testno omrežje Rinkeby"
   },
-  "ropsten": {
-    "message": "Testno omrežje Ropsten"
+  "essentia": {
+    "message": "Testno omrežje Essentia"
   },
   "sampleAccountName": {
     "message": "npr. Moj nov račun",

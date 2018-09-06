@@ -13,20 +13,20 @@ const createLocalhostClient = require('./createLocalhostClient')
 const { createSwappableProxy, createEventEmitterProxy } = require('swappable-obj-proxy')
 
 const {
-  ROPSTEN,
+  ESSENTIA,
   RINKEBY,
   KOVAN,
   MAINNET,
   LOCALHOST,
 } = require('./enums')
-const INFURA_PROVIDER_TYPES = [ROPSTEN, RINKEBY, KOVAN, MAINNET]
+const INFURA_PROVIDER_TYPES = [ RINKEBY, KOVAN, MAINNET]
 
 const env = process.env.METAMASK_ENV
 const METAMASK_DEBUG = process.env.METAMASK_DEBUG
 const testMode = (METAMASK_DEBUG || env === 'test')
 
 const defaultProviderConfig = {
-  type: testMode ? RINKEBY : MAINNET,
+  type: testMode ? ESSENTIA : ESSENTIA,
 }
 
 module.exports = class NetworkController extends EventEmitter {
@@ -50,8 +50,10 @@ module.exports = class NetworkController extends EventEmitter {
   }
 
   initializeProvider (providerParams) {
+    console.log('providerParams', providerParams)
     this._baseProviderParams = providerParams
     const { type, rpcTarget } = this.providerStore.getState()
+      console.log('type, rpcTarget', type, rpcTarget)
     this._configureProvider({ type, rpcTarget })
     this.lookupNetwork()
   }
@@ -103,7 +105,7 @@ module.exports = class NetworkController extends EventEmitter {
 
   async setProviderType (type) {
     assert.notEqual(type, 'rpc', `NetworkController - cannot call "setProviderType" with type 'rpc'. use "setRpcTarget"`)
-    assert(INFURA_PROVIDER_TYPES.includes(type) || type === LOCALHOST, `NetworkController - Unknown rpc type "${type}"`)
+    assert(INFURA_PROVIDER_TYPES.includes(type) || type === 'essentia', `NetworkController - Unknown rpc type "${type}"`)
     const providerConfig = { type }
     this.providerConfig = providerConfig
   }
@@ -143,6 +145,9 @@ module.exports = class NetworkController extends EventEmitter {
     // url-based rpc endpoints
     } else if (type === 'rpc') {
       this._configureStandardProvider({ rpcUrl: rpcTarget })
+    } else if (type === 'essentia') {
+        log.debug('rpcUrl: rpcTarget', rpcTarget)
+        this._configureStandardProvider({ rpcUrl: 'http://18.222.125.29:8545' })
     } else {
       throw new Error(`NetworkController - _configureProvider - unknown type "${type}"`)
     }

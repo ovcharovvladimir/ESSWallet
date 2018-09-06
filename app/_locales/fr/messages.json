@@ -472,8 +472,8 @@
   "rinkeby": {
     "message": "Réseau de test Rinkeby"
   },
-  "ropsten": {
-    "message": "Réseau de test Ropsten"
+  "essentia": {
+    "message": "Réseau de test essentia"
   },
   "sampleAccountName": {
     "message": "Par exemple mon nouveau compte",

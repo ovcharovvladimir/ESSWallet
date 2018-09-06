@@ -113,8 +113,8 @@
   "connectingToMainnet": {
     "message": "Conectando a la red principal de Ethereum (Main Net)"
   },
-  "connectingToRopsten": {
-    "message": "Conectando a la red de test Ropsten"
+  "connectingToEssentia": {
+    "message": "Conectando a la red de test 18.222.125.29"
   },
   "connectingToKovan": {
     "message": "Conectando a la red de test Kovan"
@@ -655,8 +655,8 @@
   "rinkeby": {
     "message": "Red privada Rinkeby"
   },
-  "ropsten": {
-    "message": "Red privada Ropsten"
+  "essentia": {
+    "message": "Red privada essentia"
   },
   "sampleAccountName": {
     "message": "P.ej. Mi nueva cuenta",

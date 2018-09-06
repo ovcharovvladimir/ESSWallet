@@ -6,8 +6,8 @@
     "config": {},
     "NetworkController": {
       "provider": {
-        "type": "ropsten",
-        "rpcTarget": "https://ropsten.infura.io/metamask"
+        "type": "essentia",
+        "rpcTarget": "http://18.223.101.201:8545"
       },
       "network": "3"
     },

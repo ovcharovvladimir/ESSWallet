@@ -124,9 +124,9 @@ class Settings extends Component {
         color = '#038789'
         break
 
-      case 'ropsten':
+      case 'essentia':
         title = this.context.t('currentNetwork')
-        value = this.context.t('ropsten')
+        value = this.context.t('essentia')
         color = '#e91550'
         break
 

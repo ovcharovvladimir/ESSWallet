@@ -601,8 +601,8 @@
   "rinkeby": {
     "message": "Rinkeby testnetwerk"
   },
-  "ropsten": {
-    "message": "Ropsten testnetwerk"
+  "essentia": {
+    "message": "Essentia testnetwerk"
   },
   "sampleAccountName": {
     "message": "Bijv. Mijn nieuwe account",

@@ -9,13 +9,13 @@ const gutil = require('gulp-util')
 const watch = require('gulp-watch')
 const sourcemaps = require('gulp-sourcemaps')
 const jsoneditor = require('gulp-json-editor')
-const zip = require('gulp-zip')
+// const zip = require('gulp-zip')
 const assign = require('lodash.assign')
 const livereload = require('gulp-livereload')
 const del = require('del')
 const fs = require('fs')
 const path = require('path')
-const manifest = require('./app/manifest.json')
+// const manifest = require('./app/manifest.json')
 const mkdirp = require('mkdirp')
 const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
@@ -343,11 +343,11 @@ gulp.task('clean', function clean () {
 })
 
 // zip tasks for distribution
-gulp.task('zip:chrome', zipTask('chrome'))
-gulp.task('zip:firefox', zipTask('firefox'))
-gulp.task('zip:edge', zipTask('edge'))
-gulp.task('zip:opera', zipTask('opera'))
-gulp.task('zip', gulp.parallel('zip:chrome', 'zip:firefox', 'zip:edge', 'zip:opera'))
+// gulp.task('zip:chrome', zipTask('chrome'))
+// gulp.task('zip:firefox', zipTask('firefox'))
+// gulp.task('zip:edge', zipTask('edge'))
+// gulp.task('zip:opera', zipTask('opera'))
+// gulp.task('zip', gulp.parallel('zip:chrome', 'zip:firefox', 'zip:edge', 'zip:opera'))
 
 // high level tasks
 
@@ -425,19 +425,19 @@ gulp.task('build:mascara',
 gulp.task('dist',
   gulp.series(
     'build',
-    'zip'
+    // 'zip'
   )
 )
 
 // task generators
-
-function zipTask (target) {
-  return () => {
-    return gulp.src(`dist/${target}/**`)
-    .pipe(zip(`metamask-${target}-${manifest.version}.zip`))
-    .pipe(gulp.dest('builds'))
-  }
-}
+//
+// function zipTask (target) {
+//   return () => {
+//     return gulp.src(`dist/${target}/**`)
+//     .pipe(zip(`metamask-${target}-${manifest.version}.zip`))
+//     .pipe(gulp.dest('builds'))
+//   }
+// }
 
 function generateBundler (opts, performBundle) {
   const browserifyOpts = assign({}, watchify.args, {

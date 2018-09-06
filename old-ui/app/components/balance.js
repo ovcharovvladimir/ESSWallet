@@ -5,7 +5,6 @@ const formatBalance = require('../util').formatBalance
 const generateBalanceObject = require('../util').generateBalanceObject
 const Tooltip = require('./tooltip.js')
 const FiatValue = require('./fiat-value.js')
-
 module.exports = EthBalanceComponent
 
 inherits(EthBalanceComponent, Component)
@@ -53,7 +52,7 @@ EthBalanceComponent.prototype.renderBalance = function (value) {
     balance = balanceObj.balance
   }
 
-  var label = balanceObj.label
+  // var label = balanceObj.label
 
   return (
     h(Tooltip, {
@@ -74,15 +73,14 @@ EthBalanceComponent.prototype.renderBalance = function (value) {
             textAlign: 'right',
           },
         }, this.props.incoming ? `+${balance}` : balance),
-        h('div', {
-          style: {
-            color: ' #AEAEAE',
-            fontSize: '12px',
-            marginLeft: '5px',
-          },
-        }, label),
+        // h('div', {
+        //   style: {
+        //     color: ' #AEAEAE',
+        //     fontSize: '12px',
+        //     marginLeft: '5px',
+        //   },
+        // }, label),
       ]),
-
       showFiat ? h(FiatValue, { value: props.value }) : null,
     ]))
   )

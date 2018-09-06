@@ -601,8 +601,8 @@
   "rinkeby": {
     "message": "เครือข่ายทดสอบ Rinkeby"
   },
-  "ropsten": {
-    "message": "เครือข่ายทดสอบ Ropsten"
+  "essentia": {
+    "message": "เครือข่ายทดสอบ Essentia"
   },
   "sampleAccountName": {
     "message": "เช่น บัญชีเฮงเฮงของฉัน",

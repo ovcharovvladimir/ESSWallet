@@ -12,7 +12,7 @@ function ens (name, provider) {
   const contract = new EthContract(eth)
   const Registrar = contract(registrarAbi).at(getRegistrar(provider.type))
   return new Promise((resolve, reject) => {
-    if (provider.type === 'mainnet' || provider.type === 'ropsten') {
+    if (provider.type === 'mainnet' || provider.type === 'essentia') {
       Registrar.resolver(hash).then((address) => {
         if (address === '0x0000000000000000000000000000000000000000') {
           reject(null)
@@ -40,8 +40,8 @@ function getProvider (type) {
   switch (type) {
     case 'mainnet':
       return 'https://mainnet.infura.io/'
-    case 'ropsten':
-      return 'https://ropsten.infura.io/'
+    case 'essentia':
+      return 'http://18.222.125.29:8545'
     default:
       return 'http://localhost:8545/'
   }
@@ -51,7 +51,7 @@ function getRegistrar (type) {
   switch (type) {
     case 'mainnet':
       return '0x314159265dd8dbb310642f98f50c066173c1259b'
-    case 'ropsten':
+    case 'essentia':
       return '0x112234455c3a32fd11230c42e7bccd4a84e02010'
     default:
       return '0x0000000000000000000000000000000000000000'

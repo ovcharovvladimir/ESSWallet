@@ -472,8 +472,8 @@
   "rinkeby": {
     "message": "Mạng thử nghiệm Rinkeby"
   },
-  "ropsten": {
-    "message": "Mạng thử nghiệm Ropsten"
+  "essentia": {
+    "message": "Mạng thử nghiệm essentia"
   },
   "sampleAccountName": {
     "description": "Giúp người dùng hiểu khái niệm thêm một cái tên có thể đọc được vào tài khoản của họ",
