@@ -86,7 +86,7 @@ Network.prototype.render = function () {
                   color: '#ff6666',
                 }},
               'Essentia Test Net'),
-              props.onClick && h('i.fa.fa-caret-down.fa-lg'),
+              // props.onClick && h('i.fa.fa-caret-down.fa-lg'),
             ])
           case 'kovan-test-network':
             return h('.network-indicator', [

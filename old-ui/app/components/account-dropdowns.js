@@ -193,7 +193,7 @@ class AccountDropdowns extends Component {
               global.platform.openWindow({ url })
             },
           },
-          'View account on Etherscan',
+          'View account on Ess Blockexplorer',
         ),
         h(
           DropdownMenuItem,

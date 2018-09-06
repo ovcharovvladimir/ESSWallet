@@ -332,7 +332,7 @@
     "message": "Passwords Don't Match"
   },
   "etherscanView": {
-    "message": "View account on Etherscan"
+    "message": "View account on Ess Blockexplorer"
   },
   "exchangeRate": {
     "message": "Exchange Rate"
@@ -1175,7 +1175,7 @@
     "message": "View Account"
   },
   "viewOnEtherscan": {
-    "message": "View on Etherscan"
+    "message": "View on Ess Blockexplorer"
   },
   "visitWebSite": {
     "message": "Visit our web site"

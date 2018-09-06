@@ -227,7 +227,7 @@
     "message": "パスワードを入力"
   },
   "etherscanView": {
-    "message": "Etherscanでアカウントを確認"
+    "message": "Ess Blockexplorerでアカウントを確認"
   },
   "exchangeRate": {
     "message": "交換レート"
@@ -743,7 +743,7 @@
     "message": "アカウントを見る"
   },
   "viewOnEtherscan": {
-    "message": "Etherscan で見る"
+    "message": "Ess Blockexplorer で見る"
   },
   "warning": {
     "message": "警告"

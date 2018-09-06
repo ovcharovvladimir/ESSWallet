@@ -53,7 +53,6 @@ module.exports = class NetworkController extends EventEmitter {
     console.log('providerParams', providerParams)
     this._baseProviderParams = providerParams
     const { type, rpcTarget } = this.providerStore.getState()
-      console.log('type, rpcTarget', type, rpcTarget)
     this._configureProvider({ type, rpcTarget })
     this.lookupNetwork()
   }
