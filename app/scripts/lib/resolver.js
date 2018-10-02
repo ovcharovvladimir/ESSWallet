@@ -41,7 +41,7 @@ function getProvider (type) {
     case 'mainnet':
       return 'https://mainnet.infura.io/'
     case 'essentia':
-      return 'http://18.222.125.29:8545'
+      return 'http://18.224.0.169:8545'
     default:
       return 'http://localhost:8545/'
   }

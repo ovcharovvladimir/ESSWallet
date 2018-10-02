@@ -138,8 +138,8 @@ BuyButtonSubview.prototype.primarySubview = function () {
     case '1':
       return this.mainnetSubview()
 
-    // Ropsten, Rinkeby, Kovan
-    case '3':
+    // Ropsten, Rinkeby, Kovan Essentia network id
+    case '5678':
     case '4':
     case '42':
       const networkName = getNetworkDisplayName(network)

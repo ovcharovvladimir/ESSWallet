@@ -425,11 +425,12 @@ gulp.task('build:mascara',
 gulp.task('dist',
   gulp.series(
     'build',
-    // 'zip'
+    'zip'
   )
 )
 
 // task generators
+
 function zipTask (target) {
   return () => {
     return gulp.src(`dist/${target}/**`)

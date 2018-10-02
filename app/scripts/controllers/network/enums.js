@@ -5,7 +5,7 @@ const MAINNET = 'mainnet'
 const LOCALHOST = 'localhost'
 
 const MAINNET_CODE = 1
-const ESSENTIA_CODE = 3
+const ESSENTIA_CODE = 5678
 const RINKEYBY_CODE = 4
 const KOVAN_CODE = 42
 
@@ -14,7 +14,7 @@ const RINKEBY_DISPLAY_NAME = 'Rinkeby'
 const KOVAN_DISPLAY_NAME = 'Kovan'
 const MAINNET_DISPLAY_NAME = 'Main Ethereum Network'
 
-const ESSENTIA_RPC_URL = 'http://18.222.125.29:8545'
+const ESSENTIA_RPC_URL = 'http://18.224.0.169:8545'
 
 module.exports = {
   ESSENTIA,

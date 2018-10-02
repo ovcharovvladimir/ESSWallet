@@ -29,7 +29,7 @@ Network.prototype.render = function () {
         alignItems: 'center',
         flexDirection: 'row',
       },
-      onClick: (event) => props.onClick && props.onClick(event),
+    /**/ onClick: (event) => props.onClick && props.onClick(event),
     }, [
       props.onClick && h('img', {
         title: 'Attempting to connect to blockchain.',
@@ -38,7 +38,7 @@ Network.prototype.render = function () {
         },
         src: 'images/loading.svg',
       }),
-      h('i.fa.fa-caret-down'),
+      // h('i.fa.fa-caret-down'),
     ])
   } else if (providerName === 'mainnet') {
     hoverText = 'Main Ethereum Network'
@@ -46,7 +46,7 @@ Network.prototype.render = function () {
   } else if (providerName === 'essentia') {
     hoverText = 'Essentia Test Network'
     iconName = 'essentia-test-network'
-  } else if (parseInt(networkNumber) === 3) {
+  } else if (parseInt(networkNumber) === 5678) {
     hoverText = 'Essentia Test Network'
     iconName = 'essentia-test-network'
   } else if (providerName === 'kovan') {

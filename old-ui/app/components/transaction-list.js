@@ -19,6 +19,7 @@ TransactionList.prototype.render = function () {
   if (network === '1') {
     shapeShiftTxList = this.props.shapeShiftTxList
   }
+  console.log('transactions', transactions)
   const txsToRender = !shapeShiftTxList ? transactions.concat(unapprovedMsgs) : transactions.concat(unapprovedMsgs, shapeShiftTxList)
   .sort((a, b) => b.time - a.time)
 

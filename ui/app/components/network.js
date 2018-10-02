@@ -54,7 +54,7 @@ Network.prototype.render = function () {
   } else if (providerName === 'essentia') {
     hoverText = context.t('essentia')
     iconName = 'essentia-test-network'
-  } else if (parseInt(networkNumber) === 3) {
+  } else if (parseInt(networkNumber) === 5678) {
     hoverText = context.t('essentia')
     iconName = 'essentia-test-network'
   } else if (providerName === 'kovan') {
@@ -73,7 +73,7 @@ Network.prototype.render = function () {
       className: classnames({
         'network-component--disabled': this.props.disabled,
         'ethereum-network': providerName === 'mainnet',
-        'essentia-test-network': providerName === 'essentia' || parseInt(networkNumber) === 3,
+        'essentia-test-network': providerName === 'essentia' || parseInt(networkNumber) === 5678,
         'kovan-test-network': providerName === 'kovan',
         'rinkeby-test-network': providerName === 'rinkeby',
       }),

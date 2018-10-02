@@ -114,7 +114,7 @@
     "message": "Conectando a la red principal de Ethereum (Main Net)"
   },
   "connectingToEssentia": {
-    "message": "Conectando a la red de test 18.222.125.29"
+    "message": "Conectando a la red de test Essentia"
   },
   "connectingToKovan": {
     "message": "Conectando a la red de test Kovan"

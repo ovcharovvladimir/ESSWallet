@@ -53,6 +53,7 @@ module.exports = class NetworkController extends EventEmitter {
     console.log('providerParams', providerParams)
     this._baseProviderParams = providerParams
     const { type, rpcTarget } = this.providerStore.getState()
+    console.log('providerParams 2', type, rpcTarget)
     this._configureProvider({ type, rpcTarget })
     this.lookupNetwork()
   }
@@ -70,6 +71,7 @@ module.exports = class NetworkController extends EventEmitter {
   }
 
   getNetworkState () {
+    console.log('getNetworkState')
     return this.networkStore.getState()
   }
 
@@ -81,17 +83,50 @@ module.exports = class NetworkController extends EventEmitter {
     return this.getNetworkState() === 'loading'
   }
 
+  _checkDomain (newProvider) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        console.log('time out')
+          return resolve(false)
+      }, 1000)
+      const ethQuery = new EthQuery(newProvider)
+      ethQuery.sendAsync({ method: 'net_version' }, (err, network) => {
+        console.log('method net_version')
+        if (err) {
+          console.log('resolve(false)', err)
+            return resolve(false)
+          }
+          console.log('resolve(network)')
+          return resolve(network)
+        })
+    })
+  }
+  async _checkNetVersion (newProvider) {
+    const rpcEssentia = new Array(4)
+    rpcEssentia[0] = 'http://18.224.0.169:8545'
+    rpcEssentia[2] = 'http://52.14.180.128:8545'
+    rpcEssentia[1] = 'http://18.221.62.255:8545'
+    rpcEssentia[3] = 'http://52.14.5.83:8545'
+    for (var i = 0; i < 3; i++) {
+      const isDomain = await this._checkDomain(this._provider)
+      if (isDomain) {
+        console.log('isDomain', isDomain)
+        log.info('web3.getNetwork returned ' + isDomain)
+        this.setNetworkState(isDomain)
+        return
+      }
+      console.log('new try', i, rpcEssentia[i + 1])
+      this._configureStandardProvider({ rpcUrl: rpcEssentia[i + 1] })
+    }
+  }
+
   lookupNetwork () {
+    console.log('lookupNetwork')
     // Prevent firing when provider is not defined.
     if (!this._provider) {
       return log.warn('NetworkController - lookupNetwork aborted due to missing provider')
     }
-    const ethQuery = new EthQuery(this._provider)
-    ethQuery.sendAsync({ method: 'net_version' }, (err, network) => {
-      if (err) return this.setNetworkState('loading')
-      log.info('web3.getNetwork returned ' + network)
-      this.setNetworkState(network)
-    })
+    this._checkNetVersion(this._provider)
   }
 
   setRpcTarget (rpcTarget) {
@@ -145,8 +180,7 @@ module.exports = class NetworkController extends EventEmitter {
     } else if (type === 'rpc') {
       this._configureStandardProvider({ rpcUrl: rpcTarget })
     } else if (type === 'essentia') {
-        log.debug('rpcUrl: rpcTarget', rpcTarget)
-        this._configureStandardProvider({ rpcUrl: 'http://18.222.125.29:8545' })
+        this._configureStandardProvider({ rpcUrl: 'http://18.224.0.169:8545' })
     } else {
       throw new Error(`NetworkController - _configureProvider - unknown type "${type}"`)
     }
@@ -192,6 +226,7 @@ module.exports = class NetworkController extends EventEmitter {
       this._blockTrackerProxy = createEventEmitterProxy(blockTracker, { eventFilter: 'skipInternal' })
     }
     // set new provider and blockTracker
+    console.log('provider', provider)
     this._provider = provider
     this._blockTracker = blockTracker
   }

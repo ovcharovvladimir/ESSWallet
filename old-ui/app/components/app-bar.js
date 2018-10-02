@@ -248,7 +248,7 @@ module.exports = class AppBar extends Component {
     //   h(DropdownMenuItem, {
     //     key: 'essentia',
     //     closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
-    //     onClick: () => dispatch(actions.setRpcTarget('http://18.222.125.29:8545')),
+    //     onClick: () => dispatch(actions.setRpcTarget('http://18.224.0.169:8545')),
     //     style: {
     //       fontSize: '18px',
     //     },
