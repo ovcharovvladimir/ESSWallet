@@ -10,6 +10,7 @@ package
 .idea
 .vscode
 .sublime-project
+.history
 
 # VIM
 *.swp
