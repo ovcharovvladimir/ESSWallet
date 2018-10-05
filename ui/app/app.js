@@ -187,8 +187,8 @@ class App extends Component {
 
     if (providerName === 'mainnet') {
       name = this.context.t('connectingToMainnet')
-    } else if (providerName === 'ropsten') {
-      name = this.context.t('connectingToRopsten')
+    } else if (providerName === 'essentia') {
+      name = this.context.t('connectingToEssentia')
     } else if (providerName === 'kovan') {
       name = this.context.t('connectingToKovan')
     } else if (providerName === 'rinkeby') {
@@ -210,8 +210,8 @@ class App extends Component {
 
     if (providerName === 'mainnet') {
       name = this.context.t('mainnet')
-    } else if (providerName === 'ropsten') {
-      name = this.context.t('ropsten')
+    } else if (providerName === 'essentia') {
+      name = this.context.t('essentia')
     } else if (providerName === 'kovan') {
       name = this.context.t('kovan')
     } else if (providerName === 'rinkeby') {

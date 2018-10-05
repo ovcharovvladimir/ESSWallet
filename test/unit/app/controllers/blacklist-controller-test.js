@@ -35,7 +35,7 @@ describe('blacklist controller', function () {
       const result = blacklistController.checkForPhishing('example.com')
       assert.equal(result, false)
     })
-    it('should not flag the ropsten faucet domains', function () {
+    it('should not flag the essentia faucet domains', function () {
       const result = blacklistController.checkForPhishing('faucet.metamask.io')
       assert.equal(result, false)
     })

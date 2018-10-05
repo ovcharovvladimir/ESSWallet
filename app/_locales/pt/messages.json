@@ -245,7 +245,7 @@
     "message": "Introduza a sua palavra-passe para confirmar"
   },
   "etherscanView": {
-    "message": "Ver conta no Etherscan"
+    "message": "Ver conta no Ess Blockexplorer"
   },
   "exchangeRate": {
     "message": "Taxa de Câmbio"
@@ -600,9 +600,6 @@
   },
   "rinkeby": {
     "message": "Rede de Teste Rinkeby"
-  },
-  "ropsten": {
-    "message": "Rede de Teste Ropsten"
   },
   "essentia": {
     "message": "Rede de Teste Essentia"

@@ -29,7 +29,7 @@ Network.prototype.render = function () {
         alignItems: 'center',
         flexDirection: 'row',
       },
-      onClick: (event) => props.onClick && props.onClick(event),
+    /**/ onClick: (event) => props.onClick && props.onClick(event),
     }, [
       props.onClick && h('img', {
         title: 'Attempting to connect to blockchain.',
@@ -38,7 +38,7 @@ Network.prototype.render = function () {
         },
         src: 'images/loading.svg',
       }),
-      h('i.fa.fa-caret-down'),
+      // h('i.fa.fa-caret-down'),
     ])
   } else if (providerName === 'mainnet') {
     hoverText = 'Main Ethereum Network'
@@ -84,17 +84,7 @@ Network.prototype.render = function () {
               'Main Network'),
               props.onClick && h('i.fa.fa-caret-down.fa-lg'),
             ])
-          case 'ropsten-test-network':
-            return h('.network-indicator', [
-              h('.menu-icon.red-dot'),
-              h('.network-name', {
-                style: {
-                  color: '#ff6666',
-                }},
-              'Ropsten Test Net'),
-              props.onClick && h('i.fa.fa-caret-down.fa-lg'),
-            ])
-            case 'essentia-test-network':
+          case 'essentia-test-network':
             return h('.network-indicator', [
               h('.menu-icon.red-dot'),
               h('.network-name', {
@@ -102,7 +92,7 @@ Network.prototype.render = function () {
                   color: '#ff6666',
                 }},
               'Essentia Test Net'),
-              props.onClick && h('i.fa.fa-caret-down.fa-lg'),
+              // props.onClick && h('i.fa.fa-caret-down.fa-lg'),
             ])
           case 'kovan-test-network':
             return h('.network-indicator', [

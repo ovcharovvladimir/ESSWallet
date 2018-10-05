@@ -260,7 +260,7 @@
     "message": "Введите ваш пароль для подтверждения"
   },
   "etherscanView": {
-    "message": "Просмотреть счет на Etherscan"
+    "message": "Просмотреть счет на Ess Blockexplorer"
   },
   "exchangeRate": {
     "message": "Обменный курс"
@@ -636,9 +636,6 @@
   },
   "rinkeby": {
     "message": "Тестовая сеть Rinkeby"
-  },
-  "ropsten": {
-    "message": "Тестовая сеть Ropsten"
   },
   "essentia": {
     "message": "Тестовая сеть Essentia"

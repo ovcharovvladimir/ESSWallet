@@ -76,7 +76,7 @@ BuyButtonSubview.prototype.headerSubview = function () {
             paddingTop: '4px',
             paddingBottom: '4px',
           },
-        }, 'Buy Eth'),
+        }, 'Buy Ess'),
       ]),
 
       // loading indication
@@ -138,11 +138,10 @@ BuyButtonSubview.prototype.primarySubview = function () {
     case '1':
       return this.mainnetSubview()
 
-    // Ropsten, Rinkeby, Kovan
-    case '3':
+    // Ropsten, Rinkeby, Kovan Essentia network id
+    case '5678':
     case '4':
     case '42':
-    case '5678':
       const networkName = getNetworkDisplayName(network)
       const label = `${networkName} Test Faucet`
       return (

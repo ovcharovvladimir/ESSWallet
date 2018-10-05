@@ -245,7 +245,7 @@
     "message": "Potrdite geslo"
   },
   "etherscanView": {
-    "message": "Poglejte račun na Etherscan"
+    "message": "Poglejte račun na Ess Blockexplorer"
   },
   "exchangeRate": {
     "message": "Menjalni tečaj"
@@ -600,9 +600,6 @@
   },
   "rinkeby": {
     "message": "Testno omrežje Rinkeby"
-  },
-  "ropsten": {
-    "message": "Testno omrežje Ropsten"
   },
   "essentia": {
     "message": "Testno omrežje Essentia"

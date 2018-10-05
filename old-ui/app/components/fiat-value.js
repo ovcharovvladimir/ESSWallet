@@ -49,15 +49,33 @@ function fiatDisplay (fiatDisplayNumber, fiatSuffix) {
           fontSize: '12px',
           color: '#333333',
         },
-      }, fiatDisplayNumber),
+      }),
       h('div', {
         style: {
           color: '#AEAEAE',
           marginLeft: '5px',
           fontSize: '12px',
         },
-      }, fiatSuffix),
-    ])
+      }),
+    ]
+        // [
+        // h('div', {
+        //     style: {
+        //         width: '100%',
+        //         textAlign: 'right',
+        //         fontSize: '12px',
+        //         color: '#333333',
+        //     },
+        // }, fiatDisplayNumber),
+        //     h('div', {
+        //         style: {
+        //             color: '#AEAEAE',
+        //             marginLeft: '5px',
+        //             fontSize: '12px',
+        //         },
+        //     }, fiatSuffix),
+        // ]
+      )
   } else {
     return h('div')
   }

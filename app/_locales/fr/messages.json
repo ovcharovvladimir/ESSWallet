@@ -197,7 +197,7 @@
     "message": "Entrer le mot de passe"
   },
   "etherscanView": {
-    "message": "Afficher le compte sur Etherscan"
+    "message": "Afficher le compte sur Ess Blockexplorer"
   },
   "exchangeRate": {
     "message": "Taux de change"
@@ -471,9 +471,6 @@
   },
   "rinkeby": {
     "message": "Réseau de test Rinkeby"
-  },
-  "ropsten": {
-    "message": "Réseau de test Ropsten"
   },
   "essentia": {
     "message": "Réseau de test Essentia"

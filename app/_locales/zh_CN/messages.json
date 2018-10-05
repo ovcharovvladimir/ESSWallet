@@ -278,7 +278,7 @@
     "message": "密码不匹配"
   },
   "etherscanView": {
-    "message": "在 Etherscan 上查看账户"
+    "message": "在 Ess Blockexplorer 上查看账户"
   },
   "exchangeRate": {
     "message": "兑换比率"
@@ -673,9 +673,6 @@
   "rinkeby": {
     "message": "Rinkeby 测试网络"
   },
-  "ropsten": {
-    "message": "Ropsten 测试网络"
-  },
   "essentia": {
     "message": "Essentia 测试网络"
   },
@@ -684,9 +681,6 @@
   },
   "connectingToMainnet": {
     "message": "正在连接到以太坊主网"
-  },
-  "connectingToRopsten": {
-    "message": "正在连接到Ropsten测试网络"
   },
   "connectingToEssentia": {
     "message": "正在连接到Essentia测试网络"

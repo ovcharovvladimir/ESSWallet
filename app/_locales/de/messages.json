@@ -263,7 +263,7 @@
     "message": "Passwörter stimmen nicht überein"
   },
   "etherscanView": {
-    "message": "Account auf Etherscan anschauen"
+    "message": "Account auf Ess Blockexplorer anschauen"
   },
   "exchangeRate": {
     "message": "Wechselrate"
@@ -631,9 +631,6 @@
   "rinkeby": {
     "message": "Rinkeby Testnetzwerk"
   },
-  "ropsten": {
-    "message": "Ropsten Testnetzwerk"
-  },
   "essentia": {
     "message": "Essentia Testnetzwerk"
   },
@@ -642,9 +639,6 @@
   },
   "connectingToMainnet": {
     "message": "Verbinde zum Ethereum Main Net"
-  },
-  "connectingToRopsten": {
-    "message": " Verbinde zum Ropsten Testnetzwerk"
   },
   "connectingToEssentia": {
     "message": " Verbinde zum Essentia Testnetzwerk"

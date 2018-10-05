@@ -197,7 +197,7 @@
     "message": "Nhập mật khẩu"
   },
   "etherscanView": {
-    "message": "Xem tài khoản trên Etherscan"
+    "message": "Xem tài khoản trên Ess Blockexplorer"
   },
   "exchangeRate": {
     "message": "Tỷ giá"
@@ -471,9 +471,6 @@
   },
   "rinkeby": {
     "message": "Mạng thử nghiệm Rinkeby"
-  },
-  "ropsten": {
-    "message": "Mạng thử nghiệm Ropsten"
   },
   "essentia": {
     "message": "Mạng thử nghiệm Essentia"

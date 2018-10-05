@@ -58,7 +58,9 @@ class TransactionStateManager extends EventEmitter {
     @returns {array} of txMetas that have been filtered for only the current network
   */
   getTxList () {
+    // console.log('======================')
     const network = this.getNetwork()
+      // console.log('network ', network)
     const fullTxList = this.getFullTxList()
     return fullTxList.filter((txMeta) => txMeta.metamaskNetworkId === network)
   }

@@ -266,7 +266,7 @@
       "message": "Parolalar eşleşmiyor"
     },
     "etherscanView": {
-      "message": "Hesabı Etherscan üzerinde izle"
+      "message": "Hesabı Ess Blockexplorer üzerinde izle"
     },
     "exchangeRate": {
       "message": "Döviz kuru"
@@ -642,9 +642,6 @@
     },
     "rinkeby": {
       "message": "Rinkeby Test Ağı"
-    },
-    "ropsten": {
-      "message": "Ropsten Test Ağı"
     },
     "essentia": {
       "message": "Essentia Test Ağı"

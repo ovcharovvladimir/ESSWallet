@@ -245,7 +245,7 @@
     "message": "ใส่รหัสผ่านอีกครั้งเพื่อยืนยัน"
   },
   "etherscanView": {
-    "message": "ดูบัญชีบน Etherscan"
+    "message": "ดูบัญชีบน Ess Blockexplorer"
   },
   "exchangeRate": {
     "message": "อัตราแลกเปลี่ยน"
@@ -600,9 +600,6 @@
   },
   "rinkeby": {
     "message": "เครือข่ายทดสอบ Rinkeby"
-  },
-  "ropsten": {
-    "message": "เครือข่ายทดสอบ Ropsten"
   },
   "essentia": {
     "message": "เครือข่ายทดสอบ Essentia"

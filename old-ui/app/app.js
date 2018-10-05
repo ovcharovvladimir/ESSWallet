@@ -26,7 +26,7 @@ const AddTokenScreen = require('./add-token')
 const AddSuggestedTokenScreen = require('./add-suggested-token')
 const Import = require('./accounts/import')
 const InfoScreen = require('./info')
-const NewUiAnnouncement = require('./new-ui-annoucement')
+// const NewUiAnnouncement = require('./new-ui-annoucement')
 const AppBar = require('./components/app-bar')
 const Loading = require('./components/loading')
 const BuyView = require('./components/buy-button-subview')
@@ -87,12 +87,12 @@ function mapStateToProps (state) {
 App.prototype.render = function () {
   const {
     currentView,
-    dispatch,
+    // dispatch,
     isLoading,
     loadingMessage,
     transForward,
     network,
-    featureFlags,
+    // featureFlags,
   } = this.props
   const isLoadingNetwork = network === 'loading' && currentView.name !== 'config'
   const loadMessage = loadingMessage || isLoadingNetwork
@@ -100,13 +100,13 @@ App.prototype.render = function () {
     : null
   log.debug('Main ui render function')
 
-  if (!featureFlags.skipAnnounceBetaUI) {
-    return (
-      h(NewUiAnnouncement, {
-        dispatch,
-      })
-    )
-  }
+  // if (!featureFlags.skipAnnounceBetaUI) {
+  //   return (
+  //     h(NewUiAnnouncement, {
+  //       dispatch,
+  //     })
+  //   )
+  // }
 
   return (
     h('.flex-column.full-height', {
@@ -298,8 +298,8 @@ App.prototype.getNetworkName = function () {
 
   if (providerName === 'mainnet') {
     name = 'Main Ethereum Network'
-  } else if (providerName === 'ropsten') {
-    name = 'Ropsten Test Network'
+  } else if (providerName === 'essentia') {
+    name = 'Essentia Test Network'
   } else if (providerName === 'kovan') {
     name = 'Kovan Test Network'
   } else if (providerName === 'rinkeby') {

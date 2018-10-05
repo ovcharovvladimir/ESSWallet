@@ -197,7 +197,7 @@
     "message": "I-enter ang password"
   },
   "etherscanView": {
-    "message": "Tingnan ang account sa Etherscan"
+    "message": "Tingnan ang account sa Ess Blockexplorer"
   },
   "exchangeRate": {
     "message": "Exchange Rate"
@@ -471,9 +471,6 @@
   },
   "rinkeby": {
     "message": "Rinkeby Test Network"
-  },
-  "ropsten": {
-    "message": "Ropsten Test Network"
   },
   "essentia": {
     "message": "Essentia Test Network"

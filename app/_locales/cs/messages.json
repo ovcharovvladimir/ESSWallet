@@ -266,7 +266,7 @@
     "message": "Hesla nejsou stejná"
   },
   "etherscanView": {
-    "message": "Prohlédněte si účet na Etherscan"
+    "message": "Prohlédněte si účet na Ess Blockexplorer"
   },
   "exchangeRate": {
     "message": "Směnný kurz"
@@ -643,9 +643,6 @@
   "rinkeby": {
     "message": "Rinkeby Test Network"
   },
-  "ropsten": {
-    "message": "Ropsten Test Network"
-  },
   "essentia": {
     "message": "Essentia Test Network"
   },
@@ -654,9 +651,6 @@
   },
   "connectingToMainnet": {
     "message": "Připojuji se k Main Ethereum Network"
-  },
-  "connectingToRopsten": {
-    "message": "Připojuji se k Ropsten Test Network"
   },
   "connectingToEssentia": {
     "message": "Připojuji se k Essentia Test Network"

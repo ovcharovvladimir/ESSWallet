@@ -1,7 +1,7 @@
 const assert = require('assert')
 const recipientBlackListChecker = require('../../../../../app/scripts/controllers/transactions/lib/recipient-blacklist-checker')
 const {
-  ROPSTEN_CODE,
+  ESSENTIA_CODE,
   RINKEYBY_CODE,
   KOVAN_CODE,
 } = require('../../../../../app/scripts/controllers/network/enums')
@@ -27,7 +27,7 @@ describe('Recipient Blacklist Checker', function () {
   describe('#checkAccount', function () {
     it('does not fail on test networks', function () {
       let callCount = 0
-      const networks = [ROPSTEN_CODE, RINKEYBY_CODE, KOVAN_CODE]
+      const networks = [ESSENTIA_CODE, RINKEYBY_CODE, KOVAN_CODE]
       for (const networkId in networks) {
         publicAccounts.forEach((account) => {
            recipientBlackListChecker.checkAccount(networkId, account)
