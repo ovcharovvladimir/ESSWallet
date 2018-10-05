@@ -691,6 +691,9 @@
   "ropsten": {
     "message": "Ropsten 테스트넷"
   },
+  "essentia": {
+    "message": "Essentia 테스트넷"
+  },
   "rpc": {
     "message": "사용자 정의 RPC"
   },
@@ -702,6 +705,9 @@
   },
   "connectingToRopsten": {
     "message": "Ropsten 테스트넷 접속중"
+  },
+  "connectingToEssentia": {
+    "message": "Essentia 테스트넷 접속중"
   },
   "connectingToKovan": {
     "message": "Kovan 테스트넷 접속중"

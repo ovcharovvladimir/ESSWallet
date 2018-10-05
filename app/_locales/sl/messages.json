@@ -173,7 +173,7 @@
   },
   "decimal": {
     "message": "Decimalke natančnosti"
-  }, 
+  },
   "defaultNetwork": {
     "message": "Privzeto omrežje za transakcije je Main Net."
   },
@@ -604,6 +604,9 @@
   "ropsten": {
     "message": "Testno omrežje Ropsten"
   },
+  "essentia": {
+    "message": "Testno omrežje Essentia"
+  },
   "sampleAccountName": {
     "message": "npr. Moj nov račun",
     "description": "Help user understand concept of adding a human-readable name to their account"
@@ -800,7 +803,7 @@
   },
   "visitWebSite": {
     "message": "Obiščite našo spletno stran"
-  }, 
+  },
   "warning": {
     "message": "Opozorilo"
   },

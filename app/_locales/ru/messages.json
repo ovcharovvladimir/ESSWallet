@@ -640,6 +640,9 @@
   "ropsten": {
     "message": "Тестовая сеть Ropsten"
   },
+  "essentia": {
+    "message": "Тестовая сеть Essentia"
+  },
   "currentRpc": {
     "message": "Current RPC"
   },
@@ -648,6 +651,9 @@
   },
   "connectingToRopsten": {
     "message": "Соединение с тестовой сетью Ropsten"
+  },
+  "connectingToEssentia": {
+    "message": "Соединение с тестовой сетью Essentia"
   },
   "connectingToKovan": {
     "message": "Соединение с тестовой сетью Kovan"

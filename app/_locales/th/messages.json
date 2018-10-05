@@ -604,6 +604,9 @@
   "ropsten": {
     "message": "เครือข่ายทดสอบ Ropsten"
   },
+  "essentia": {
+    "message": "เครือข่ายทดสอบ Essentia"
+  },
   "sampleAccountName": {
     "message": "เช่น บัญชีเฮงเฮงของฉัน",
     "description": "Help user understand concept of adding a human-readable name to their account"

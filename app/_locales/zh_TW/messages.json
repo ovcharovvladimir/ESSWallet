@@ -646,6 +646,9 @@
   "ropsten": {
     "message": "Ropsten 測試網路"
   },
+  "essentia": {
+    "message": "Essentia 測試網路"
+  },
   "currentRpc": {
     "message": "當前的 RPC"
   },
@@ -654,6 +657,9 @@
   },
   "connectingToRopsten": {
     "message": "連線到 Ropsten 測試網路"
+  },
+  "connectingToEssentia": {
+    "message": "連線到 Essentia 測試網路"
   },
   "connectingToKovan": {
     "message": "連線到 Kovan 測試網路"

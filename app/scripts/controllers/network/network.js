@@ -18,6 +18,7 @@ const {
   KOVAN,
   MAINNET,
   LOCALHOST,
+  ESSENTIA
 } = require('./enums')
 const INFURA_PROVIDER_TYPES = [ROPSTEN, RINKEBY, KOVAN, MAINNET]
 
@@ -26,7 +27,7 @@ const METAMASK_DEBUG = process.env.METAMASK_DEBUG
 const testMode = (METAMASK_DEBUG || env === 'test')
 
 const defaultProviderConfig = {
-  type: testMode ? RINKEBY : MAINNET,
+  type: testMode ? ESSENTIA : ESSENTIA,
 }
 
 module.exports = class NetworkController extends EventEmitter {
@@ -143,7 +144,9 @@ module.exports = class NetworkController extends EventEmitter {
     // url-based rpc endpoints
     } else if (type === 'rpc') {
       this._configureStandardProvider({ rpcUrl: rpcTarget })
-    } else {
+    } else if (type === 'essentia') {
+      this._configureStandardProvider({ rpcUrl: 'http://34.233.106.204:8545' })
+    }else {
       throw new Error(`NetworkController - _configureProvider - unknown type "${type}"`)
     }
   }

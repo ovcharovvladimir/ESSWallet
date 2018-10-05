@@ -604,6 +604,9 @@
   "ropsten": {
     "message": "Ropsten testnetwerk"
   },
+  "essentia": {
+    "message": "Essentia testnetwerk"
+  },
   "sampleAccountName": {
     "message": "Bijv. Mijn nieuwe account",
     "description": "Help de gebruiker begrip te ontwikkelen van het toevoegen van een door mensen leesbare naam aan zijn of haar account"

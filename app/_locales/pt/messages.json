@@ -173,7 +173,7 @@
   },
   "decimal": {
     "message": "Precisão em Decimais"
-  }, 
+  },
   "defaultNetwork": {
     "message": "A rede pré definida para transações em Ether é a Main Net."
   },
@@ -604,6 +604,9 @@
   "ropsten": {
     "message": "Rede de Teste Ropsten"
   },
+  "essentia": {
+    "message": "Rede de Teste Essentia"
+  },
   "sampleAccountName": {
     "message": "Ex. A minha conta nova",
     "description": "Ajuda o utilizador a perceber o conceito de adicionar um  nome legível à sua conta"
@@ -800,7 +803,7 @@
   },
   "visitWebSite": {
     "message": "Visite o nosso site"
-  }, 
+  },
   "warning": {
     "message": "Aviso"
   },

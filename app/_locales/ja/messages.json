@@ -562,6 +562,9 @@
   "ropsten": {
     "message": "Ropstenテストネットワーク"
   },
+  "essentia": {
+    "message": "Essentiaテストネットワーク"
+  },
   "sampleAccountName": {
     "message": "例.新しいマイアカウント",
     "description": "Help user understand concept of adding a human-readable name to their account"

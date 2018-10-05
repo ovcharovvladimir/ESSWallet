@@ -475,6 +475,9 @@
   "ropsten": {
     "message": "Réseau de test Ropsten"
   },
+  "essentia": {
+    "message": "Réseau de test Essentia"
+  },
   "sampleAccountName": {
     "message": "Par exemple mon nouveau compte",
     "description": "Aidez l'utilisateur à comprendre le concept d'ajout d'un nom lisible par un humain à son compte"

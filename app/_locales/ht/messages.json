@@ -829,6 +829,9 @@
     "ropsten": {
         "message": "Ropsten Tès Rezo"
     },
+    "essentia": {
+      "message": "Essentia Tès Rezo"
+    },
     "rpc": {
         "message": "Koutim RPC"
     },
@@ -841,6 +844,9 @@
     "connectingToRopsten": {
         "message": "Konekte ak Ropsten Tès Rezo a"
     },
+    "connectingToEssentia": {
+      "message": "Konekte ak Essentia Tès Rezo a"
+  },
     "connectingToKovan": {
         "message": "Konekte nan Kovan Tès Rezo a"
     },

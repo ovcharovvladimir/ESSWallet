@@ -646,11 +646,17 @@
     "ropsten": {
       "message": "Ropsten Test Ağı"
     },
+    "essentia": {
+      "message": "Essentia Test Ağı"
+    },
     "currentRpc": {
       "message": "Geçerli RPC"
     },
     "connectingToMainnet": {
       "message": "Main Ethereum Ağına bağlanıyor"
+    },
+    "connectingToEssentia": {
+      "message": "Essentia Test Ağına bağlanıyor"
     },
     "connectingToRopsten": {
       "message": "Ropsten Test Ağına bağlanıyor"

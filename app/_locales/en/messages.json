@@ -862,6 +862,9 @@
   "ropsten": {
     "message": "Ropsten Test Network"
   },
+  "essentia": {
+    "message": "Essentia Test Network"
+  },
   "rpc": {
     "message": "Custom RPC"
   },
@@ -871,8 +874,8 @@
   "connectingToMainnet": {
     "message": "Connecting to Main Ethereum Network"
   },
-  "connectingToRopsten": {
-    "message": "Connecting to Ropsten Test Network"
+  "connectingToEssentia": {
+    "message": "Connecting to Essentia Test Network"
   },
   "connectingToKovan": {
     "message": "Connecting to Kovan Test Network"

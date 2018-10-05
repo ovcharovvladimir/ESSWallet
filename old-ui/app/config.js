@@ -239,6 +239,11 @@ function currentProviderDisplay (metamaskState) {
       value = 'Ropsten Test Network'
       break
 
+      case 'essentia':
+      title = 'Current Network'
+      value = 'Essentia Test Network'
+      break
+
     case 'kovan':
       title = 'Current Network'
       value = 'Kovan Test Network'

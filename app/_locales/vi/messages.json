@@ -475,6 +475,9 @@
   "ropsten": {
     "message": "Mạng thử nghiệm Ropsten"
   },
+  "essentia": {
+    "message": "Mạng thử nghiệm Essentia"
+  },
   "sampleAccountName": {
     "description": "Giúp người dùng hiểu khái niệm thêm một cái tên có thể đọc được vào tài khoản của họ",
     "message": "Ví dụ, Tài khoản mới của tôi"

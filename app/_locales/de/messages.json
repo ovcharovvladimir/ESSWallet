@@ -634,6 +634,9 @@
   "ropsten": {
     "message": "Ropsten Testnetzwerk"
   },
+  "essentia": {
+    "message": "Essentia Testnetzwerk"
+  },
   "currentRpc": {
     "message": "Aktueller RPC"
   },
@@ -642,6 +645,9 @@
   },
   "connectingToRopsten": {
     "message": " Verbinde zum Ropsten Testnetzwerk"
+  },
+  "connectingToEssentia": {
+    "message": " Verbinde zum Essentia Testnetzwerk"
   },
   "connectingToKovan": {
     "message": " Verbinde zum Kovan Testnetzwerk"

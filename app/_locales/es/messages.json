@@ -116,6 +116,9 @@
   "connectingToRopsten": {
     "message": "Conectando a la red de test Ropsten"
   },
+  "connectingToEssentia": {
+    "message": "Conectando a la red de test Essentia"
+  },
   "connectingToKovan": {
     "message": "Conectando a la red de test Kovan"
   },

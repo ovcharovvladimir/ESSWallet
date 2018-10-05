@@ -268,7 +268,7 @@
     "message": "i-click ito",
     "description": "tulad ng -i-click dito- para sa mas maraming impormasyon (kasama ng troubleTokenBalances)"
   },
-  "hide": { 
+  "hide": {
     "message": "Itago"
   },
   "hideToken": {
@@ -474,6 +474,9 @@
   },
   "ropsten": {
     "message": "Ropsten Test Network"
+  },
+  "essentia": {
+    "message": "Essentia Test Network"
   },
   "sampleAccountName": {
     "message": "Halimbawa: Ang aking bagong account",

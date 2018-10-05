@@ -15,6 +15,9 @@
     &--ropsten {
       background-color: lighten($crimson, 45%);
     }
+    &--essentia {
+      background-color: lighten($crimson, 45%);
+    }
 
     &--kovan {
       background-color: lighten($purple, 65%);
@@ -40,6 +43,10 @@
     }
 
     &--ropsten {
+      background-color: $crimson;
+    }
+    
+    &--essentia {
       background-color: $crimson;
     }
 

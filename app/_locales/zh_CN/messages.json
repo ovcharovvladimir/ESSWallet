@@ -676,6 +676,9 @@
   "ropsten": {
     "message": "Ropsten 测试网络"
   },
+  "essentia": {
+    "message": "Essentia 测试网络"
+  },
   "currentRpc": {
     "message": "当前 RPC"
   },
@@ -684,6 +687,9 @@
   },
   "connectingToRopsten": {
     "message": "正在连接到Ropsten测试网络"
+  },
+  "connectingToEssentia": {
+    "message": "正在连接到Essentia测试网络"
   },
   "connectingToKovan": {
     "message": "正在连接到Kovan测试网络"
