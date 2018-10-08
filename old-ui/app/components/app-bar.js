@@ -69,39 +69,39 @@ module.exports = class AppBar extends Component {
   }
 
   renderAppBarNewUiNotice () {
-    // const {dispatch} = this.props
+    const {dispatch} = this.props
 
-    // return (
-      // h('div.app-bar__new-ui-banner', {
-      //   style: {
-      //     height: '28px',
-      //     zIndex: 12,
-      //   },
-      // }, [
-      //   'Try the New MetaMask',
-      //   AppBar.renderSpace(),
-      //   h('span.banner__link', {
-      //     async onClick () {
-      //       await dispatch(actions.setFeatureFlag('betaUI', true))
-      //       global.platform.openExtensionInBrowser()
-      //     },
-      //   }, [
-      //     'Now',
-      //   ]),
-      //   AppBar.renderSpace(),
-      //   'or',
-      //   AppBar.renderSpace(),
-      //   h('span.banner__link', {
-      //     onClick () {
-      //       global.platform.openWindow({
-      //         url: 'https://medium.com/metamask/74dba32cc7f7',
-      //       })
-      //     },
-      //   }, [
-      //     'Learn More',
-      //   ]),
-      // ])
-    // )
+    return (
+      h('div.app-bar__new-ui-banner', {
+        style: {
+          height: '28px',
+          zIndex: 12,
+        },
+      }, [
+        'Try the New MetaMask',
+        AppBar.renderSpace(),
+        h('span.banner__link', {
+          async onClick () {
+            await dispatch(actions.setFeatureFlag('betaUI', true))
+            global.platform.openExtensionInBrowser()
+          },
+        }, [
+          'Now',
+        ]),
+        AppBar.renderSpace(),
+        'or',
+        AppBar.renderSpace(),
+        h('span.banner__link', {
+          onClick () {
+            global.platform.openWindow({
+              url: 'https://medium.com/metamask/74dba32cc7f7',
+            })
+          },
+        }, [
+          'Learn More',
+        ]),
+      ])
+    )
   }
 
   renderAppBarAppHeader () {
