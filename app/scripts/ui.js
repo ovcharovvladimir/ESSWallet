@@ -42,15 +42,17 @@ async function start () {
     if (err) return displayCriticalError(err)
 
     // Code commented out until we begin auto adding users to NewUI
-    // const { isMascara, identities = {}, featureFlags = {} } = store.getState().metamask
-    // const firstTime = Object.keys(identities).length === 0
-    const { isMascara, featureFlags = {} } = store.getState().metamask
+    const { isMascara, identities = {}, featureFlags = {} } = store.getState().metamask
+    const firstTime = Object.keys(identities).length === 0
+    // const { isMascara, featureFlags = {} } = store.getState().metamask
     let betaUIState = featureFlags.betaUI
 
     // Code commented out until we begin auto adding users to NewUI
-    // const useBetaCss = isMascara || firstTime || betaUIState
-    const useBetaCss = isMascara || betaUIState
+    const useBetaCss = isMascara || firstTime || betaUIState
+    // const useBetaCss = isMascara || betaUIState
 
+    console.log('useBetaCss', useBetaCss)
+    // let css = NewMetaMaskUiCss()
     let css = useBetaCss ? NewMetaMaskUiCss() : OldMetaMaskUiCss()
     let deleteInjectedCss = injectCss(css)
     let newBetaUIState
@@ -58,10 +60,12 @@ async function start () {
     store.subscribe(() => {
       const state = store.getState()
       newBetaUIState = state.metamask.featureFlags.betaUI
+      console.log(11111)
       if (newBetaUIState !== betaUIState) {
+        console.log(222222)
         deleteInjectedCss()
         betaUIState = newBetaUIState
-        css = betaUIState ? NewMetaMaskUiCss() : OldMetaMaskUiCss()
+        css = NewMetaMaskUiCss()
         deleteInjectedCss = injectCss(css)
       }
     })

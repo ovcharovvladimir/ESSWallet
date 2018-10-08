@@ -63,12 +63,6 @@ Network.prototype.render = function () {
   } else if (providerName === 'rinkeby') {
     hoverText = context.t('rinkeby')
     iconName = 'rinkeby-test-network'
-  } else if (providerName === 'essentia') {
-    hoverText = context.t('essentia')
-    iconName = 'essentia-test-network'
-  } else if (parseInt(networkNumber) === 5678) {
-    hoverText = context.t('essentia')
-    iconName = 'essentia-test-network'
   } else {
     hoverText = context.t('unknownNetwork')
     iconName = 'unknown-private-network'

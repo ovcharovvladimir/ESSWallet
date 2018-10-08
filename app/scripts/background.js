@@ -439,7 +439,7 @@ function triggerUi () {
   extension.tabs.query({ active: true }, tabs => {
     const currentlyActiveMetamaskTab = Boolean(tabs.find(tab => openMetamaskTabsIDs[tab.id]))
     if (!popupIsOpen && !currentlyActiveMetamaskTab && !notificationIsOpen) {
-      // notificationManager.showPopup()
+      notificationManager.showPopup()
     }
   })
 }

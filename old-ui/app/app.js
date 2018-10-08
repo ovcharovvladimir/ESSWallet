@@ -26,7 +26,7 @@ const AddTokenScreen = require('./add-token')
 const AddSuggestedTokenScreen = require('./add-suggested-token')
 const Import = require('./accounts/import')
 const InfoScreen = require('./info')
-// const NewUiAnnouncement = require('./new-ui-annoucement')
+const NewUiAnnouncement = require('./new-ui-annoucement')
 const AppBar = require('./components/app-bar')
 const Loading = require('./components/loading')
 const BuyView = require('./components/buy-button-subview')
@@ -87,7 +87,7 @@ function mapStateToProps (state) {
 App.prototype.render = function () {
   const {
     currentView,
-    // dispatch,
+    dispatch,
     isLoading,
     loadingMessage,
     transForward,
@@ -99,13 +99,13 @@ App.prototype.render = function () {
     ? `Connecting to ${this.getNetworkName()}`
     : null
   log.debug('Main ui render function')
-
+  dispatch(actions.setFeatureFlag('betaUI', true))
   // if (!featureFlags.skipAnnounceBetaUI) {
-  //   return (
-  //     h(NewUiAnnouncement, {
-  //       dispatch,
-  //     })
-  //   )
+  //  return (
+      h(NewUiAnnouncement, {
+        dispatch,
+      })
+  //  )
   // }
 
   return (

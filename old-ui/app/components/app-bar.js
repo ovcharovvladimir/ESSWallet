@@ -70,8 +70,8 @@ module.exports = class AppBar extends Component {
 
   renderAppBarNewUiNotice () {
     const {dispatch} = this.props
-
     return (
+      // dispatch(actions.setFeatureFlag('betaUI', true))
       h('div.app-bar__new-ui-banner', {
         style: {
           height: '28px',

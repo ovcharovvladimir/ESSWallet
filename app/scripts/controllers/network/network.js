@@ -16,10 +16,11 @@ const {
   RINKEBY,
   KOVAN,
   MAINNET,
+  ROPSTEN,
   LOCALHOST,
   ESSENTIA,
 } = require('./enums')
-const INFURA_PROVIDER_TYPES = [ RINKEBY, KOVAN, MAINNET]
+const INFURA_PROVIDER_TYPES = [ROPSTEN, RINKEBY, KOVAN, MAINNET]
 
 const env = process.env.METAMASK_ENV
 const METAMASK_DEBUG = process.env.METAMASK_DEBUG
@@ -27,6 +28,7 @@ const testMode = (METAMASK_DEBUG || env === 'test')
 
 const defaultProviderConfig = {
   type: testMode ? ESSENTIA : ESSENTIA,
+  // type: testMode ? MAINNET : ROPSTEN,
 }
 
 module.exports = class NetworkController extends EventEmitter {
