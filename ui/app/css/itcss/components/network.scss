@@ -29,6 +29,9 @@
   &.rinkeby-test-network .menu-icon-circle div {
     background-color: rgba(235, 179, 63, .7) !important;
   }
+  &.essentia-test-network .menu-icon-circle div {
+    background-color: rgba(8, 23, 238, 0.7) !important;
+  }
 }
 
 .dropdown-menu-item {
@@ -57,6 +60,15 @@
   flex: 1 0 auto;
   color: $tundora;
   font-weight: 500;
+}
+
+.dropdown-menu-item .fa.delete {
+    margin-right: 10px;
+    display: none;
+}
+
+.dropdown-menu-item:hover .fa.delete {
+    display: inherit;
 }
 
 .network-droppo {

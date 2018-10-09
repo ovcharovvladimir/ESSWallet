@@ -15,6 +15,9 @@
     &--essentia {
       background-color: lighten($crimson, 45%);
     }
+    &--essentia {
+      background-color: lighten($crimson, 45%);
+    }
 
     &--kovan {
       background-color: lighten($purple, 65%);
@@ -39,6 +42,10 @@
       background-color: $blue-lagoon;
     }
 
+    &--essentia {
+      background-color: $crimson;
+    }
+    
     &--essentia {
       background-color: $crimson;
     }

@@ -28,6 +28,7 @@ To add another network to our dropdown menu, make sure the following files are a
 --ui/lib/explorer-link.js
 
 ui/app/constants/common.js change eth to ess
+
 ```
 
 You will need:

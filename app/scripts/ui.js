@@ -1,5 +1,5 @@
 const injectCss = require('inject-css')
-const OldMetaMaskUiCss = require('../../old-ui/css')
+// const OldMetaMaskUiCss = require('../../old-ui/css')
 const NewMetaMaskUiCss = require('../../ui/css')
 const startPopup = require('./popup-core')
 const PortStream = require('extension-port-stream')
@@ -42,27 +42,33 @@ async function start () {
     if (err) return displayCriticalError(err)
 
     // Code commented out until we begin auto adding users to NewUI
-    // const { isMascara, identities = {}, featureFlags = {} } = store.getState().metamask
-    // const firstTime = Object.keys(identities).length === 0
-    const { isMascara, featureFlags = {} } = store.getState().metamask
-    let betaUIState = featureFlags.betaUI
+    const { isMascara, identities = {}} = store.getState().metamask
+    const firstTime = Object.keys(identities).length === 0
+    // const { isMascara, featureFlags = {} } = store.getState().metamask
+    const betaUIState = true
 
     // Code commented out until we begin auto adding users to NewUI
     // const useBetaCss = isMascara || firstTime || betaUIState
-    const useBetaCss = isMascara || betaUIState
+    const useBetaCss = isMascara || firstTime || betaUIState
+    // const useBetaCss = isMascara || betaUIState
 
-    let css = useBetaCss ? NewMetaMaskUiCss() : OldMetaMaskUiCss()
-    let deleteInjectedCss = injectCss(css)
+    console.log('useBetaCss', useBetaCss)
+    // let css = NewMetaMaskUiCss()
+    let css = NewMetaMaskUiCss()
+    injectCss(css)
+    // let deleteInjectedCss = injectCss(css)
     let newBetaUIState
 
     store.subscribe(() => {
       const state = store.getState()
       newBetaUIState = state.metamask.featureFlags.betaUI
+      console.log(11111, newBetaUIState, betaUIState)
       if (newBetaUIState !== betaUIState) {
-        deleteInjectedCss()
-        betaUIState = newBetaUIState
-        css = betaUIState ? NewMetaMaskUiCss() : OldMetaMaskUiCss()
-        deleteInjectedCss = injectCss(css)
+        console.log(222222)
+        // deleteInjectedCss()
+        // betaUIState = newBetaUIState
+        // css = NewMetaMaskUiCss()
+        // deleteInjectedCss = injectCss(css)
       }
     })
   })

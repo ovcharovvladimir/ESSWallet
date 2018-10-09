@@ -13,6 +13,7 @@ const networkToClassHash = {
   [ESSENTIA_CODE]: 'essentia',
   [RINKEYBY_CODE]: 'rinkeby',
   [KOVAN_CODE]: 'kovan',
+  [ESSENTIA_CODE]: 'essentia',
 }
 
 export default class NetworkDisplay extends Component {

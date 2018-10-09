@@ -39,34 +39,32 @@ function SelectedApp () {
 SelectedApp.prototype.componentWillReceiveProps = function (nextProps) {
   // Code commented out until we begin auto adding users to NewUI
   const {
-    // isUnlocked,
-    // setFeatureFlagWithModal,
+    isUnlocked,
+    setFeatureFlagWithModal,
     setFeatureFlagWithoutModal,
     isMascara,
-    // firstTime,
+    firstTime,
   } = this.props
 
-  // if (isMascara || firstTime) {
-  if (isMascara) {
+  if (isMascara || firstTime) {
+  // if (isMascara) {
     setFeatureFlagWithoutModal()
-  }
-  // } else if (!isUnlocked && nextProps.isUnlocked && (nextProps.autoAdd)) {
-  //   setFeatureFlagWithModal()
   // }
+  } else if (!isUnlocked && nextProps.isUnlocked && (nextProps.autoAdd)) {
+    setFeatureFlagWithModal()
+  }
 }
 
 SelectedApp.prototype.render = function () {
   // Code commented out until we begin auto adding users to NewUI
-  // const { betaUI, isMascara, firstTime } = this.props
-  // const Selected = betaUI || isMascara || firstTime ? App : OldApp
+  const { betaUI, isMascara, firstTime } = this.props
+  const Selected = betaUI || isMascara || firstTime ? App : OldApp
+console.log('selected', Selected)
+  // const { betaUI, isMascara } = this.props
 
-  const { betaUI, isMascara } = this.props
-
-  return betaUI || isMascara
-  ? h(HashRouter, {
+  return ( h(HashRouter, {
       hashType: 'noslash',
     }, [
       h(I18nProvider, [ h(App) ]),
-    ])
-  : h(OldApp)
+    ]))
 }

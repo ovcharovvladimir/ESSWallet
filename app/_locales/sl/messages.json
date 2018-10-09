@@ -173,7 +173,7 @@
   },
   "decimal": {
     "message": "Decimalke natančnosti"
-  }, 
+  },
   "defaultNetwork": {
     "message": "Privzeto omrežje za transakcije je Main Net."
   },
@@ -800,7 +800,7 @@
   },
   "visitWebSite": {
     "message": "Obiščite našo spletno stran"
-  }, 
+  },
   "warning": {
     "message": "Opozorilo"
   },

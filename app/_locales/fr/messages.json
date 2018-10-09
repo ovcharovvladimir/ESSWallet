@@ -473,7 +473,7 @@
     "message": "Réseau de test Rinkeby"
   },
   "essentia": {
-    "message": "Réseau de test essentia"
+    "message": "Réseau de test Essentia"
   },
   "sampleAccountName": {
     "message": "Par exemple mon nouveau compte",
@@ -490,7 +490,7 @@
     "message": "Sélectionner un service"
   },
   "send": {
-    "message": "Envoyé"
+    "message": "Envoyer"
   },
   "sendTokens": {
     "message": "Envoyer des jetons"

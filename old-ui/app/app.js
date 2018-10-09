@@ -87,7 +87,7 @@ function mapStateToProps (state) {
 App.prototype.render = function () {
   const {
     currentView,
-    // dispatch,
+    dispatch,
     isLoading,
     loadingMessage,
     transForward,
@@ -99,13 +99,13 @@ App.prototype.render = function () {
     ? `Connecting to ${this.getNetworkName()}`
     : null
   log.debug('Main ui render function')
-
+  dispatch(actions.setFeatureFlag('betaUI', true))
   // if (!featureFlags.skipAnnounceBetaUI) {
-  //   return (
-  //     h(NewUiAnnouncement, {
-  //       dispatch,
-  //     })
-  //   )
+  //  return (
+      // h(NewUiAnnouncement, {
+      //   dispatch,
+      // })
+  //  )
   // }
 
   return (

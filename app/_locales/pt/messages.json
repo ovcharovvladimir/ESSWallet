@@ -173,7 +173,7 @@
   },
   "decimal": {
     "message": "Precisão em Decimais"
-  }, 
+  },
   "defaultNetwork": {
     "message": "A rede pré definida para transações em Ether é a Main Net."
   },
@@ -602,7 +602,7 @@
     "message": "Rede de Teste Rinkeby"
   },
   "essentia": {
-    "message": "Rede de Teste essentia"
+    "message": "Rede de Teste Essentia"
   },
   "sampleAccountName": {
     "message": "Ex. A minha conta nova",
@@ -800,7 +800,7 @@
   },
   "visitWebSite": {
     "message": "Visite o nosso site"
-  }, 
+  },
   "warning": {
     "message": "Aviso"
   },

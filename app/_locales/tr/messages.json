@@ -644,7 +644,7 @@
       "message": "Rinkeby Test Ağı"
     },
     "essentia": {
-      "message": "essentia Test Ağı"
+      "message": "Essentia Test Ağı"
     },
     "currentRpc": {
       "message": "Geçerli RPC"
@@ -653,7 +653,10 @@
       "message": "Main Ethereum Ağına bağlanıyor"
     },
     "connectingToEssentia": {
-      "message": "essentia Test Ağına bağlanıyor"
+      "message": "Essentia Test Ağına bağlanıyor"
+    },
+    "connectingToRopsten": {
+      "message": "Ropsten Test Ağına bağlanıyor"
     },
     "connectingToKovan": {
       "message": "Kovan Test Ağına bağlanıyor"

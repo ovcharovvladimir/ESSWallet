@@ -14,6 +14,9 @@ module.exports = function (network) {
     case 42: // kovan test net
       prefix = 'kovan.'
       break
+      case 5678: // essentia test net
+      prefix = 'essentia.'
+      break
     default:
       prefix = ''
   }

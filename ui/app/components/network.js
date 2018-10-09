@@ -73,9 +73,9 @@ Network.prototype.render = function () {
       className: classnames({
         'network-component--disabled': this.props.disabled,
         'ethereum-network': providerName === 'mainnet',
-        'essentia-test-network': providerName === 'essentia' || parseInt(networkNumber) === 5678,
         'kovan-test-network': providerName === 'kovan',
         'rinkeby-test-network': providerName === 'rinkeby',
+        'essentia-test-network': providerName === 'essentia' || parseInt(networkNumber) === 5678,
       }),
       title: hoverText,
       onClick: (event) => {

@@ -146,9 +146,6 @@
   "copy": {
     "message": "복사"
   },
-  "copyContractAddress": {
-    "message": "컨트랙트 주소 복사"
-  },
   "copyToClipboard": {
     "message": "클립보드로 복사"
   },
@@ -704,7 +701,7 @@
     "message": "이더리움 메인넷 접속중"
   },
   "connectingToEssentia": {
-    "message": "essentia 테스트넷 접속중"
+    "message": "Essentia 테스트넷 접속중"
   },
   "connectingToKovan": {
     "message": "Kovan 테스트넷 접속중"

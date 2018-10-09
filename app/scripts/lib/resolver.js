@@ -40,8 +40,10 @@ function getProvider (type) {
   switch (type) {
     case 'mainnet':
       return 'https://mainnet.infura.io/'
+    case 'ropsten':
+      return 'https://ropsten.infura.io/'
     case 'essentia':
-      return 'http://18.224.0.169:8545'
+    return 'http://34.233.106.204:8545/'
     default:
       return 'http://localhost:8545/'
   }

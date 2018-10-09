@@ -15,13 +15,13 @@ const SendTransactionScreen = require('./components/send/send.container')
 const ConfirmTransaction = require('./components/pages/confirm-transaction')
 
 // slideout menu
-const WalletView = require('./components/wallet-view')
+const Sidebar = require('./components/sidebars').default
 
 // other views
 import Home from './components/pages/home'
+import Settings from './components/pages/settings'
 const Authenticated = require('./components/pages/authenticated')
 const Initialized = require('./components/pages/initialized')
-const Settings = require('./components/pages/settings')
 const RestoreVaultPage = require('./components/pages/keychains/restore-vault').default
 const RevealSeedConfirmation = require('./components/pages/keychains/reveal-seed')
 const AddTokenPage = require('./components/pages/add-token')
@@ -31,7 +31,6 @@ const CreateAccountPage = require('./components/pages/create-account')
 const NoticeScreen = require('./components/pages/notice')
 
 const Loading = require('./components/loading-screen')
-const ReactCSSTransitionGroup = require('react-addons-css-transition-group')
 const NetworkDropdown = require('./components/dropdowns/network-dropdown')
 const AccountMenu = require('./components/account-menu')
 
@@ -105,6 +104,7 @@ class App extends Component {
       frequentRpcList,
       currentView,
       setMouseUserState,
+      sidebar,
     } = this.props
     const isLoadingNetwork = network === 'loading' && currentView.name !== 'config'
     const loadMessage = loadingMessage || isLoadingNetwork ?
@@ -137,7 +137,12 @@ class App extends Component {
         h(AppHeader),
 
         // sidebar
-        this.renderSidebar(),
+        h(Sidebar, {
+          sidebarOpen: sidebar.isOpen,
+          hideSidebar: this.props.hideSidebar,
+          transitionName: sidebar.transitionName,
+          type: sidebar.type,
+        }),
 
         // network dropdown
         h(NetworkDropdown, {
@@ -147,59 +152,16 @@ class App extends Component {
 
         h(AccountMenu),
 
-        (isLoading || isLoadingNetwork) && h(Loading, {
-          loadingMessage: loadMessage,
-        }),
+        h('div.main-container-wrapper', [
+          (isLoading || isLoadingNetwork) && h(Loading, {
+            loadingMessage: loadMessage,
+          }),
 
-        // content
-        this.renderRoutes(),
+          // content
+          this.renderRoutes(),
+        ]),
       ])
     )
-  }
-
-  renderSidebar () {
-    return h('div', [
-      h('style', `
-        .sidebar-enter {
-          transition: transform 300ms ease-in-out;
-          transform: translateX(-100%);
-        }
-        .sidebar-enter.sidebar-enter-active {
-          transition: transform 300ms ease-in-out;
-          transform: translateX(0%);
-        }
-        .sidebar-leave {
-          transition: transform 200ms ease-out;
-          transform: translateX(0%);
-        }
-        .sidebar-leave.sidebar-leave-active {
-          transition: transform 200ms ease-out;
-          transform: translateX(-100%);
-        }
-      `),
-
-      h(ReactCSSTransitionGroup, {
-        transitionName: 'sidebar',
-        transitionEnterTimeout: 300,
-        transitionLeaveTimeout: 200,
-      }, [
-        // A second instance of Walletview is used for non-mobile viewports
-        this.props.sidebarOpen ? h(WalletView, {
-          responsiveDisplayClassname: 'sidebar',
-          style: {},
-        }) : undefined,
-
-      ]),
-
-      // overlay
-      // TODO: add onClick for overlay to close sidebar
-      this.props.sidebarOpen ? h('div.sidebar-overlay', {
-        style: {},
-        onClick: () => {
-          this.props.hideSidebar()
-        },
-      }, []) : undefined,
-    ])
   }
 
   toggleMetamaskActive () {
@@ -228,9 +190,11 @@ class App extends Component {
     } else if (providerName === 'essentia') {
       name = this.context.t('connectingToEssentia')
     } else if (providerName === 'kovan') {
-      name = this.context.t('connectingToEssentia')
+      name = this.context.t('connectingToKovan')
     } else if (providerName === 'rinkeby') {
       name = this.context.t('connectingToRinkeby')
+    } else if (providerName === 'ropsten') {
+      name = this.context.t('connectingToRopsten')
     } else {
       name = this.context.t('connectingToUnknown')
     }
@@ -252,6 +216,8 @@ class App extends Component {
       name = this.context.t('kovan')
     } else if (providerName === 'rinkeby') {
       name = this.context.t('rinkeby')
+    } else if (providerName === 'ropsten') {
+      name = this.context.t('ropsten')
     } else {
       name = this.context.t('unknownNetwork')
     }
@@ -270,7 +236,7 @@ App.propTypes = {
   provider: PropTypes.object,
   frequentRpcList: PropTypes.array,
   currentView: PropTypes.object,
-  sidebarOpen: PropTypes.bool,
+  sidebar: PropTypes.object,
   alertOpen: PropTypes.bool,
   hideSidebar: PropTypes.func,
   isMascara: PropTypes.bool,
@@ -306,7 +272,7 @@ function mapStateToProps (state) {
   const { appState, metamask } = state
   const {
     networkDropdownOpen,
-    sidebarOpen,
+    sidebar,
     alertOpen,
     alertMessage,
     isLoading,
@@ -333,7 +299,7 @@ function mapStateToProps (state) {
   return {
     // state from plugin
     networkDropdownOpen,
-    sidebarOpen,
+    sidebar,
     alertOpen,
     alertMessage,
     isLoading,

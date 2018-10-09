@@ -43,6 +43,9 @@ function mapDispatchToProps (dispatch) {
     setRpcTarget: (target) => {
       dispatch(actions.setRpcTarget(target))
     },
+    delRpcTarget: (target) => {
+      dispatch(actions.delRpcTarget(target))
+    },
     showNetworkDropdown: () => dispatch(actions.showNetworkDropdown()),
     hideNetworkDropdown: () => dispatch(actions.hideNetworkDropdown()),
   }
@@ -198,6 +201,27 @@ NetworkDropdown.prototype.render = function () {
         }, this.context.t('rinkeby')),
       ]
     ),
+    h(
+      DropdownMenuItem,
+      {
+        key: 'essentia',
+        closeMenu: () => this.props.hideNetworkDropdown(),
+        onClick: () => props.setProviderType('essentia'),
+        style: dropdownMenuItemStyle,
+      },
+      [
+        providerType === 'essentia' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
+        h(NetworkDropdownIcon, {
+          backgroundColor: '#f6c343', // $saffron
+          isSelected: providerType === 'essentia',
+        }),
+        h('span.network-name-item', {
+          style: {
+            color: providerType === 'essentia' ? '#ffffff' : '#9b9b9b',
+          },
+        }, this.context.t('essentia')),
+      ]
+    ),
 
     h(
       DropdownMenuItem,
@@ -300,6 +324,13 @@ NetworkDropdown.prototype.renderCommonRpc = function (rpcList, provider) {
               color: currentRpcTarget ? '#ffffff' : '#9b9b9b',
             },
           }, rpc),
+          h('i.fa.fa-times.delete',
+          {
+            onClick: (e) => {
+              e.stopPropagation()
+              props.delRpcTarget(rpc)
+            },
+          }),
         ]
       )
     }

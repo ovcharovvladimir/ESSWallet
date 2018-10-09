@@ -43,6 +43,12 @@ Network.prototype.render = function () {
   } else if (providerName === 'mainnet') {
     hoverText = 'Main Ethereum Network'
     iconName = 'ethereum-network'
+  } else if (providerName === 'ropsten') {
+    hoverText = 'Ropsten Test Network'
+    iconName = 'ropsten-test-network'
+  } else if (parseInt(networkNumber) === 3) {
+    hoverText = 'Ropsten Test Network'
+    iconName = 'ropsten-test-network'
   } else if (providerName === 'essentia') {
     hoverText = 'Essentia Test Network'
     iconName = 'essentia-test-network'

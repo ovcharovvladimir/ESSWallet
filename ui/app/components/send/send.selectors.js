@@ -9,7 +9,7 @@ const {
 
 const selectors = {
   accountsWithSendEtherInfoSelector,
-  // autoAddToBetaUI,
+  autoAddToBetaUI,
   getAddressBook,
   getAmountConversionRate,
   getBlockGasLimit,
@@ -34,6 +34,7 @@ const selectors = {
   getSelectedTokenToFiatRate,
   getSendAmount,
   getSendHexData,
+  getSendHexDataFeatureFlagState,
   getSendEditingTransactionId,
   getSendErrors,
   getSendFrom,
@@ -64,22 +65,22 @@ function accountsWithSendEtherInfoSelector (state) {
   return accountsWithSendEtherInfo
 }
 
-// function autoAddToBetaUI (state) {
-//   const autoAddTransactionThreshold = 12
-//   const autoAddAccountsThreshold = 2
-//   const autoAddTokensThreshold = 1
+function autoAddToBetaUI (state) {
+  const autoAddTransactionThreshold = 12
+  const autoAddAccountsThreshold = 2
+  const autoAddTokensThreshold = 1
 
-//   const numberOfTransactions = state.metamask.selectedAddressTxList.length
-//   const numberOfAccounts = Object.keys(state.metamask.accounts).length
-//   const numberOfTokensAdded = state.metamask.tokens.length
+  const numberOfTransactions = state.metamask.selectedAddressTxList.length
+  const numberOfAccounts = Object.keys(state.metamask.accounts).length
+  const numberOfTokensAdded = state.metamask.tokens.length
 
-//   const userPassesThreshold = (numberOfTransactions > autoAddTransactionThreshold) &&
-//     (numberOfAccounts > autoAddAccountsThreshold) &&
-//     (numberOfTokensAdded > autoAddTokensThreshold)
-//   const userIsNotInBeta = !state.metamask.featureFlags.betaUI
+  const userPassesThreshold = (numberOfTransactions > autoAddTransactionThreshold) &&
+    (numberOfAccounts > autoAddAccountsThreshold) &&
+    (numberOfTokensAdded > autoAddTokensThreshold)
+  const userIsNotInBeta = !state.metamask.featureFlags.betaUI
 
-//   return userIsNotInBeta && userPassesThreshold
-// }
+  return userIsNotInBeta && userPassesThreshold
+}
 
 function getAddressBook (state) {
   return state.metamask.addressBook
@@ -214,6 +215,10 @@ function getSendAmount (state) {
 
 function getSendHexData (state) {
   return state.metamask.send.data
+}
+
+function getSendHexDataFeatureFlagState (state) {
+  return state.metamask.featureFlags.sendHexData
 }
 
 function getSendEditingTransactionId (state) {

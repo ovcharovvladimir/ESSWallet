@@ -167,6 +167,7 @@ var actions = {
   updateTransaction,
   updateAndApproveTx,
   cancelTx: cancelTx,
+  cancelTxs,
   completedTx: completedTx,
   txError: txError,
   nextTx: nextTx,
@@ -237,6 +238,7 @@ var actions = {
   removeSuggestedTokens,
   UPDATE_TOKENS: 'UPDATE_TOKENS',
   setRpcTarget: setRpcTarget,
+  delRpcTarget: delRpcTarget,
   setProviderType: setProviderType,
   SET_HARDWARE_WALLET_DEFAULT_HD_PATH: 'SET_HARDWARE_WALLET_DEFAULT_HD_PATH',
   setHardwareWalletDefaultHdPath,
@@ -315,6 +317,8 @@ var actions = {
   CLEAR_PENDING_TOKENS: 'CLEAR_PENDING_TOKENS',
   setPendingTokens,
   clearPendingTokens,
+
+  createCancelTransaction,
 }
 
 module.exports = actions
@@ -413,12 +417,18 @@ function createNewVaultAndRestore (password, seed) {
     log.debug(`background.createNewVaultAndRestore`)
 
     return new Promise((resolve, reject) => {
-      background.createNewVaultAndRestore(password, seed, err => {
+      background.clearSeedWordCache((err) => {
         if (err) {
           return reject(err)
         }
 
-        resolve()
+        background.createNewVaultAndRestore(password, seed, (err) => {
+          if (err) {
+            return reject(err)
+          }
+
+          resolve()
+        })
       })
     })
       .then(() => dispatch(actions.unMarkPasswordForgotten()))
@@ -908,6 +918,7 @@ function updateGasData ({
   selectedToken,
   to,
   value,
+  data,
 }) {
   return (dispatch) => {
     dispatch(actions.gasLoadingStarted())
@@ -928,6 +939,7 @@ function updateGasData ({
           to,
           value,
           estimateGasPrice,
+          data,
         }),
       ])
     })
@@ -1291,6 +1303,47 @@ function cancelTx (txData) {
   }
 }
 
+/**
+ * Cancels all of the given transactions
+ * @param {Array<object>} txDataList a list of tx data objects
+ * @return {function(*): Promise<void>}
+ */
+function cancelTxs (txDataList) {
+  return async (dispatch, getState) => {
+    dispatch(actions.showLoadingIndication())
+    const txIds = txDataList.map(({id}) => id)
+    const cancellations = txIds.map((id) => new Promise((resolve, reject) => {
+      background.cancelTransaction(id, (err) => {
+        if (err) {
+          return reject(err)
+        }
+
+        resolve()
+      })
+    }))
+
+    await Promise.all(cancellations)
+    const newState = await updateMetamaskStateFromBackground()
+    dispatch(actions.updateMetamaskState(newState))
+    dispatch(actions.clearSend())
+
+    txIds.forEach((id) => {
+      dispatch(actions.completedTx(id))
+    })
+
+    dispatch(actions.hideLoadingIndication())
+
+    if (global.METAMASK_UI_TYPE === ENVIRONMENT_TYPE_NOTIFICATION) {
+      return global.platform.closeCurrentWindow()
+    }
+  }
+}
+
+/**
+ * @deprecated
+ * @param {Array<object>} txsData
+ * @return {Function}
+ */
 function cancelAllTx (txsData) {
   return (dispatch) => {
     txsData.forEach((txData, i) => {
@@ -1766,6 +1819,29 @@ function retryTransaction (txId) {
   }
 }
 
+function createCancelTransaction (txId, customGasPrice) {
+  log.debug('background.cancelTransaction')
+  let newTxId
+
+  return dispatch => {
+    return new Promise((resolve, reject) => {
+      background.createCancelTransaction(txId, customGasPrice, (err, newState) => {
+        if (err) {
+          dispatch(actions.displayWarning(err.message))
+          reject(err)
+        }
+
+        const { selectedAddressTxList } = newState
+        const { id } = selectedAddressTxList[selectedAddressTxList.length - 1]
+        newTxId = id
+        resolve(newState)
+      })
+    })
+    .then(newState => dispatch(actions.updateMetamaskState(newState)))
+    .then(() => newTxId)
+  }
+}
+
 //
 // config
 //
@@ -1799,6 +1875,19 @@ function setRpcTarget (newRpc) {
       if (err) {
         log.error(err)
         return dispatch(self.displayWarning('Had a problem changing networks!'))
+      }
+      dispatch(actions.setSelectedToken())
+    })
+  }
+}
+
+function delRpcTarget (oldRpc) {
+  return (dispatch) => {
+    log.debug(`background.delRpcTarget: ${oldRpc}`)
+    background.delCustomRpc(oldRpc, (err, result) => {
+      if (err) {
+        log.error(err)
+        return dispatch(self.displayWarning('Had a problem removing network!'))
       }
       dispatch(actions.setSelectedToken())
     })
@@ -1853,9 +1942,13 @@ function hideModal (payload) {
   }
 }
 
-function showSidebar () {
+function showSidebar ({ transitionName, type }) {
   return {
     type: actions.SIDEBAR_OPEN,
+    value: {
+      transitionName,
+      type,
+    },
   }
 }
 

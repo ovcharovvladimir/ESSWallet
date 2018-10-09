@@ -69,39 +69,39 @@ module.exports = class AppBar extends Component {
   }
 
   renderAppBarNewUiNotice () {
-    // const {dispatch} = this.props
-
-    // return (
-      // h('div.app-bar__new-ui-banner', {
-      //   style: {
-      //     height: '28px',
-      //     zIndex: 12,
-      //   },
-      // }, [
-      //   'Try the New MetaMask',
-      //   AppBar.renderSpace(),
-      //   h('span.banner__link', {
-      //     async onClick () {
-      //       await dispatch(actions.setFeatureFlag('betaUI', true))
-      //       global.platform.openExtensionInBrowser()
-      //     },
-      //   }, [
-      //     'Now',
-      //   ]),
-      //   AppBar.renderSpace(),
-      //   'or',
-      //   AppBar.renderSpace(),
-      //   h('span.banner__link', {
-      //     onClick () {
-      //       global.platform.openWindow({
-      //         url: 'https://medium.com/metamask/74dba32cc7f7',
-      //       })
-      //     },
-      //   }, [
-      //     'Learn More',
-      //   ]),
-      // ])
-    // )
+    const {dispatch} = this.props
+    return (
+      // dispatch(actions.setFeatureFlag('betaUI', true))
+      h('div.app-bar__new-ui-banner', {
+        style: {
+          height: '28px',
+          zIndex: 12,
+        },
+      }, [
+        'Try the New MetaMask',
+        AppBar.renderSpace(),
+        h('span.banner__link', {
+          async onClick () {
+            await dispatch(actions.setFeatureFlag('betaUI', true))
+            global.platform.openExtensionInBrowser()
+          },
+        }, [
+          'Now',
+        ]),
+        AppBar.renderSpace(),
+        'or',
+        AppBar.renderSpace(),
+        h('span.banner__link', {
+          onClick () {
+            global.platform.openWindow({
+              url: 'https://medium.com/metamask/74dba32cc7f7',
+            })
+          },
+        }, [
+          'Learn More',
+        ]),
+      ])
+    )
   }
 
   renderAppBarAppHeader () {
@@ -194,131 +194,145 @@ module.exports = class AppBar extends Component {
   }
 
   renderNetworkDropdown () {
-    // const {
-    //   dispatch,
-    //   frequentRpcList: rpcList,
-    //   provider,
-    // } = this.props
-    // const {
-    //   type: providerType,
-    //   rpcTarget: activeNetwork,
-    // } = provider
-    // const isOpen = this.state.isNetworkMenuOpen
-    //
-    // return h(Dropdown, {
-    //   useCssTransition: true,
-    //   isOpen,
-    //   onClickOutside: (event) => {
-    //     const { classList } = event.target
-    //     const isNotToggleElement = [
-    //       classList.contains('menu-icon'),
-    //       classList.contains('network-name'),
-    //       classList.contains('network-indicator'),
-    //     ].filter(bool => bool).length === 0
-    //     // classes from three constituent nodes of the toggle element
-    //
-    //     if (isNotToggleElement) {
-    //       this.setState({ isNetworkMenuOpen: false })
-    //     }
-    //   },
-    //   zIndex: 11,
-    //   style: {
-    //     position: 'absolute',
-    //     left: '2px',
-    //     top: '64px',
-    //   },
-    //   innerStyle: {
-    //     padding: '2px 16px 2px 0px',
-    //   },
-    // }, [
-    //   h(DropdownMenuItem, {
-    //     key: 'main',
-    //     closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
-    //     onClick: () => dispatch(actions.setProviderType('mainnet')),
-    //     style: {
-    //       fontSize: '18px',
-    //     },
-    //   }, [
-    //     h('.menu-icon.diamond'),
-    //     'Main Ethereum Network',
-    //     providerType === 'mainnet'
-    //       ? h('.check', '✓')
-    //       : null,
-    //   ]),
-    //   h(DropdownMenuItem, {
-    //     key: 'essentia',
-    //     closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
-    //     onClick: () => dispatch(actions.setRpcTarget('http://18.224.0.169:8545')),
-    //     style: {
-    //       fontSize: '18px',
-    //     },
-    //   }, [
-    //     h('.menu-icon.red-dot'),
-    //     'Essentia Test Network',
-    //     providerType === 'essentia'
-    //       ? h('.check', '✓')
-    //       : null,
-    //   ]),
-    //   h(DropdownMenuItem, {
-    //     key: 'kovan',
-    //     closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
-    //     onClick: () => dispatch(actions.setProviderType('kovan')),
-    //     style: {
-    //       fontSize: '18px',
-    //     },
-    //   }, [
-    //     h('.menu-icon.hollow-diamond'),
-    //     'Kovan Test Network',
-    //     providerType === 'kovan'
-    //       ? h('.check', '✓')
-    //       : null,
-    //   ]),
-    //   h(DropdownMenuItem, {
-    //     key: 'rinkeby',
-    //     closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
-    //     onClick: () => dispatch(actions.setProviderType('rinkeby')),
-    //     style: {
-    //       fontSize: '18px',
-    //     },
-    //   }, [
-    //     h('.menu-icon.golden-square'),
-    //     'Rinkeby Test Network',
-    //     providerType === 'rinkeby'
-    //       ? h('.check', '✓')
-    //       : null,
-    //   ]),
-    //   h(DropdownMenuItem, {
-    //     key: 'default',
-    //     closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
-    //     onClick: () => dispatch(actions.setProviderType('localhost')),
-    //     style: {
-    //       fontSize: '18px',
-    //     },
-    //   }, [
-    //     h('i.fa.fa-question-circle.fa-lg.menu-icon'),
-    //     'Localhost 8545',
-    //     activeNetwork === LOCALHOST_RPC_URL
-    //       ? h('.check', '✓')
-    //       : null,
-    //   ]),
-    //
-    //   this.renderCustomOption(provider),
-    //   this.renderCommonRpc(rpcList, provider),
-    //
-    //   h(DropdownMenuItem, {
-    //     closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
-    //     onClick: () => dispatch(actions.showConfigPage()),
-    //     style: {
-    //       fontSize: '18px',
-    //     },
-    //   }, [
-    //     h('i.fa.fa-question-circle.fa-lg.menu-icon'),
-    //     'Custom RPC',
-    //     activeNetwork === 'custom'
-    //       ? h('.check', '✓')
-    //       : null,
-    //   ]),
-    // ])
+    const {
+      dispatch,
+      frequentRpcList: rpcList,
+      provider,
+    } = this.props
+    const {
+      type: providerType,
+      rpcTarget: activeNetwork,
+    } = provider
+    const isOpen = this.state.isNetworkMenuOpen
+
+    return h(Dropdown, {
+      useCssTransition: true,
+      isOpen,
+      onClickOutside: (event) => {
+        const { classList } = event.target
+        const isNotToggleElement = [
+          classList.contains('menu-icon'),
+          classList.contains('network-name'),
+          classList.contains('network-indicator'),
+        ].filter(bool => bool).length === 0
+        // classes from three constituent nodes of the toggle element
+
+        if (isNotToggleElement) {
+          this.setState({ isNetworkMenuOpen: false })
+        }
+      },
+      zIndex: 11,
+      style: {
+        position: 'absolute',
+        left: '2px',
+        top: '64px',
+      },
+      innerStyle: {
+        padding: '2px 16px 2px 0px',
+      },
+    }, [
+      h(DropdownMenuItem, {
+        key: 'main',
+        closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+        onClick: () => dispatch(actions.setProviderType('mainnet')),
+        style: {
+          fontSize: '18px',
+        },
+      }, [
+        h('.menu-icon.diamond'),
+        'Main Ethereum Network',
+        providerType === 'mainnet'
+          ? h('.check', '✓')
+          : null,
+      ]),
+      h(DropdownMenuItem, {
+        key: 'ropsten',
+        closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+        onClick: () => dispatch(actions.setProviderType('ropsten')),
+        style: {
+          fontSize: '18px',
+        },
+      }, [
+        h('.menu-icon.red-dot'),
+        'Ropsten Test Network',
+        providerType === 'ropsten'
+          ? h('.check', '✓')
+          : null,
+      ]),
+      h(DropdownMenuItem, {
+        key: 'essentia',
+        closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+        onClick: () => dispatch(actions.setProviderType('essentia')),
+        style: {
+          fontSize: '18px',
+        },
+      }, [
+        h('.menu-icon.red-dot'),
+        'Essentia Test Network',
+        providerType === 'essentia'
+          ? h('.check', '✓')
+          : null,
+      ]),
+      h(DropdownMenuItem, {
+        key: 'kovan',
+        closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+        onClick: () => dispatch(actions.setProviderType('kovan')),
+        style: {
+          fontSize: '18px',
+        },
+      }, [
+        h('.menu-icon.hollow-diamond'),
+        'Kovan Test Network',
+        providerType === 'kovan'
+          ? h('.check', '✓')
+          : null,
+      ]),
+      h(DropdownMenuItem, {
+        key: 'rinkeby',
+        closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+        onClick: () => dispatch(actions.setProviderType('rinkeby')),
+        style: {
+          fontSize: '18px',
+        },
+      }, [
+        h('.menu-icon.golden-square'),
+        'Rinkeby Test Network',
+        providerType === 'rinkeby'
+          ? h('.check', '✓')
+          : null,
+      ]),
+      h(DropdownMenuItem, {
+        key: 'default',
+        closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+        onClick: () => dispatch(actions.setProviderType('localhost')),
+        style: {
+          fontSize: '18px',
+        },
+      }, [
+        h('i.fa.fa-question-circle.fa-lg.menu-icon'),
+        'Localhost 8545',
+        activeNetwork === LOCALHOST_RPC_URL
+          ? h('.check', '✓')
+          : null,
+      ]),
+
+      this.renderCustomOption(provider),
+      this.renderCommonRpc(rpcList, provider),
+
+      h(DropdownMenuItem, {
+        closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+        onClick: () => dispatch(actions.showConfigPage()),
+        style: {
+          fontSize: '18px',
+        },
+      }, [
+        h('i.fa.fa-question-circle.fa-lg.menu-icon'),
+        'Custom RPC',
+        activeNetwork === 'custom'
+          ? h('.check', '✓')
+          : null,
+      ]),
+    ])
   }
 
   renderCustomOption ({ rpcTarget, type }) {

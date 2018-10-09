@@ -20,6 +20,7 @@ export default class SenderToRecipient extends PureComponent {
     t: PropTypes.func,
     variant: PropTypes.oneOf([DEFAULT_VARIANT, CARDS_VARIANT]),
     addressOnly: PropTypes.bool,
+    assetImage: PropTypes.string,
   }
 
   static defaultProps = {
@@ -66,13 +67,14 @@ export default class SenderToRecipient extends PureComponent {
   }
 
   renderRecipientIdenticon () {
-    const { recipientAddress } = this.props
+    const { recipientAddress, assetImage } = this.props
 
     return !this.props.addressOnly && (
       <div className="sender-to-recipient__sender-icon">
         <Identicon
           address={recipientAddress}
           diameter={24}
+          image={assetImage}
         />
       </div>
     )
@@ -113,7 +115,7 @@ export default class SenderToRecipient extends PureComponent {
   renderRecipientWithoutAddress () {
     return (
       <div className="sender-to-recipient__party sender-to-recipient__party--recipient">
-        <i className="fa fa-file-text-o" />
+        { !this.props.addressOnly && <i className="fa fa-file-text-o" /> }
         <div className="sender-to-recipient__name">
           { this.context.t('newContract') }
         </div>
