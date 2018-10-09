@@ -26,7 +26,7 @@ const AddTokenScreen = require('./add-token')
 const AddSuggestedTokenScreen = require('./add-suggested-token')
 const Import = require('./accounts/import')
 const InfoScreen = require('./info')
-const NewUiAnnouncement = require('./new-ui-annoucement')
+// const NewUiAnnouncement = require('./new-ui-annoucement')
 const AppBar = require('./components/app-bar')
 const Loading = require('./components/loading')
 const BuyView = require('./components/buy-button-subview')
@@ -102,9 +102,9 @@ App.prototype.render = function () {
   dispatch(actions.setFeatureFlag('betaUI', true))
   // if (!featureFlags.skipAnnounceBetaUI) {
   //  return (
-      h(NewUiAnnouncement, {
-        dispatch,
-      })
+      // h(NewUiAnnouncement, {
+      //   dispatch,
+      // })
   //  )
   // }
 
