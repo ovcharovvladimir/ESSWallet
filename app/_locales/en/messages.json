@@ -597,7 +597,7 @@
     "message": "seed words only have lowercase characters"
   },
   "mainnet": {
-    "message": "Main Ethereum Network"
+    "message": "Essentia TestNet"
   },
   "menu": {
     "message": "Menu"
