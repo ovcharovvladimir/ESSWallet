@@ -58,9 +58,8 @@ export default class AppHeader extends PureComponent {
         })}
         onClick={() => this.isConfirming() || toggleAccountMenu()}
       >
-        <Identicon
-          address={selectedAddress}
-          diameter={32}
+        <img
+          src="/images/icon-menu.svg"
         />
       </div>
     )
@@ -106,16 +105,22 @@ export default class AppHeader extends PureComponent {
             className="app-header__logo-container"
             onClick={() => history.push(DEFAULT_ROUTE)}
           >
-            <img
-              className="app-header__metafox-logo app-header__metafox-logo--horizontal"
-              src="/images/logo/metamask-logo-horizontal-beta.svg"
-              height={30}
-            />
+            <div className="app-header__metafox-logo app-header__metafox-logo--horizontal">
+              <div className="app-header__logo">
+                <img
+                  src="/images/logo/ess-logo.svg"
+                  height={33}
+                />
+                <span className="app-header__logo-text">
+                  ESS Wallet
+                </span>
+              </div>
+            </div>
             <img
               className="app-header__metafox-logo app-header__metafox-logo--icon"
-              src="/images/logo/metamask-fox.svg"
-              height={42}
-              width={42}
+              src="/images/logo/ess-logo.svg"
+              height={33}
+              width={32}
             />
           </div>
           <div className="app-header__account-menu-container">
