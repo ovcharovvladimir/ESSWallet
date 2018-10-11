@@ -152,7 +152,7 @@ WalletView.prototype.render = function () {
 
       // h('div.wallet-view__keyring-label.allcaps', label),
 
-      h('div.flex-column.flex-center.wallet-view__name-container', {
+      h('div.flex-column.wallet-view__name-container', {
         style: { margin: '0 auto' },
       }, [
 

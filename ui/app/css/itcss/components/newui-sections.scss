@@ -86,17 +86,14 @@ $wallet-view-bg: $alabaster;
 
   &__tooltip {
     display: flex;
-    justify-content: center;
     align-items: center;
   }
 
   &__address {
-    border-radius: 3px;
-    background-color: $alto;
-    color: $scorpion;
+    background-color: transparent;
+    padding: 0;
+    color: $text-secondary-inefficient;
     font-size: 14px;
-    line-height: 12px;
-    padding: 4px 12px;
     cursor: pointer;
     flex: 0 0 auto;
 
