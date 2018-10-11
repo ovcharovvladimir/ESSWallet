@@ -93,7 +93,7 @@ Network.prototype.render = function () {
                 nonSelectBackgroundColor: '#15afb2',
               }),
               h('.network-name', context.t('mainnet')),
-              h('i.fa.fa-chevron-down.fa-lg.network-caret'),
+              h('i.fa.fa-chevron-down.network-caret'),
             ])
           case 'essentia-test-network':
             return h('.network-indicator', [

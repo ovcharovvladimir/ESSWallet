@@ -60,7 +60,7 @@ export default class TransactionViewBalance extends PureComponent {
               className="transaction-view-balance__button"
               onClick={() => showDepositModal()}
             >
-              { t('deposit') }
+              { t('buy') }
             </Button>
           )
         }

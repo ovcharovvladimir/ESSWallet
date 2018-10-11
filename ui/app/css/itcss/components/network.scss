@@ -8,14 +8,12 @@
 }
 
 .network-component.pointer {
-  border: 2px solid $silver;
-  border-radius: 82px;
   padding: 7px 3px;
   flex: 0 0 auto;
   display: flex;
 
   &.ethereum-network .menu-icon-circle div {
-    background-color: rgba(3, 135, 137, .7) !important;
+    background-color: rgba(56, 191, 76, 1) !important;
   }
 
   &.essentia-test-network .menu-icon-circle div {
@@ -57,9 +55,12 @@
   padding: 0 4px;
   font-family: Roboto;
   font-size: 12px;
+  font-weight: bold;
+  line-height: normal;
   flex: 1 0 auto;
   color: $tundora;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
 .dropdown-menu-item .fa.delete {
@@ -125,9 +126,9 @@
 
 .menu-icon-circle div,
 .menu-icon-circle--active div {
-  height: 12px;
-  width: 12px;
-  border-radius: 17px;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
 }
 
 .menu-icon-circle--active div {
@@ -169,4 +170,6 @@
 
 .network-caret {
   margin: 0 8px 2px;
+  font-size: 8px;
+  color: $tundora;
 }

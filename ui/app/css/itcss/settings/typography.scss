@@ -403,3 +403,37 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'NotoSans-Bold';
+  src: url('./fonts/NotoSans/NotoSans-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNext-Bold';
+  src: url('./fonts/AvenirNext/AvenirNext-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNext-DemiBold';
+  src: url('./fonts/AvenirNext/AvenirNext-DemiBold.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNext-Medium';
+  src: url('./fonts/AvenirNext/AvenirNext-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNext-Regular';
+  src: url('./fonts/AvenirNext/AvenirNext-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
