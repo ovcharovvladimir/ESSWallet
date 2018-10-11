@@ -40,9 +40,9 @@ $wallet-view-bg: $alabaster;
 .wallet-view {
   display: flex;
   flex-direction: column;
-  flex: 32 1 32%;
+  flex: 40 1 40%;
   width: 0;
-  background: $wallet-view-bg;
+  background: $background-sidebar;
   z-index: 200;
   position: relative;
 
@@ -61,8 +61,8 @@ $wallet-view-bg: $alabaster;
 
   &__name-container {
     flex: 0 0 auto;
-    cursor: pointer;
     width: 100%;
+    padding: 18px 24px;
   }
 
   &__keyring-label {
@@ -88,7 +88,6 @@ $wallet-view-bg: $alabaster;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 24px;
   }
 
   &__address {
@@ -233,16 +232,20 @@ $wallet-view-bg: $alabaster;
 
 // wallet view
 .account-name {
-  font-size: 24px;
-  color: $black;
-  margin-top: 8px;
-  margin-bottom: .9rem;
+  font-size: 18px;
+  color: $text-primary-saturated;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   width: 100%;
-  padding: 0 8px;
-  text-align: center;
+}
+.account-address {
+  font-size: 14px;
+  color: $text-secondary-inefficient;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
 }
 
 // account options dropdown

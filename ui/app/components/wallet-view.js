@@ -7,7 +7,7 @@ const { compose } = require('recompose')
 const inherits = require('util').inherits
 const classnames = require('classnames')
 const { checksumAddress } = require('../util')
-const Identicon = require('./identicon')
+// const Identicon = require('./identicon')
 // const AccountDropdowns = require('./dropdowns/index.js').AccountDropdowns
 const Tooltip = require('./tooltip-v2.js').default
 const copyToClipboard = require('copy-to-clipboard')
@@ -146,20 +146,15 @@ WalletView.prototype.render = function () {
     h('div.flex-column.wallet-view-account-details', {
       style: {},
     }, [
-      h('div.wallet-view__sidebar-close', {
-        onClick: hideSidebar,
-      }),
+      // h('div.wallet-view__sidebar-close', {
+      //   onClick: hideSidebar,
+      // }),
 
-      h('div.wallet-view__keyring-label.allcaps', label),
+      // h('div.wallet-view__keyring-label.allcaps', label),
 
       h('div.flex-column.flex-center.wallet-view__name-container', {
         style: { margin: '0 auto' },
-        onClick: showAccountDetailModal,
       }, [
-        h(Identicon, {
-          diameter: 54,
-          address: checksummedAddress,
-        }),
 
         h('span.account-name', {
           style: {},
@@ -167,33 +162,34 @@ WalletView.prototype.render = function () {
           identities[selectedAddress].name,
         ]),
 
-        h('button.btn-clear.wallet-view__details-button.allcaps', this.context.t('details')),
-      ]),
-    ]),
-
-    h(Tooltip, {
-      position: 'bottom',
-      title: this.state.hasCopied ? this.context.t('copiedExclamation') : this.context.t('copyToClipboard'),
-      wrapperClassName: 'wallet-view__tooltip',
-    }, [
-      h('button.wallet-view__address', {
-        className: classnames({
-          'wallet-view__address__pressed': this.state.copyToClipboardPressed,
+        h('span.account-details', {
+          onClick: showAccountDetailModal,
         }),
-        onClick: () => {
-          copyToClipboard(checksummedAddress)
-          this.setState({ hasCopied: true })
-          setTimeout(() => this.setState({ hasCopied: false }), 3000)
-        },
-        onMouseDown: () => {
-          this.setState({ copyToClipboardPressed: true })
-        },
-        onMouseUp: () => {
-          this.setState({ copyToClipboardPressed: false })
-        },
-      }, [
-        `${checksummedAddress.slice(0, 6)}...${checksummedAddress.slice(-4)}`,
-        h('i.fa.fa-clipboard', { style: { marginLeft: '8px' } }),
+
+        h(Tooltip, {
+          position: 'bottom',
+          title: this.state.hasCopied ? this.context.t('copiedExclamation') : this.context.t('copyToClipboard'),
+          wrapperClassName: 'wallet-view__tooltip',
+        }, [
+          h('button.wallet-view__address', {
+            className: classnames({
+              'wallet-view__address__pressed': this.state.copyToClipboardPressed,
+            }),
+            onClick: () => {
+              copyToClipboard(checksummedAddress)
+              this.setState({ hasCopied: true })
+              setTimeout(() => this.setState({ hasCopied: false }), 3000)
+            },
+            onMouseDown: () => {
+              this.setState({ copyToClipboardPressed: true })
+            },
+            onMouseUp: () => {
+              this.setState({ copyToClipboardPressed: false })
+            },
+          }, [
+            `${checksummedAddress.slice(0, 6)}...${checksummedAddress.slice(-4)}`,
+          ]),
+        ]),
       ]),
     ]),
 
