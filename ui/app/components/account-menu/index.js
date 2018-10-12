@@ -104,7 +104,7 @@ AccountMenu.prototype.render = function () {
         toggleAccountMenu()
         history.push(NEW_ACCOUNT_ROUTE)
       },
-      icon: h('img.account-menu__item-icon', { src: 'images/plus-btn-white.svg' }),
+      icon: h('img.account-menu__item-icon', { src: 'images/plus-btn-gray.svg' }),
       text: this.context.t('createAccount'),
     }),
     h(Item, {
@@ -112,37 +112,8 @@ AccountMenu.prototype.render = function () {
         toggleAccountMenu()
         history.push(IMPORT_ACCOUNT_ROUTE)
       },
-      icon: h('img.account-menu__item-icon', { src: 'images/import-account.svg' }),
+      icon: h('img.account-menu__item-icon', { src: 'images/import-account-gray.svg' }),
       text: this.context.t('importAccount'),
-    }),
-    h(Item, {
-      onClick: () => {
-        toggleAccountMenu()
-        if (getEnvironmentType(window.location.href) === ENVIRONMENT_TYPE_POPUP) {
-          global.platform.openExtensionInBrowser(CONNECT_HARDWARE_ROUTE)
-        } else {
-          history.push(CONNECT_HARDWARE_ROUTE)
-        }
-      },
-      icon: h('img.account-menu__item-icon', { src: 'images/connect-icon.svg' }),
-      text: this.context.t('connectHardwareWallet'),
-    }),
-    h(Divider),
-    h(Item, {
-      onClick: () => {
-        toggleAccountMenu()
-        history.push(INFO_ROUTE)
-      },
-      icon: h('img', { src: 'images/mm-info-icon.svg' }),
-      text: this.context.t('infoHelp'),
-    }),
-    h(Item, {
-      onClick: () => {
-        toggleAccountMenu()
-        history.push(SETTINGS_ROUTE)
-      },
-      icon: h('img.account-menu__item-icon', { src: 'images/settings.svg' }),
-      text: this.context.t('settings'),
     }),
   ])
 }
