@@ -640,6 +640,9 @@
   "essentia": {
     "message": "Тестовая сеть Essentia"
   },
+  "essentiaMainnet": {
+    "message": "Основная сеть Essentia"
+  },
   "currentRpc": {
     "message": "Current RPC"
   },
@@ -651,6 +654,9 @@
   },
   "connectingToEssentia": {
     "message": "Соединение с тестовой сетью Essentia"
+  },
+  "connectingToEssentiaMainnet": {
+    "message": "Соединение с основной сетью Essentia"
   },
   "connectingToKovan": {
     "message": "Соединение с тестовой сетью Kovan"

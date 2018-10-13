@@ -20,6 +20,10 @@
     background-color: rgba(233, 21, 80, .7) !important;
   }
 
+  &.essentia-main-network .menu-icon-circle div {
+    background-color: rgba(226, 195, 15, 0.863) !important;
+  }
+
   &.kovan-test-network .menu-icon-circle div {
     background-color: rgba(105, 4, 150, .7) !important;
   }
@@ -29,6 +33,10 @@
   }
   &.essentia-test-network .menu-icon-circle div {
     background-color: rgba(8, 23, 238, 0.7) !important;
+  }
+
+  &.essentia-main-network .menu-icon-circle div {
+    background-color: rgba(226, 195, 15, 0.863) !important;
   }
 }
 

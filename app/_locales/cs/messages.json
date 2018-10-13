@@ -646,6 +646,9 @@
   "essentia": {
     "message": "Essentia Test Network"
   },
+  "essentiaMainnet": {
+    "message": "Essentia Main Network"
+  },
   "currentRpc": {
     "message": "Současné RPC"
   },
@@ -654,6 +657,9 @@
   },
   "connectingToEssentia": {
     "message": "Připojuji se k Essentia Test Network"
+  },
+  "connectingToEssentiaMainnet": {
+    "message": "Připojuji se k Essentia Main Network"
   },
   "connectingToKovan": {
     "message": "Připojuji se k Kovan Test Network"

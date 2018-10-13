@@ -22,6 +22,14 @@ function getBuyEthUrl ({ network, amount, address }) {
       url = 'https://github.com/ovcharovvladimir/essentiaHybrid/issues'
       break
 
+      case '5678':
+      url = 'https://github.com/ovcharovvladimir/essentiaHybrid/issues'
+      break
+
+      case '4201':
+      url = 'https://github.com/ovcharovvladimir/essentiaHybrid/issues'
+      break
+
     case '4':
       url = 'https://www.rinkeby.io/'
       break

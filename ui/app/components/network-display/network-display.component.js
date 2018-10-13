@@ -4,6 +4,7 @@ import classnames from 'classnames'
 import {
   MAINNET_CODE,
   ESSENTIA_CODE,
+  ESSENTIAMAINNET_CODE,
   RINKEYBY_CODE,
   KOVAN_CODE,
 } from '../../../../app/scripts/controllers/network/enums'
@@ -13,7 +14,7 @@ const networkToClassHash = {
   [ESSENTIA_CODE]: 'essentia',
   [RINKEYBY_CODE]: 'rinkeby',
   [KOVAN_CODE]: 'kovan',
-  [ESSENTIA_CODE]: 'essentia',
+  [ESSENTIAMAINNET_CODE]: 'essentiaMainnet',
 }
 
 export default class NetworkDisplay extends Component {

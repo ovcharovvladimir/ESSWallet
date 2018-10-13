@@ -159,6 +159,28 @@ NetworkDropdown.prototype.render = function () {
     h(
       DropdownMenuItem,
       {
+        key: 'essentiaMainnet',
+        closeMenu: () => this.props.hideNetworkDropdown(),
+        onClick: () => props.setProviderType('essentiaMainnet'),
+        style: dropdownMenuItemStyle,
+      },
+      [
+        providerType === 'essentiaMainnet' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
+        h(NetworkDropdownIcon, {
+          backgroundColor: '#ff4a8d', // $wild-strawberry
+          isSelected: providerType === 'essentiaMainnet',
+        }),
+        h('span.network-name-item', {
+          style: {
+            color: providerType === 'essentiaMainnet' ? '#ffffff' : '#46576e',
+          },
+        }, this.context.t('essentiaMainnet')),
+      ]
+    ),
+
+    h(
+      DropdownMenuItem,
+      {
         key: 'kovan',
         closeMenu: () => this.props.hideNetworkDropdown(),
         onClick: () => props.setProviderType('kovan'),
@@ -197,27 +219,6 @@ NetworkDropdown.prototype.render = function () {
             color: providerType === 'rinkeby' ? '#ffffff' : '#46576e',
           },
         }, this.context.t('rinkeby')),
-      ]
-    ),
-    h(
-      DropdownMenuItem,
-      {
-        key: 'essentia',
-        closeMenu: () => this.props.hideNetworkDropdown(),
-        onClick: () => props.setProviderType('essentia'),
-        style: dropdownMenuItemStyle,
-      },
-      [
-        providerType === 'essentia' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
-        h(NetworkDropdownIcon, {
-          backgroundColor: '#f6c343', // $saffron
-          isSelected: providerType === 'essentia',
-        }),
-        h('span.network-name-item', {
-          style: {
-            color: providerType === 'essentia' ? '#ffffff' : '#46576e',
-          },
-        }, this.context.t('essentia')),
       ]
     ),
 

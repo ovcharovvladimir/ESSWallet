@@ -17,6 +17,9 @@ module.exports = function (network) {
       case 5678: // essentia test net
       prefix = 'essentia.'
       break
+      case 4201: // essentia  net
+      prefix = 'essentia.'
+      break
     default:
       prefix = ''
   }

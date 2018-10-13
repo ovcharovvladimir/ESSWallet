@@ -55,6 +55,12 @@ Network.prototype.render = function () {
   } else if (parseInt(networkNumber) === 5678) {
     hoverText = 'Essentia Test Network'
     iconName = 'essentia-test-network'
+  } else if (providerName === 'essentiaMainnet') {
+    hoverText = 'Main Essentia Network'
+    iconName = 'essentia-main-network'
+  } else if (parseInt(networkNumber) === 4201) {
+    hoverText = 'Main Essentia Network'
+    iconName = 'essentia-main-network'
   } else if (providerName === 'kovan') {
     hoverText = 'Kovan Test Network'
     iconName = 'kovan-test-network'
@@ -92,7 +98,17 @@ Network.prototype.render = function () {
                   color: '#ff6666',
                 }},
               'Essentia Test Net'),
-              // props.onClick && h('i.fa.fa-caret-down.fa-lg'),
+               props.onClick && h('i.fa.fa-caret-down.fa-lg'),
+            ])
+            case 'essentia-main-network':
+            return h('.network-indicator', [
+              h('.menu-icon.red-dot'),
+              h('.network-name', {
+                style: {
+                  color: '#ff6666',
+                }},
+              'Main Essentia Net'),
+               props.onClick && h('i.fa.fa-caret-down.fa-lg'),
             ])
           case 'kovan-test-network':
             return h('.network-indicator', [
