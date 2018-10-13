@@ -203,6 +203,9 @@
   "copyAddress": {
     "message": "Copy address to clipboard"
   },
+  "copyAddress1": {
+    "message": "Copy address"
+  },
   "copyToClipboard": {
     "message": "Copy to clipboard"
   },
@@ -254,6 +257,9 @@
   },
   "defaultNetwork": {
     "message": "The default network for Ether transactions is Main Net."
+  },
+  "deleteAccount": {
+    "message": "Delete Account"
   },
   "denExplainer": {
     "message": "Your DEN is your password-encrypted storage within MetaMask."
@@ -350,7 +356,7 @@
     "message": "Passwords Don't Match"
   },
   "etherscanView": {
-    "message": "View account on Ess Blockexplorer"
+    "message": "View on ESSexplorer"
   },
   "exchangeRate": {
     "message": "Exchange Rate"
@@ -795,6 +801,9 @@
   },
   "rejected": {
     "message": "Rejected"
+  },
+  "renameAccount": {
+    "message": "Rename account"
   },
   "reset": {
     "message": "Reset"

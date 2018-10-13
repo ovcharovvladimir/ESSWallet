@@ -185,12 +185,8 @@
 
 // Account Modal Container
 .account-modal-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
   position: relative;
-  padding: 5px 0 31px 0;
+  padding: 60px 20px 31px;
   border: 1px solid $silver;
   border-radius: 4px;
   font-family: Roboto;
@@ -253,9 +249,12 @@
     justify-content: center;
     border: 1px solid $alto;
     padding: 5px 10px;
-    font-family: Roboto;
-    margin-top: 7px;
+    font-family: 'AvenirNext-Medium', sans-serif;
+    margin-bottom: 20px;
     width: 286px;
+    input {
+      color: $text-accent-saturated;
+    }
   }
 
   .account-modal__button {
@@ -270,6 +269,43 @@
   height: 1px;
   margin: 19px 0 8px 0;
   background-color: $alto;
+}
+
+.account-modal-link {
+  color: $text-accent-saturated;
+  cursor: pointer;
+  font-size: 0;
+  &__img,
+  &__text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__img {
+    position: relative;
+    width: 15px;
+    margin-right: -15px;
+    color: $tundora;
+    z-index: 1;
+    img {
+      display: inline-block;
+    }
+  }
+  &__text {
+    width: 100%;
+    padding-left: 30px;
+    font-family: 'AvenirNext-Medium', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    color: inherit;
+  }
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  &.delete {
+    padding-top: 5px;
+    opacity: .5;
+  }
 }
 
 // Export Private Key Modal

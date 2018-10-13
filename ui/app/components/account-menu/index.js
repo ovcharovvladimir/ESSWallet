@@ -150,14 +150,6 @@ AccountMenu.prototype.renderAccounts = function () {
           isSelected ? h('div.account-menu__check-mark-icon') : null,
         ]),
 
-        h(
-          Identicon,
-          {
-            address: identity.address,
-            diameter: 24,
-          },
-        ),
-
         h('div.account-menu__account-info', [
           h('div.account-menu__name', identity.name || ''),
           h('div.account-menu__balance', formattedBalance),

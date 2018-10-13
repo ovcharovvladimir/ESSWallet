@@ -1,35 +1,46 @@
 .editable-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-
-  &__value {
-    max-width: 250px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
 
   &__input {
-    width: 250px;
     font-size: 14px;
-    text-align: center;
     border: 1px solid $alto;
+
+    input {
+      width: 100%;
+    }
 
     &--error {
       border: 1px solid $monzo;
     }
   }
 
+  &__icon-wrapper,
+  &__text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   &__icon-wrapper {
-    position: absolute;
-    margin-left: 10px;
-    left: 100%;
+    position: relative;
+    width: 15px;
+    margin-right: -15px;
+    font-size: 16px;
+    z-index: 1;
+    img {
+      display: inline-block;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    padding-left: 30px;
+    font-family: 'AvenirNext-Medium', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    color: inherit;
   }
 
   &__icon {
-    cursor: pointer;
-    color: $dusty-gray;
+    color: $tundora;
   }
 }
