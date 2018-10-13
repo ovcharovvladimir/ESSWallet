@@ -29,6 +29,10 @@ function mapDispatchToProps (dispatch) {
     },
     hideModal: () => dispatch(actions.hideModal()),
     setAccountLabel: (address, label) => dispatch(actions.setAccountLabel(address, label)),
+    copyToClipboard: () => {
+      document.querySelector('.qr-ellip-address').select()
+      document.execCommand('copy')
+    }
   }
 }
 
@@ -53,6 +57,7 @@ AccountDetailsModal.prototype.render = function () {
     showExportPrivateKeyModal,
     setAccountLabel,
     keyrings,
+    copyToClipboard,
   } = this.props
   const { name, address } = selectedIdentity
 
@@ -75,7 +80,9 @@ AccountDetailsModal.prototype.render = function () {
 
       h('div', [
 
-        h('div.account-modal-link', [
+        h('div.account-modal-link', {
+          onClick: copyToClipboard
+        }, [
           h('div.account-modal-link__img', [
             h('img', {src: '../images/icon-copy.svg'})
           ]),
