@@ -42,12 +42,12 @@ QrCodeView.prototype.render = function () {
     },
     this.props.warning) : null,
 
-    h('.div.qr-wrapper', {
-      style: {},
-      dangerouslySetInnerHTML: {
-        __html: qrImage.createTableTag(4),
-      },
-    }),
+    // h('.div.qr-wrapper', {
+    //   style: {},
+    //   dangerouslySetInnerHTML: {
+    //     __html: qrImage.createTableTag(4),
+    //   },
+    // }),
     h(ReadOnlyInput, {
       wrapperClass: 'ellip-address-wrapper',
       inputClass: 'qr-ellip-address',

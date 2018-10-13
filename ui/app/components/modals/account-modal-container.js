@@ -48,17 +48,6 @@ AccountModalContainer.prototype.render = function () {
   return h('div', { style: { borderRadius: '4px' }}, [
     h('div.account-modal-container', [
 
-      h('div', [
-
-        // Needs a border; requires changes to svg
-        h(Identicon, {
-          address: selectedIdentity.address,
-          diameter: 64,
-          style: {},
-        }),
-
-      ]),
-
       showBackButton && h('div.account-modal-back', {
         onClick: backButtonAction,
       }, [

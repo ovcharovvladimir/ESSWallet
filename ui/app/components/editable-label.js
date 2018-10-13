@@ -34,34 +34,40 @@ class EditableLabel extends Component {
     const { value } = this.state
 
     return ([
-      h('input.large-input.editable-label__input', {
-        type: 'text',
-        required: true,
-        value: this.state.value,
-        onKeyPress: (event) => {
-          if (event.key === 'Enter') {
-            this.handleSubmit()
-          }
-        },
-        onChange: event => this.setState({ value: event.target.value }),
-        className: classnames({ 'editable-label__input--error': value === '' }),
-      }),
       h('div.editable-label__icon-wrapper', [
         h('i.fa.fa-check.editable-label__icon', {
           onClick: () => this.handleSubmit(),
         }),
       ]),
+      h('div.editable-label__text', [
+        h('input.large-input.editable-label__input', {
+          type: 'text',
+          required: true,
+          value: this.state.value,
+          onKeyPress: (event) => {
+            if (event.key === 'Enter') {
+              this.handleSubmit()
+            }
+          },
+          onChange: event => this.setState({ value: event.target.value }),
+          className: classnames({ 'editable-label__input--error': value === '' }),
+        }),
+      ])
     ])
   }
 
   renderReadonly () {
     return ([
-      h('div.editable-label__value', this.state.value),
-      h('div.editable-label__icon-wrapper', [
-        h('i.fa.fa-pencil.editable-label__icon', {
+      h('div', {
           onClick: () => this.setState({ isEditing: true }),
-        }),
-      ]),
+        }, [
+        h('div.editable-label__icon-wrapper', [
+          h('img', {
+            src: '/images/icon-rename.svg',
+          }),
+        ]),
+        h('div.editable-label__text', this.context.t('renameAccount'))
+      ])
     ])
   }
 
@@ -70,7 +76,7 @@ class EditableLabel extends Component {
     const { className } = this.props
 
     return (
-      h('div.editable-label', { className: classnames(className) },
+      h('div', { className: classnames(className) },
         isEditing
           ? this.renderEditing()
           : this.renderReadonly()
@@ -83,6 +89,10 @@ EditableLabel.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   defaultValue: PropTypes.string,
   className: PropTypes.string,
+}
+
+EditableLabel.contextTypes = {
+  t: PropTypes.func,
 }
 
 module.exports = EditableLabel

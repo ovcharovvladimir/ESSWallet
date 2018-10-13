@@ -29,6 +29,10 @@ function mapDispatchToProps (dispatch) {
     },
     hideModal: () => dispatch(actions.hideModal()),
     setAccountLabel: (address, label) => dispatch(actions.setAccountLabel(address, label)),
+    copyToClipboard: () => {
+      document.querySelector('.qr-ellip-address').select()
+      document.execCommand('copy')
+    }
   }
 }
 
@@ -43,7 +47,6 @@ AccountDetailsModal.contextTypes = {
 
 module.exports = connect(mapStateToProps, mapDispatchToProps)(AccountDetailsModal)
 
-
 // Not yet pixel perfect todos:
   // fonts of qr-header
 
@@ -54,6 +57,7 @@ AccountDetailsModal.prototype.render = function () {
     showExportPrivateKeyModal,
     setAccountLabel,
     keyrings,
+    copyToClipboard,
   } = this.props
   const { name, address } = selectedIdentity
 
@@ -68,33 +72,61 @@ AccountDetailsModal.prototype.render = function () {
   }
 
   return h(AccountModalContainer, {}, [
-      h(EditableLabel, {
-        className: 'account-modal__name',
-        defaultValue: name,
-        onSubmit: label => setAccountLabel(address, label),
-      }),
-
       h(QrView, {
         Qr: {
           data: address,
         },
       }),
 
-      h('div.account-modal-divider'),
+      h('div', [
 
-      h(Button, {
-        type: 'primary',
-        className: 'account-modal__button',
-        onClick: () => global.platform.openWindow({ url: genAccountLink(address, network) }),
-      }, this.context.t('etherscanView')),
+        h('div.account-modal-link', {
+          onClick: copyToClipboard
+        }, [
+          h('div.account-modal-link__img', [
+            h('img', {src: '../images/icon-copy.svg'})
+          ]),
 
-      // Holding on redesign for Export Private Key functionality
+          h('div.account-modal-link__text', {}, this.context.t('copyAddress1'))
+        ]),
 
-      exportPrivateKeyFeatureEnabled ? h(Button, {
-        type: 'primary',
-        className: 'account-modal__button',
-        onClick: () => showExportPrivateKeyModal(),
-      }, this.context.t('exportPrivateKey')) : null,
+        // Holding on redesign for Export Private Key functionality
+        exportPrivateKeyFeatureEnabled ? h('div.account-modal-link', {
+            onClick: () => showExportPrivateKeyModal()
+          }, [
+          h('div.account-modal-link__img', [
+            h('img', {src: '../images/icon-export.svg'})
+          ]),
 
+          h('div.account-modal-link__text', this.context.t('exportPrivateKey'))
+        ]) : null,
+
+        h(EditableLabel, {
+          className: 'account-modal-link',
+          defaultValue: name,
+          onSubmit: label => setAccountLabel(address, label),
+        }),
+
+        h('div.account-modal-link', {
+            onClick: () => global.platform.openWindow({ url: genAccountLink(address, network) })
+          }, [
+          h('div.account-modal-link__img', [
+            h('img', {src: '../images/icon-info.svg'})
+          ]),
+
+          h('div.account-modal-link__text', this.context.t('etherscanView'))
+        ]),
+
+        // h('div.account-modal-link.delete', [
+        //   h('div.account-modal-link__img', [
+        //     h('img', {src: '../images/icon-trash.svg'})
+        //   ]),
+        //
+        //   h('div.account-modal-link__text', {
+        //     onClick: () => global.platform.openWindow({ url: genAccountLink(address, network) })
+        //   }, this.context.t('deleteAccount'))
+        // ])
+
+      ])
   ])
 }
