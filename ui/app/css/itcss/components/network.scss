@@ -35,7 +35,18 @@
 .dropdown-menu-item {
   .menu-icon-circle,
   .menu-icon-circle--active {
+    display: none;
     margin: 0 14px;
+  }
+  .fa-check {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: $blue;
+    color: $white;
+    text-align: center;
+    line-height: 17px;
+    font-size: 10px;
   }
 }
 
@@ -53,7 +64,6 @@
 
 .network-name {
   padding: 0 4px;
-  font-family: Roboto;
   font-size: 12px;
   font-weight: bold;
   line-height: normal;
@@ -61,6 +71,8 @@
   color: $tundora;
   font-weight: 500;
   text-transform: uppercase;
+  font-family: 'AvenirNext-Bold', sans-serif;
+  color: #90a1b8;
 }
 
 .dropdown-menu-item .fa.delete {
@@ -94,6 +106,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  margin-left: 8px;
 }
 
 .network-check,
@@ -103,9 +116,11 @@
 }
 
 .network-check__transparent {
-  opacity: 0;
-  width: 16px;
+  width: 17px;
+  height: 17px;
   margin: 0;
+  border: 1px solid $tundora;
+  border-radius: 50%;
 }
 
 .menu-icon-circle,
@@ -138,7 +153,6 @@
 .network-dropdown-header {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
 }
 
@@ -150,22 +164,22 @@
 }
 
 .network-dropdown-title {
-  height: 25px;
-  width: 120px;
-  color: $white;
-  font-family: Roboto;
-  font-size: 18px;
-  line-height: 25px;
-  text-align: center;
+  margin-bottom: 3px;
+  font-family: 'AvenirNext-Medium', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+  color: $text-accent-saturated;
 }
 
 .network-dropdown-content {
-  height: 36px;
-  width: 265px;
-  color: $dusty-gray;
-  font-family: Roboto;
-  font-size: 14px;
-  line-height: 18px;
+  margin-bottom: 7px;
+  color: $tundora;
+  font-family: 'AvenirNext-Regular', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: normal;
+  color: #90a1b8;
 }
 
 .network-caret {

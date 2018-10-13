@@ -3,6 +3,7 @@
   z-index: 100;
   top: 58px;
   width: 310px;
+  padding-bottom: 12px;
 
   @media screen and (max-width: 575px) {
     right: calc(((100vw - 100%) / 2) + 8px);
@@ -34,16 +35,22 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    font-family: 'AvenirNext-Medium', sans-serif;
+    color: $text-accent-saturated;
   }
 
   &__logout-button {
-    border: 1px solid $dusty-gray;
+    border: 1px solid $tundora;
     background-color: transparent;
-    color: $white;
-    border-radius: 4px;
+    border-radius: 3px;
     font-size: 12px;
-    line-height: 23px;
-    padding: 0 24px;
+    padding: 5px 16px 6px;
+    text-transform: uppercase;
+    font-family: 'NotoSans-Bold', sans-serif;
+    font-weight: bold;
+    line-height: normal;
+    text-align: center;
+    color: $tundora;
   }
 
   &__item-icon {
@@ -79,8 +86,17 @@
   &__account {
     display: flex;
     flex-flow: row nowrap;
-    padding: 16px 14px;
+    padding: 10px 14px;
     flex: 0 0 auto;
+    align-items: center;
+
+    &:first-child {
+      padding-top: 16px;
+    }
+
+    &:last-child {
+      padding-bottom: 16px;
+    }
 
     @media screen and (max-width: 575px) {
       padding: 12px 14px;
@@ -111,38 +127,62 @@
   }
 
   &__check-mark {
-    width: 14px;
-    margin-right: 12px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 17px;
+    height: 17px;
+    border: 1px solid $tundora;
+    border-radius: 50%;
+    margin-right: 15px;
     flex: 0 0 auto;
   }
 
   &__check-mark-icon {
-    background-image: url("images/check-white.svg");
-    height: 18px;
-    width: 18px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    margin: 3px 0;
+    position: absolute;
+    background-color: $blue;
+    height: 17px;
+    width: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 50%;
+    &:before {
+      content: '\f00c';
+      font-family: FontAwesome;
+      display: inline-block;
+      font-size: 10px;
+      color: $white;
+      margin: -1px -1px 0;
+    }
   }
 
   .identicon {
+    display: none !important;
     margin: 0 12px 0 0;
     flex: 0 0 auto;
   }
 
   &__name {
-    color: $white;
-    font-size: 18px;
+    margin-bottom: 3px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     max-width: 200px;
+    font-family: 'AvenirNext-Medium', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.13;
+    color: $text-accent-saturated;
   }
 
   &__balance {
-    color: $dusty-gray;
-    font-size: 14px;
+    color: $tundora;
+    font-family: 'AvenirNext-Medium', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.17;
   }
 
   &__action {

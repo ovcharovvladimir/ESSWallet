@@ -641,7 +641,7 @@
     "message": "Can not send negative amounts of ETH."
   },
   "networks": {
-    "message": "Networks"
+    "message": "Network"
   },
   "nevermind": {
     "message": "Nevermind"
