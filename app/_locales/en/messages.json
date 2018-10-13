@@ -597,7 +597,7 @@
     "message": "seed words only have lowercase characters"
   },
   "mainnet": {
-    "message": "Main Ethereum Network"
+    "message": "Essentia TestNet"
   },
   "menu": {
     "message": "Menu"
@@ -638,7 +638,7 @@
     "message": "Can not send negative amounts of ETH."
   },
   "networks": {
-    "message": "Networks"
+    "message": "Network"
   },
   "nevermind": {
     "message": "Nevermind"

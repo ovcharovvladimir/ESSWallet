@@ -99,14 +99,12 @@ NetworkDropdown.prototype.render = function () {
       zIndex: '55px',
     },
     innerStyle: {
-      padding: '18px 8px',
+      padding: '18px 20px 12px 28px',
     },
   }, [
 
     h('div.network-dropdown-header', {}, [
       h('div.network-dropdown-title', {}, this.context.t('networks')),
-
-      h('div.network-dropdown-divider'),
 
       h('div.network-dropdown-content',
         {},
@@ -130,7 +128,7 @@ NetworkDropdown.prototype.render = function () {
         }),
         h('span.network-name-item', {
           style: {
-            color: providerType === 'mainnet' ? '#ffffff' : '#9b9b9b',
+            color: providerType === 'mainnet' ? '#46576e' : '#ffffff',
           },
         }, this.context.t('mainnet')),
       ]
@@ -152,7 +150,7 @@ NetworkDropdown.prototype.render = function () {
         }),
         h('span.network-name-item', {
           style: {
-            color: providerType === 'essentia' ? '#ffffff' : '#9b9b9b',
+            color: providerType === 'essentia' ? '#ffffff' : '#46576e',
           },
         }, this.context.t('essentia')),
       ]
@@ -174,7 +172,7 @@ NetworkDropdown.prototype.render = function () {
         }),
         h('span.network-name-item', {
           style: {
-            color: providerType === 'kovan' ? '#ffffff' : '#9b9b9b',
+            color: providerType === 'kovan' ? '#ffffff' : '#46576e',
           },
         }, this.context.t('kovan')),
       ]
@@ -196,7 +194,7 @@ NetworkDropdown.prototype.render = function () {
         }),
         h('span.network-name-item', {
           style: {
-            color: providerType === 'rinkeby' ? '#ffffff' : '#9b9b9b',
+            color: providerType === 'rinkeby' ? '#ffffff' : '#46576e',
           },
         }, this.context.t('rinkeby')),
       ]
@@ -217,7 +215,7 @@ NetworkDropdown.prototype.render = function () {
         }),
         h('span.network-name-item', {
           style: {
-            color: providerType === 'essentia' ? '#ffffff' : '#9b9b9b',
+            color: providerType === 'essentia' ? '#ffffff' : '#46576e',
           },
         }, this.context.t('essentia')),
       ]
@@ -235,11 +233,11 @@ NetworkDropdown.prototype.render = function () {
         providerType === 'localhost' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
         h(NetworkDropdownIcon, {
           isSelected: providerType === 'localhost',
-          innerBorder: '1px solid #9b9b9b',
+          innerBorder: '1px solid #46576e',
         }),
         h('span.network-name-item', {
           style: {
-            color: providerType === 'localhost' ? '#ffffff' : '#9b9b9b',
+            color: providerType === 'localhost' ? '#ffffff' : '#46576e',
           },
         }, this.context.t('localhost')),
       ]
@@ -259,11 +257,11 @@ NetworkDropdown.prototype.render = function () {
         activeNetwork === 'custom' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
         h(NetworkDropdownIcon, {
           isSelected: activeNetwork === 'custom',
-          innerBorder: '1px solid #9b9b9b',
+          innerBorder: '1px solid #46576e',
         }),
         h('span.network-name-item', {
           style: {
-            color: activeNetwork === 'custom' ? '#ffffff' : '#9b9b9b',
+            color: activeNetwork === 'custom' ? '#ffffff' : '#46576e',
           },
         }, this.context.t('customRPC')),
       ]

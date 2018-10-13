@@ -8,6 +8,10 @@ $black: #000;
 $orange: #ffa500;
 $red: #f00;
 $gray: #808080;
+$blue: #3c8ffc;
+$background-primary-saturated: #225cff;
+$text-accent-saturated: #46576e;
+$text-accent-inefficient: #eaeaea;
 
 /*
   Colors
@@ -16,7 +20,7 @@ $gray: #808080;
 $white-linen: #faf6f0; // formerly 'faint orange (textfield shades)'
 $rajah: #f5c26d; // formerly 'light orange (button shades)'
 $buttercup: #f5a623; // formerly 'dark orange (text)'
-$tundora: #4a4a4a; // formerly 'borders/font/any gray'
+$tundora: #90a1b8; // formerly 'borders/font/any gray'
 $gallery: #efefef;
 $alabaster: #f7f7f7;
 $shark: #22232c;
@@ -28,7 +32,7 @@ $alabaster: #fafafa;
 $silver-chalice: #aeaeae;
 $curious-blue: #2f9ae0;
 $concrete: #f3f3f3;
-$tundora: #4d4d4d;
+$tundora: #90a1b8;
 $nile-blue: #1b344d;
 $scorpion: #5d5d5d;
 $silver: #cdcdcd;
@@ -87,5 +91,6 @@ $break-midpoint: 780px;
 $break-large: 576px;
 
 
-$primary-font-type: Roboto;
 
+$primary-font-type: 'AvenirNext-Medium';
+$primary-font-type: Roboto;

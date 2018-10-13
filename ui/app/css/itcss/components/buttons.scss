@@ -3,22 +3,21 @@
  */
 
 .button {
-  height: 44px;
-  background: $white;
+  background: $background-primary-saturated;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  border-radius: 4px;
-  font-size: 14px;
+  border-radius: 3px;
+  font-size: 13px;
   font-weight: 400;
   transition: border-color .3s ease;
-  padding: 0 16px;
-  min-width: 140px;
+  padding: 9px 16px;
+  min-width: 115px;
   width: 100%;
   text-transform: uppercase;
   outline: none;
-  font-family: Roboto;
+  font-family: 'NotoSans-Bold', sans-serif;
 
   &--disabled,
   &[disabled] {
@@ -29,22 +28,11 @@
 }
 
 .btn-primary {
-  color: $curious-blue;
-  border: 2px solid $spindle;
-
-  &:active {
-    background: $zumthor;
-    border-color: $curious-blue;
-  }
-
-  &:hover {
-    border-color: $curious-blue;
-  }
+  color: $white;
 }
 
 .btn-secondary {
   color: $monzo;
-  border: 2px solid lighten($monzo, 40%);
 
   &:active {
     background: lighten($monzo, 55%);
@@ -58,7 +46,6 @@
 
 .btn-default {
   color: $scorpion;
-  border: 2px solid $dusty-gray;
 
   &:active {
     background: $gallery;
@@ -72,7 +59,6 @@
 
 .btn-confirm {
   color: $white;
-  border: 2px solid $curious-blue;
   background-color: $curious-blue;
 }
 

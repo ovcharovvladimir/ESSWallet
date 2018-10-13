@@ -46,6 +46,20 @@
     }
   }
 
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    &-text {
+      margin-left: 12px;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: normal;
+      color: $text-accent-saturated;
+      font-family: 'AvenirNext-Bold', sans-serif;
+    }
+  }
+
   &__contents {
     display: flex;
     justify-content: space-between;

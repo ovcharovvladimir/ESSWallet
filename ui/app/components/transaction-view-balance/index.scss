@@ -54,6 +54,7 @@
   &__buttons {
     display: flex;
     flex-direction: row;
+    flex: 1;
 
     @media screen and (max-width: $break-small) {
       margin-bottom: 16px;
@@ -62,10 +63,9 @@
 
   &__button {
     min-width: initial;
-    width: 100px;
 
     &:not(:last-child) {
-      margin-right: 12px;
+      margin-right: 8px;
     }
   }
 

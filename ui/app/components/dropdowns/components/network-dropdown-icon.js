@@ -15,7 +15,7 @@ NetworkDropdownIcon.prototype.render = function () {
     backgroundColor,
     isSelected,
     innerBorder = 'none',
-    diameter = '12',
+    diameter = '8',
   } = this.props
 
   return h(`.menu-icon-circle${isSelected ? '--active' : ''}`, {},
