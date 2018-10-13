@@ -11,7 +11,7 @@
   background: $white;
 
   @media screen and (max-width: 575px) {
-    padding: 0;
+    padding: 24px;
   }
 
   &__info {
@@ -22,39 +22,47 @@
     align-items: center;
     justify-content: center;
 
+    &__logo {
+      width: 88px;
+      height: 92px;
+      background: url("./images/logo/big-logo.svg")
+    }
+
     &__header {
-      font-size: 1.65em;
-      margin-bottom: 14px;
+      font-size: 2.1em;
+      margin-bottom: 8px;
+      margin-top: 90px;
+      font-family: AvenirNext-Medium;
+      letter-spacing: -1.1px;
+      color: #46576e;
 
       @media screen and (max-width: 575px) {
-        font-size: 1.5em;
+        max-width: 300px;
       }
     }
 
     &__copy {
-      font-size: 1em;
+      font-size: .9em;
       width: 400px;
-      max-width: 90vw;
       text-align: center;
+      line-height: 1.38;
+      color: #90a1b8;
+      line-height: 1.38;
+      font-family: AvenirNext-Regular;
 
       @media screen and (max-width: 575px) {
-        font-size: .9em;
+        max-width: 300px;
+        text-align: left
       }
     }
   }
 
   &__button {
-    height: 54px;
-    width: 198px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .14);
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 26px;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 35px 0 14px;
-    transition: 200ms ease-in-out;
-    background-color: rgba(247, 134, 28, .9);
+    margin-top: 45px;
+    color: $white;
+    line-height: 1.23;
+    letter-spacing: 1px;
+    padding: 14px;
+    font-family: Roboto, san-serif;
   }
 }

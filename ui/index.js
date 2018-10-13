@@ -28,9 +28,10 @@ async function startApp (metamaskState, accountManager, opts) {
   // parse opts
   if (!metamaskState.featureFlags) metamaskState.featureFlags = {}
 
-  const currentLocaleMessages = metamaskState.currentLocale
-    ? await fetchLocale(metamaskState.currentLocale)
-    : {}
+  const currentLocaleMessages = await fetchLocale('en')
+  // const currentLocaleMessages = metamaskState.currentLocale
+  //   ? await fetchLocale(metamaskState.currentLocale)
+  //   : {}
   const enLocaleMessages = await fetchLocale('en')
 
   const store = configureStore({

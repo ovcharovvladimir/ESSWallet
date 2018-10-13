@@ -6,7 +6,6 @@ import {connect} from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
 import {closeWelcomeScreen} from './actions'
-import Mascot from './components/mascot'
 import { INITIALIZE_CREATE_PASSWORD_ROUTE } from './routes'
 
 class WelcomeScreen extends Component {
@@ -44,19 +43,13 @@ class WelcomeScreen extends Component {
 
         h('div.welcome-screen__info', [
 
-          h(Mascot, {
-            animationEventEmitter: this.animationEventEmitter,
-            width: '225',
-            height: '225',
-          }),
+          h('div.welcome-screen__info__logo'),
 
           h('div.welcome-screen__info__header', this.context.t('welcomeBeta')),
 
           h('div.welcome-screen__info__copy', this.context.t('metamaskDescription')),
 
-          h('div.welcome-screen__info__copy', this.context.t('holdEther')),
-
-          h('button.welcome-screen__button', {
+          h('button.button.button-primary.welcome-screen__button', {
             onClick: this.initiateAccountCreation,
           }, this.context.t('continue')),
 

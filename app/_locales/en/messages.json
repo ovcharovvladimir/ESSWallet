@@ -52,7 +52,7 @@
     "description": "The description of the application"
   },
   "appName": {
-    "message": "MetaMask",
+    "message": "Essentia Wallet",
     "description": "The name of the application"
   },
   "approve": {
@@ -177,7 +177,7 @@
     "message": "Connect to Trezor"
   },
   "continue": {
-    "message": "Continue"
+    "message": "Next"
   },
   "continueToCoinbase": {
     "message": "Continue to Coinbase"
@@ -615,7 +615,7 @@
     "message": "Message"
   },
   "metamaskDescription": {
-    "message": "MetaMask is a secure identity vault for Ethereum."
+    "message": "Join the framework where all your dApps are interconnected and available any minute."
   },
   "metamaskSeedWords": {
     "message": "MetaMask Seed Words"
@@ -1274,7 +1274,7 @@
     "message": "Welcome Back!"
   },
   "welcomeBeta": {
-    "message": "Welcome to MetaMask Beta"
+    "message": "Welcome to Essentia Wallet"
   },
   "whatsThis": {
     "message": "What's this?"
