@@ -29,6 +29,9 @@
   "addToken": {
     "message": "Add Token"
   },
+  "tokens": {
+    "message": "Tokens"
+  },
   "addTokens": {
     "message": "Add Tokens"
   },

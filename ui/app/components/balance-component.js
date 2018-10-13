@@ -45,7 +45,7 @@ BalanceComponent.prototype.render = function () {
     //   style: {},
     // }),
     h(Identicon, {
-      diameter: 50,
+      diameter: 36,
       address,
       network,
       image,
@@ -69,7 +69,7 @@ BalanceComponent.prototype.renderBalance = function () {
   const balanceValue = account && account.balance
   const needsParse = 'needsParse' in props ? props.needsParse : true
   const formattedBalance = balanceValue ? formatBalance(balanceValue, 6, needsParse) : '...'
-  const showFiat = 'showFiat' in props ? props.showFiat : true
+  // const showFiat = 'showFiat' in props ? props.showFiat : true
 
   if (formattedBalance === 'None' || formattedBalance === '...') {
     return h('div.flex-column.balance-display', {}, [
@@ -84,9 +84,10 @@ BalanceComponent.prototype.renderBalance = function () {
       style: {},
     }, this.getTokenBalance(formattedBalance, shorten)),
 
-    showFiat && h(CurrencyDisplay, {
-      value: balanceValue,
-    }),
+
+    // showFiat && h(CurrencyDisplay, {
+    //   value: balanceValue,
+    // }),
   ])
 }
 
