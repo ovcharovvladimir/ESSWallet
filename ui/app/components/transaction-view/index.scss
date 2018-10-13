@@ -4,6 +4,8 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
+  border: 1px solid $background-accent-inefficient;
+  border-left: 0;
 
   &__balance-wrapper {
     @media screen and (max-width: $break-small) {

@@ -162,10 +162,6 @@ WalletView.prototype.render = function () {
           identities[selectedAddress].name,
         ]),
 
-        h('span.account-details', {
-          onClick: showAccountDetailModal,
-        }),
-
         h(Tooltip, {
           position: 'bottom',
           title: this.state.hasCopied ? this.context.t('copiedExclamation') : this.context.t('copyToClipboard'),
@@ -191,20 +187,29 @@ WalletView.prototype.render = function () {
           ]),
         ]),
       ]),
+      h('span.account-details', {
+        onClick: showAccountDetailModal,
+      }),
     ]),
 
     this.renderWalletBalance(),
 
-    h(TokenList),
+    h('.wallet-view__add-token-wrapper', {
+      style: {},
+    },
+    [
+      h('.wallet-view__token-text', {}, this.context.t('tokens')),
 
-    h(Button, {
-      type: 'primary',
-      className: 'wallet-view__add-token-button',
-      onClick: () => {
-        history.push(ADD_TOKEN_ROUTE)
-        sidebarOpen && hideSidebar()
-      },
-    }, this.context.t('addToken')),
+      h('span.wallet-view__add-token', {
+        onClick: () => {
+          history.push(ADD_TOKEN_ROUTE)
+          sidebarOpen && hideSidebar()
+        },
+      }),
+    ]),
+
+
+    h(TokenList),
   ])
 }
 

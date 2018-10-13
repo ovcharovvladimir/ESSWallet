@@ -94,7 +94,7 @@ TokenCell.prototype.render = function () {
 
       h(Identicon, {
         className: 'token-list-item__identicon',
-        diameter: 50,
+        diameter: 36,
         address,
         network,
         image,
@@ -102,19 +102,28 @@ TokenCell.prototype.render = function () {
 
       h('div.token-list-item__balance-ellipsis', null, [
         h('div.token-list-item__balance-wrapper', null, [
-          h('div.token-list-item__token-balance', `${string || 0}`),
           h('div.token-list-item__token-symbol', symbol),
           showFiat && h('div.token-list-item__fiat-amount', {
             style: {},
           }, formattedFiat),
+          h('div.token-list-item__balance-wrapper-inner', {
+            style: {},
+          },
+            [
+              h('div.token-list-item__amount', `${string || 0}`),
+              h('div.token-list-item__symbol', symbol),
+              showFiat && h('div.token-list-item__fiat-amount', {
+                style: {},
+              }, formattedFiat),
+          ]),
         ]),
 
-        h('i.fa.fa-ellipsis-h.fa-lg.token-list-item__ellipsis.cursor-pointer', {
-          onClick: (e) => {
-            e.stopPropagation()
-            this.setState({ tokenMenuOpen: true })
-          },
-        }),
+        // h('i.fa.fa-ellipsis-h.fa-lg.token-list-item__ellipsis.cursor-pointer', {
+        //   onClick: (e) => {
+        //     e.stopPropagation()
+        //     this.setState({ tokenMenuOpen: true })
+        //   },
+        // }),
 
       ]),
 

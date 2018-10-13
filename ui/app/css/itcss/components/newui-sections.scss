@@ -26,6 +26,7 @@ $wallet-view-bg: $alabaster;
   display: flex;
   width: 100vw;
   justify-content: center;
+  background-color: $white;
 }
 
 //Account and transaction details
@@ -57,12 +58,15 @@ $wallet-view-bg: $alabaster;
 
   .wallet-view-account-details {
     flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 18px;
   }
 
   &__name-container {
-    flex: 0 0 auto;
+    flex: 1;
     width: 100%;
-    padding: 18px 24px;
   }
 
   &__keyring-label {
@@ -94,11 +98,12 @@ $wallet-view-bg: $alabaster;
     padding: 0;
     color: $text-secondary-inefficient;
     font-size: 14px;
+    font-family: 'AvenirNext-Medium';
     cursor: pointer;
     flex: 0 0 auto;
 
     &__pressed {
-      background-color: $manatee,
+      color: $background-primary-saturated,
     }
   }
 
@@ -116,17 +121,35 @@ $wallet-view-bg: $alabaster;
       }
     }
   }
+  &__add-token-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 18px;
+  }
 
-  &__add-token-button {
+  &__add-token-button,
+  &__token-text {
     flex: 0 0 auto;
-    margin: 36px auto;
     background: none;
     transition: border-color .3s ease;
-    width: 150px;
+    justify-content: space-between;
+    font-size: 12px;
+    color: $text-secondary-inefficient;
+    font-family: 'AvenirNext-Bold';
+    text-transform: uppercase;
 
     &:hover {
       border-color: $curious-blue;
     }
+  }
+
+  &__add-token {
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url('images/plus.svg');
+    cursor: pointer;
   }
 }
 
@@ -183,7 +206,6 @@ $wallet-view-bg: $alabaster;
     // margin-top: 6.9vh;
     width: 85vw;
     height: 90vh;
-    box-shadow: 0 0 7px 0 rgba(0, 0, 0, .08);
   }
 }
 
@@ -192,7 +214,6 @@ $wallet-view-bg: $alabaster;
     // margin-top: 6.9vh;
     width: 80vw;
     height: 82vh;
-    box-shadow: 0 0 7px 0 rgba(0, 0, 0, .08);
   }
 }
 
@@ -201,7 +222,6 @@ $wallet-view-bg: $alabaster;
     // margin-top: 6.9vh;
     width: 62vw;
     height: 82vh;
-    box-shadow: 0 0 7px 0 rgba(0, 0, 0, .08);
   }
 }
 
@@ -230,6 +250,7 @@ $wallet-view-bg: $alabaster;
 // wallet view
 .account-name {
   font-size: 18px;
+  font-family: 'AvenirNext-Medium';
   color: $text-primary-saturated;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -238,11 +259,25 @@ $wallet-view-bg: $alabaster;
 }
 .account-address {
   font-size: 14px;
+  font-family: 'AvenirNext-Medium';
   color: $text-secondary-inefficient;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   width: 100%;
+}
+
+.account-details {
+  cursor: pointer;
+  display: block;
+  mask: url('images/arrow-down.svg') no-repeat center;
+  background-color: $background-secondary-inefficient;
+  width: 14px;
+  height: 14px;
+
+  &:hover {
+    background-color: $background-primary-saturated;
+  }
 }
 
 // account options dropdown
