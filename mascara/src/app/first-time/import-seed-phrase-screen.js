@@ -166,7 +166,7 @@ class ImportSeedPhraseScreen extends Component {
               largeLabel
             />
             <button
-              className="first-time-flow__button"
+              className="button first-time-flow__button"
               onClick={() => !disabled && this.onClick()}
               disabled={disabled}
             >
