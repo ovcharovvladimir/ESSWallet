@@ -112,6 +112,21 @@
   position: relative;
 }
 
+.create-password {
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 125px 14px 3px;
+}
+
+.create-password__inner {
+  width: 100%;
+}
+.create-password__inner--center {
+  text-align: center;
+}
+
 .import-account {
   max-width: initial;
 }
@@ -127,6 +142,10 @@
     display: flex;
     flex-flow: column nowrap;
     width: calc(100vw - 80px);
+  }
+
+  .create-password {
+    width: 100%;
   }
 
   .create-password__title,
@@ -151,7 +170,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin-top: 12px;
   }
 
   .mascara-info {
@@ -234,6 +252,34 @@
   font-size: 40px;
   line-height: 51px;
   margin-bottom: 24px;
+}
+
+.create-password__title {
+  margin-bottom: 36px;
+  font-family: 'AvenirNext-Medium', sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -1.1px;
+  color: #46576e;
+}
+
+.create-password .TextField-largeInputLabel-9 {
+  font-family: 'AvenirNext-Medium', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+  color: #46576e;
+}
+
+.create-password label + .TextField-inputRoot-8 {
+  margin-top: 4px;
+  height: 40px;
+}
+
+.create-password .MuiFormControl-marginNormal-12 {
+  margin-bottom: 12px;
+  margin-top: 0;
 }
 
 .import-account__title {
@@ -703,28 +749,19 @@ button.backup-phrase__confirm-seed-option:hover {
 }
 
 .first-time-flow__button {
-  height: 54px;
-  width: 198px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14);
   color: #FFFFFF;
   font-size: 20px;
   font-weight: 500;
   font-family: Roboto;
-  line-height: 26px;
   text-align: center;
   text-transform: uppercase;
   margin: 35px 0 14px;
-  transition: 200ms ease-in-out;
-  background-color: rgba(247, 134, 28, 0.9);
+  border-radius: 2px;
+  font-size: 16px;
 }
 
 button.first-time-flow__button[disabled] {
-  opacity: .6;
-}
-
-button.first-time-flow__button:hover {
-  transform: scale(1);
-  background-color: rgba(247, 134, 28, 0.9);
+  opacity: 1;
 }
 
 .first-time-flow__button--tertiary {
@@ -736,7 +773,7 @@ button.first-time-flow__button:hover {
   line-height: 26px;
   font-family: Roboto;
   text-align: center;
-  margin: 35px 0 14px;
+  margin: 35px 0 18px;
   background-color: transparent;
 }
 
@@ -745,9 +782,16 @@ button.first-time-flow__button--tertiary:hover {
 }
 
 .first-time-flow__link {
-  color: #1B344D;
-  font-size: 18px;
-  line-height: 23px;
+  color: #225cff;
+  font-size: 13px;
+  font-family: "AvenirNext-Bold", sans-serif;
+  line-height: 1.23;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.first-time-flow__link:hover {
+  color: #225cff;
 }
 
 .breadcrumbs {
