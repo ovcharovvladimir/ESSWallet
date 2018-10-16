@@ -130,66 +130,69 @@ class CreatePasswordScreen extends Component {
             </div>
           </div>}
           <form className="create-password">
-            <div className="create-password__title">
-              Create Password
+            <div className="create-password__inner">
+              <div className="create-password__title">
+                Create Password
+              </div>
+              <TextField
+                id="create-password"
+                label={t('newPassword')}
+                type="password"
+                className="first-time-flow__input"
+                value={this.state.password}
+                onChange={event => this.handlePasswordChange(event.target.value)}
+                error={passwordError}
+                autoFocus
+                autoComplete="new-password"
+                margin="normal"
+                fullWidth
+                largeLabel
+              />
+              <TextField
+                id="confirm-password"
+                label={t('confirmPassword')}
+                type="password"
+                className="first-time-flow__input"
+                value={this.state.confirmPassword}
+                onChange={event => this.handleConfirmPasswordChange(event.target.value)}
+                error={confirmPasswordError}
+                autoComplete="confirm-password"
+                margin="normal"
+                fullWidth
+                largeLabel
+              />
             </div>
-            <TextField
-              id="create-password"
-              label={t('newPassword')}
-              type="password"
-              className="first-time-flow__input"
-              value={this.state.password}
-              onChange={event => this.handlePasswordChange(event.target.value)}
-              error={passwordError}
-              autoFocus
-              autoComplete="new-password"
-              margin="normal"
-              fullWidth
-              largeLabel
-            />
-            <TextField
-              id="confirm-password"
-              label={t('confirmPassword')}
-              type="password"
-              className="first-time-flow__input"
-              value={this.state.confirmPassword}
-              onChange={event => this.handleConfirmPasswordChange(event.target.value)}
-              error={confirmPasswordError}
-              autoComplete="confirm-password"
-              margin="normal"
-              fullWidth
-              largeLabel
-            />
-            <button
-              className="first-time-flow__button"
-              disabled={!this.isValid()}
-              onClick={this.createAccount}
-            >
-              Create
-            </button>
-            <a
-              href=""
-              className="first-time-flow__link create-password__import-link"
-              onClick={e => {
-                e.preventDefault()
-                history.push(INITIALIZE_IMPORT_WITH_SEED_PHRASE_ROUTE)
-              }}
-            >
-              Import with seed phrase
-            </a>
-            { /* }
-            <a
-              href=""
-              className="first-time-flow__link create-password__import-link"
-              onClick={e => {
-                e.preventDefault()
-                history.push(INITIALIZE_IMPORT_ACCOUNT_ROUTE)
-              }}
-            >
-              Import an account
-            </a>
-            { */ }
-            <Breadcrumbs total={3} currentIndex={0} />
+            <div className="create-password__inner create-password__inner--center">
+              <button
+                className="button first-time-flow__button"
+                disabled={!this.isValid()}
+                onClick={this.createAccount}
+              >
+                Create
+              </button>
+              <a
+                href=""
+                className="first-time-flow__link create-password__import-link"
+                onClick={e => {
+                  e.preventDefault()
+                  history.push(INITIALIZE_IMPORT_WITH_SEED_PHRASE_ROUTE)
+                }}
+              >
+                Import with seed phrase
+              </a>
+              { /* }
+              <a
+                href=""
+                className="first-time-flow__link create-password__import-link"
+                onClick={e => {
+                  e.preventDefault()
+                  history.push(INITIALIZE_IMPORT_ACCOUNT_ROUTE)
+                }}
+              >
+                Import an account
+              </a>
+              { */ }
+            </div>
           </form>
         </div>
       </div>
