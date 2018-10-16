@@ -668,6 +668,9 @@
   "next": {
     "message": "Next"
   },
+  "add": {
+    "message": "Add"
+  },
   "noAddressForName": {
     "message": "No address has been set for this name."
   },

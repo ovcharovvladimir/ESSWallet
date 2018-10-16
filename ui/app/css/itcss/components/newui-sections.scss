@@ -123,6 +123,7 @@ $wallet-view-bg: $alabaster;
   }
   &__add-token-wrapper {
     display: flex;
+    flex: 0 0 auto;
     align-items: center;
     justify-content: space-between;
     padding: 15px 18px;

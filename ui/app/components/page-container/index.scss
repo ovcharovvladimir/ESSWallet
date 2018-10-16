@@ -1,17 +1,15 @@
 .page-container {
-  width: 408px;
+  width: 370px;
   background-color: $white;
-  box-shadow: 0 0 7px 0 rgba(0, 0, 0, .08);
   z-index: 25;
   display: flex;
   flex-flow: column;
-  border-radius: 8px;
+  border: 1px solid $background-accent-inefficient;
+  padding: 70px 30px;
 
   &__header {
     display: flex;
     flex-flow: column;
-    border-bottom: 1px solid $geyser;
-    padding: 16px;
     flex: 0 0 auto;
     position: relative;
 
@@ -45,8 +43,8 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
-    border-top: 1px solid $geyser;
     flex: 0 0 auto;
+    align-self: center;
 
     .btn-default,
     .btn-confirm {
@@ -79,10 +77,11 @@
   }
 
   &__footer-button {
-    height: 55px;
-    font-size: 1rem;
+    font-size: 13px;
     text-transform: uppercase;
-    margin-right: 16px;
+    padding: 13px 10px;
+    width: 100px;
+    min-width: 100%;
 
     &:last-of-type {
       margin-right: 0;
@@ -97,10 +96,12 @@
   }
 
   &__title {
-    color: $black;
-    font-size: 2rem;
+    color: $text-accent-saturated;
+    font-size: 24px;
+    font-family: 'AvenirNext-Medium';
     font-weight: 500;
-    line-height: 2rem;
+    line-height: 24px;
+    text-align: center;
   }
 
   &__subtitle {
@@ -112,27 +113,29 @@
 
   &__tabs {
     display: flex;
+    justify-content: space-between;
     margin-top: 16px;
   }
 
   &__tab {
+    flex: 1;
     min-width: 5rem;
     padding: 8px;
-    color: $dusty-gray;
-    font-family: Roboto;
-    font-size: 1rem;
+    color: $text-secondary-inefficient;
+    font-family: 'AvenirNext-Medium';
+    font-size: 16px;
     text-align: center;
     cursor: pointer;
     border-bottom: none;
-    margin-right: 16px;
+    text-transform: uppercase;
 
     &:last-of-type {
       margin-right: 0;
     }
 
     &--selected {
-      color: $curious-blue;
-      border-bottom: 2px solid $curious-blue;
+      color: $text-primary-saturated;
+      border-bottom: 2px solid $text-primary-saturated;
     }
   }
 

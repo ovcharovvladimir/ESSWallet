@@ -47,7 +47,7 @@ export default class ConfirmAddSuggestedToken extends Component {
             { this.context.t('likeToAddTokens') }
           </div>
         </div>
-        <div className="page-container__content">
+        <div className="page-container__content scroll">
           <div className="confirm-add-token">
             <div className="confirm-add-token__header">
               <div className="confirm-add-token__token">
