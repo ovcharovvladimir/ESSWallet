@@ -99,16 +99,9 @@
   min-height: 100vh;
 }
 
-.create-password {
+.create-password,
+.import-account {
   justify-content: space-between;
-  align-items: center;
-}
-
-.create-password__inner {
-  width: 100%;
-}
-.create-password__inner--center {
-  text-align: center;
 }
 
 .import-account {
@@ -268,6 +261,7 @@
 .create-password .first-time-flow__input,
 .import-account .first-time-flow__input {
   margin-top: 0;
+  width: 100%;
 }
 
 .create-password .first-time-flow__input:not(:last-child),
@@ -479,7 +473,6 @@
 .backup-phrase__confirm-secret,
 .import-account__secret-phrase {
   height: 190px;
-  width: 495px;
   border: 1px solid #CDCDCD;
   border-radius: 6px;
   background-color: #FFFFFF;
@@ -725,10 +718,6 @@
   flex-flow: column nowrap;
 }
 
-.first-time-flow__input {
-  max-width: 350px;
-}
-
 .first-time-flow__button {
   color: #FFFFFF;
   font-size: 20px;
@@ -736,7 +725,7 @@
   font-family: 'AvenirNext-Medium', sans-serif;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 35px;
+  margin-top: 33px;
   border-radius: 2px;
   margin-bottom: 0;
   font-size: 13px;

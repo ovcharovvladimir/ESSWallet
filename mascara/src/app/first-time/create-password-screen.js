@@ -130,7 +130,7 @@ class CreatePasswordScreen extends Component {
             </div>
           </div>}
           <form className="create-password">
-            <div className="create-password__inner">
+            <div>
               <div className="create-password__title">
                 Create Password
               </div>
@@ -162,7 +162,7 @@ class CreatePasswordScreen extends Component {
                 largeLabel
               />
             </div>
-            <div className="create-password__inner create-password__inner--center">
+            <div>
               <button
                 className="button first-time-flow__button"
                 disabled={!this.isValid()}
