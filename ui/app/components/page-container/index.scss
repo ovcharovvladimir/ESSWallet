@@ -1,17 +1,16 @@
 .page-container {
-  width: 408px;
+  width: 370px;
   background-color: $white;
-  box-shadow: 0 0 7px 0 rgba(0, 0, 0, .08);
   z-index: 25;
   display: flex;
   flex-flow: column;
-  border-radius: 8px;
+  border: 1px solid $background-accent-inefficient;
+  padding: 70px 30px 54px 30px;
+  border-radius: 4px;
 
   &__header {
     display: flex;
     flex-flow: column;
-    border-bottom: 1px solid $geyser;
-    padding: 16px;
     flex: 0 0 auto;
     position: relative;
 
@@ -21,18 +20,14 @@
   }
 
   &__header-close {
-    color: $tundora;
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: -45px;
+    right: 0;
     cursor: pointer;
-    overflow: hidden;
-
-    &::after {
-      content: '\00D7';
-      font-size: 40px;
-      line-height: 20px;
-    }
+    background: url('images/cancel.svg') no-repeat center;
+    width: 16px;
+    height: 16px;
+    z-index: 2;
   }
 
   &__header-row {
@@ -43,14 +38,14 @@
 
   &__footer {
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     justify-content: center;
-    border-top: 1px solid $geyser;
     flex: 0 0 auto;
+    align-self: center;
 
     .btn-default,
     .btn-confirm {
-      font-size: 1rem;
+      font-size: 13px;
     }
 
     header {
@@ -79,10 +74,11 @@
   }
 
   &__footer-button {
-    height: 55px;
-    font-size: 1rem;
+    font-size: 13px;
     text-transform: uppercase;
-    margin-right: 16px;
+    width: 100px;
+    height: 44px;
+    margin: 0 10px;
 
     &:last-of-type {
       margin-right: 0;
@@ -96,43 +92,52 @@
     font-weight: 400;
   }
 
+
   &__title {
-    color: $black;
-    font-size: 2rem;
+    color: $text-accent-saturated;
+    font-size: 24px;
+    font-family: 'AvenirNext-Medium';
     font-weight: 500;
-    line-height: 2rem;
+    line-height: 24px;
+    text-align: center;
   }
 
   &__subtitle {
-    padding-top: .5rem;
+    padding-top: 10px;
     line-height: initial;
-    font-size: .9rem;
-    color: $gray;
+    font-family: 'AvenirNext-Regular';
+    font-size: 14px;
+    text-align: center;
+    color: $text-secondary-inefficient;
   }
 
   &__tabs {
     display: flex;
+    justify-content: space-between;
+    align-self: center;
     margin-top: 16px;
+    width: 280px;
   }
 
   &__tab {
+    flex: 1;
     min-width: 5rem;
-    padding: 8px;
-    color: $dusty-gray;
-    font-family: Roboto;
-    font-size: 1rem;
+    padding: 9px 2px;
+    color: $text-secondary-inefficient;
+    font-family: 'AvenirNext-DemiBold';
+    font-size: 16px;
     text-align: center;
     cursor: pointer;
     border-bottom: none;
-    margin-right: 16px;
+    text-transform: uppercase;
 
     &:last-of-type {
       margin-right: 0;
     }
 
     &--selected {
-      color: $curious-blue;
-      border-bottom: 2px solid $curious-blue;
+      color: $text-primary-saturated;
+      border-bottom: 2px solid $text-primary-saturated;
     }
   }
 

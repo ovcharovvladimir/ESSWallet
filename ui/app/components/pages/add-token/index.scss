@@ -3,6 +3,11 @@
 .add-token {
   &__custom-token-form {
     padding: 8px 16px 16px;
+    font-family: 'AvenirNext-Medium';
+    
+    label {
+      font-family: 'AvenirNext-Medium';
+    }
 
     input[type="number"]::-webkit-inner-spin-button {
       -webkit-appearance: none;
@@ -16,7 +21,19 @@
   }
 
   &__search-token {
-    padding: 16px;
+    padding: 10px 13px;
+
+    input {
+      font-size: 13px;
+    }
+
+    img {
+      width: 13px;
+    }
+
+    .token-list-placeholder img {
+      width: auto;
+    }
   }
 
   &__token-list {

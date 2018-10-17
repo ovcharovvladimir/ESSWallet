@@ -303,7 +303,12 @@ class AddToken extends Component {
 
     return (
       <PageContainer
+        onClose={() => {
+          clearPendingTokens()
+          history.push(DEFAULT_ROUTE)
+        }}
         title={this.context.t('addTokens')}
+        subtitle={this.context.t('addTokensDescription')}
         tabsComponent={this.renderTabs()}
         onSubmit={() => this.handleNext()}
         disabled={this.hasError() || !this.hasSelected()}

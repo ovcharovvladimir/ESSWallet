@@ -58,7 +58,7 @@ export default class TokenSearch extends Component {
     return (
       <InputAdornment
         position="start"
-        style={{ marginRight: '12px' }}
+        style={{ marginRight: '0', order: '2' }}
       >
         <img src="images/search.svg" />
       </InputAdornment>
@@ -72,7 +72,7 @@ export default class TokenSearch extends Component {
     return (
       <TextField
         id="search-tokens"
-        placeholder={this.context.t('searchTokens')}
+        placeholder={this.context.t('searchToken')}
         type="text"
         value={searchQuery}
         onChange={e => this.handleSearch(e.target.value)}

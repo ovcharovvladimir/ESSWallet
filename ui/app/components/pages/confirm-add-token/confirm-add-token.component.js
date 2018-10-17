@@ -44,7 +44,7 @@ export default class ConfirmAddToken extends Component {
             { this.context.t('likeToAddTokens') }
           </div>
         </div>
-        <div className="page-container__content">
+        <div className="page-container__content scroll">
           <div className="confirm-add-token">
             <div className="confirm-add-token__header">
               <div className="confirm-add-token__token">
@@ -88,7 +88,6 @@ export default class ConfirmAddToken extends Component {
         <div className="page-container__footer">
           <Button
             type="default"
-            large
             className="page-container__footer-button"
             onClick={() => history.push(ADD_TOKEN_ROUTE)}
           >
@@ -96,7 +95,6 @@ export default class ConfirmAddToken extends Component {
           </Button>
           <Button
             type="primary"
-            large
             className="page-container__footer-button"
             onClick={() => {
               addTokens(pendingTokens)

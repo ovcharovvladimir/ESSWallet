@@ -43,7 +43,7 @@ async function runAddTokenFlowTest (assert, done) {
   assert.equal(addTokenTitle[0].textContent, 'Add Tokens', 'add token title is correct')
 
   // Cancel Add Token
-  const cancelAddTokenButton = await queryAsync($, 'button.btn-default.btn--large.page-container__footer-button')
+  const cancelAddTokenButton = await queryAsync($, 'button.page-container__footer-button')
   assert.ok(cancelAddTokenButton[0], 'cancel add token button present')
   cancelAddTokenButton.click()
 

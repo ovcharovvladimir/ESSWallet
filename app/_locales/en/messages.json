@@ -35,6 +35,9 @@
   "addTokens": {
     "message": "Add Tokens"
   },
+  "addTokensDescription": {
+    "message": "Add the tokens you've acquired using"
+  },
   "addSuggestedTokens": {
     "message": "Add Suggested Tokens"
   },
@@ -674,6 +677,9 @@
   "next": {
     "message": "Next"
   },
+  "add": {
+    "message": "Add"
+  },
   "noAddressForName": {
     "message": "No address has been set for this name."
   },
@@ -988,7 +994,10 @@
   "outgoing": {
     "message": "Outgoing"
   },
-  "searchTokens": {
+  "searchToken": {
+    "message": "Find Token"
+  },
+  "findTokens": {
     "message": "Search Tokens"
   },
   "selectAnAddress": {

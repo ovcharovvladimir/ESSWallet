@@ -9,7 +9,7 @@ export default class PageContainerContent extends Component {
 
   render () {
     return (
-      <div className="page-container__content">
+      <div className="page-container__content scroll">
         {this.props.children}
       </div>
     )

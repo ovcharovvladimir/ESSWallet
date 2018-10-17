@@ -21,8 +21,8 @@ export default class PageContainerFooter extends Component {
   render () {
     const {
       children,
-      onCancel,
-      cancelText,
+      // onCancel,
+      // cancelText,
       onSubmit,
       submitText,
       disabled,
@@ -33,23 +33,22 @@ export default class PageContainerFooter extends Component {
       <div className="page-container__footer">
 
         <header>
-          <Button
+          {/* <Button
             type="default"
             large
             className="page-container__footer-button"
             onClick={e => onCancel(e)}
           >
             { cancelText || this.context.t('cancel') }
-          </Button>
+          </Button> */}
 
           <Button
             type={submitButtonType || 'primary'}
-            large
             className="page-container__footer-button"
             disabled={disabled}
             onClick={e => onSubmit(e)}
           >
-            { submitText || this.context.t('next') }
+            { submitText || this.context.t('add') }
           </Button>
         </header>
 
