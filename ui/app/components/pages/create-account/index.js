@@ -41,26 +41,30 @@ class CreateAccountPage extends Component {
       }, [
         this.context.t('import'),
       ]),
-      h(
-        'div.new-account__tabs__tab',
-        {
-          className: classnames('new-account__tabs__tab', {
-            'new-account__tabs__selected': matchPath(location.pathname, {
-              path: CONNECT_HARDWARE_ROUTE,
-              exact: true,
-            }),
-          }),
-          onClick: () => history.push(CONNECT_HARDWARE_ROUTE),
-        },
-        this.context.t('connect')
-      ),
+      // h(
+      //   'div.new-account__tabs__tab',
+      //   {
+      //     className: classnames('new-account__tabs__tab', {
+      //       'new-account__tabs__selected': matchPath(location.pathname, {
+      //         path: CONNECT_HARDWARE_ROUTE,
+      //         exact: true,
+      //       }),
+      //     }),
+      //     onClick: () => history.push(CONNECT_HARDWARE_ROUTE),
+      //   },
+      //   this.context.t('connect')
+      // ),
     ])
   }
 
   render () {
     return h('div.new-account', {}, [
       h('div.new-account__header', [
-        h('div.new-account__title', this.context.t('newAccount')),
+
+        h('div.new-account__title', this.context.t('createAccount')),
+
+        h('div.new-account__description', this.context.t('createAccountDescription')),
+
         this.renderTabs(),
       ]),
       h('div.new-account__form', [

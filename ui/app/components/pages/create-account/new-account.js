@@ -34,27 +34,28 @@ class NewAccountCreateForm extends Component {
           value: newAccountName,
           placeholder: defaultAccountName,
           onChange: event => this.setState({ newAccountName: event.target.value }),
-        }, []),
+        },
+        []),
+      ]),
+
+      h('div.new-account-create-form__input-label-prepend', {}, [
+          this.context.t('accountNameMaxCharts'),
       ]),
 
       h('div.new-account-create-form__buttons', {}, [
 
         h(Button, {
-          type: 'default',
-          large: true,
-          className: 'new-account-create-form__button',
-          onClick: () => history.push(DEFAULT_ROUTE),
-        }, [this.context.t('cancel')]),
-
-        h(Button, {
           type: 'primary',
-          large: true,
-          className:'new-account-create-form__button',
+          className: 'new-account-create-form__button',
           onClick: () => {
             createAccount(newAccountName || defaultAccountName)
               .then(() => history.push(DEFAULT_ROUTE))
           },
         }, [this.context.t('create')]),
+
+        h('div.new-account__cancel-modal', {
+          onClick: () => history.push(DEFAULT_ROUTE),
+        }),
 
       ]),
 

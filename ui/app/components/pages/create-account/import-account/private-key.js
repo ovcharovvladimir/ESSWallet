@@ -43,7 +43,7 @@ function PrivateKeyImportView () {
 }
 
 PrivateKeyImportView.prototype.render = function () {
-  const { error, displayWarning } = this.props
+  const { error } = this.props
 
   return (
     h('div.new-account-import-form__private-key', [
@@ -63,21 +63,14 @@ PrivateKeyImportView.prototype.render = function () {
       h('div.new-account-import-form__buttons', {}, [
 
         h(Button, {
-          type: 'default',
-          large: true,
-          className: 'new-account-create-form__button',
-          onClick: () => {
-            displayWarning(null)
-            this.props.history.push(DEFAULT_ROUTE)
-          },
-        }, [this.context.t('cancel')]),
-
-        h(Button, {
           type: 'primary',
-          large: true,
           className: 'new-account-create-form__button',
           onClick: () => this.createNewKeychain(),
         }, [this.context.t('import')]),
+
+        h('div.new-account__cancel-modal', {
+          onClick: () => this.props.history.push(DEFAULT_ROUTE),
+        }),
 
       ]),
 

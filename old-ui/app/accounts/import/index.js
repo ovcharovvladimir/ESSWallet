@@ -75,7 +75,7 @@ AccountImportSubview.prototype.render = function () {
 
         h('style', `
           .has-value.Select--single > .Select-control .Select-value .Select-value-label, .Select-value-label {
-            color: rgb(174,174,174);
+            color: #46576e);
           }
         `),
 

@@ -12,7 +12,10 @@
     "message": "Account Details"
   },
   "accountName": {
-    "message": "Account Name"
+    "message": "Account name"
+  },
+  "accountNameMaxCharts": {
+    "message": "Maximum 20 characters"
   },
   "accountSelectionRequired": {
     "message": "You need to select an account!"
@@ -226,6 +229,9 @@
   },
   "createAccount": {
     "message": "Create Account"
+  },
+  "createAccountDescription": {
+    "message": "Сome up with a name for your account"
   },
   "createDen": {
     "message": "Create"
@@ -658,6 +664,9 @@
   "newAccount": {
     "message": "New Account"
   },
+  "createAccount": {
+    "message": "Create account"
+  },
   "newAccountNumberName": {
     "message": "Account $1",
     "description": "Default name of next account to be created on create account screen"
@@ -738,7 +747,7 @@
     "description": "in password creation process, the password is not long enough to be secure"
   },
   "pastePrivateKey": {
-    "message": "Paste your private key string here:",
+    "message": "Paste your private key string here",
     "description": "For importing an account from a private key"
   },
   "pasteSeed": {
