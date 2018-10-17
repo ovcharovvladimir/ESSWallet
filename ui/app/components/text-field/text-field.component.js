@@ -7,7 +7,7 @@ const inputLabelBase = {
   transform: 'none',
   transition: 'none',
   position: 'initial',
-  color: '#5b5b5b',
+  color: '#46576e',
 }
 
 const styles = {
@@ -43,14 +43,14 @@ const styles = {
     'label + &': {
       marginTop: '8px',
     },
-    border: '1px solid #d2d8dd',
-    height: '48px',
-    borderRadius: '4px',
-    padding: '0 16px',
+    border: '1px solid #eaeaea',
+    height: 'auto',
+    borderRadius: '3px',
+    padding: '3px 10px',
     display: 'flex',
     alignItems: 'center',
     '&$inputFocused': {
-      border: '1px solid #2f9ae0',
+      border: '1px solid #3167ff',
     },
   },
   largeInputLabel: {
@@ -59,7 +59,7 @@ const styles = {
   },
   inputLabel: {
     ...inputLabelBase,
-    fontSize: '.75rem',
+    fontSize: '13px',
   },
 }
 

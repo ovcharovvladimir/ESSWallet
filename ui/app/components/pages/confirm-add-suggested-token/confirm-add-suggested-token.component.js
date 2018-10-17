@@ -92,7 +92,6 @@ export default class ConfirmAddSuggestedToken extends Component {
         <div className="page-container__footer">
           <Button
             type="default"
-            large
             className="page-container__footer-button"
             onClick={() => {
               removeSuggestedTokens()
@@ -105,8 +104,8 @@ export default class ConfirmAddSuggestedToken extends Component {
           </Button>
           <Button
             type="primary"
-            large
-            className="page-container__footer-button"
+            className="footer-button
+            "
             onClick={() => {
               addToken(pendingToken)
                 .then(() => {

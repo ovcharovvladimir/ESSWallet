@@ -106,7 +106,7 @@ export default class PageContainer extends PureComponent {
           backButtonString={backButtonString}
           tabs={this.renderTabs()}
         />
-        <div className="page-container__content">
+        <div className="page-container__content scroll">
           { this.renderContent() }
         </div>
         <PageContainerFooter

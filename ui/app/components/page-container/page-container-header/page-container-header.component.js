@@ -4,6 +4,7 @@ import classnames from 'classnames'
 
 export default class PageContainerHeader extends Component {
   static propTypes = {
+    cancel: PropTypes.bool,
     title: PropTypes.string,
     subtitle: PropTypes.string,
     onClose: PropTypes.func,

@@ -35,6 +35,9 @@
   "addTokens": {
     "message": "Add Tokens"
   },
+  "addTokensDescription": {
+    "message": "Add the tokens you've acquired using"
+  },
   "addSuggestedTokens": {
     "message": "Add Suggested Tokens"
   },
@@ -982,7 +985,10 @@
   "outgoing": {
     "message": "Outgoing"
   },
-  "searchTokens": {
+  "searchToken": {
+    "message": "Find Token"
+  },
+  "findTokens": {
     "message": "Search Tokens"
   },
   "selectAnAddress": {

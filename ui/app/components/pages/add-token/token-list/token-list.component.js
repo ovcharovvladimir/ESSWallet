@@ -23,9 +23,9 @@ export default class InfoBox extends Component {
       ? <TokenListPlaceholder />
       : (
         <div className="token-list">
-          <div className="token-list__title">
+          {/* <div className="token-list__title">
             { this.context.t('searchResults') }
-          </div>
+          </div> */}
           <div className="token-list__tokens-container">
             {
               Array(6).fill(undefined)
@@ -47,7 +47,8 @@ export default class InfoBox extends Component {
                         style={{ backgroundImage: logo && `url(images/contract/${logo})` }}>
                       </div>
                       <div className="token-list__token-data">
-                        <span className="token-list__token-name">{ `${name} (${symbol})` }</span>
+                        <span className="token-list__token-name">{ `${name}` }</span>
+                        <span className="token-list__token-name-sumbol">{ `${symbol}` }</span>
                       </div>
                     </div>
                   )
