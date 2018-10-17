@@ -113,65 +113,69 @@ class ImportSeedPhraseScreen extends Component {
       <div className="first-view-main-wrapper">
         <div className="first-view-main">
           <div className="import-account">
-            <a
-              className="import-account__back-button"
-              onClick={e => {
-                e.preventDefault()
-                this.props.history.goBack()
-              }}
-              href="#"
-            >
-              {`< Back`}
-            </a>
-            <div className="import-account__title">
-              Import an Account with Seed Phrase
-            </div>
-            <div className="import-account__selector-label">
-              Enter your secret twelve word phrase here to restore your vault.
-            </div>
-            <div className="import-account__input-wrapper">
-              <label className="import-account__input-label">Wallet Seed</label>
-              <textarea
-                className="import-account__secret-phrase"
-                onChange={e => this.handleSeedPhraseChange(e.target.value)}
-                value={this.state.seedPhrase}
-                placeholder="Separate each word with a single space"
+            <div>
+              <a
+                className="import-account__back-button"
+                onClick={e => {
+                  e.preventDefault()
+                  this.props.history.goBack()
+                }}
+                href="#"
+              >
+                {`< Back`}
+              </a>
+              <div className="import-account__title">
+                Import an Account with Seed Phrase
+              </div>
+              <div className="import-account__selector-label">
+                Enter your secret twelve word phrase here to restore your vault.
+              </div>
+              <div className="import-account__input-wrapper">
+                <label className="import-account__input-label">Wallet Seed</label>
+                <textarea
+                  className="import-account__secret-phrase"
+                  onChange={e => this.handleSeedPhraseChange(e.target.value)}
+                  value={this.state.seedPhrase}
+                  placeholder="Separate each word with a single space"
+                />
+              </div>
+              <span className="error">
+                { seedPhraseError }
+              </span>
+              <TextField
+                id="password"
+                label={t('newPassword')}
+                type="password"
+                className="first-time-flow__input"
+                value={this.state.password}
+                onChange={event => this.handlePasswordChange(event.target.value)}
+                error={passwordError}
+                autoComplete="new-password"
+                margin="normal"
+                largeLabel
+              />
+              <TextField
+                id="confirm-password"
+                label={t('confirmPassword')}
+                type="password"
+                className="first-time-flow__input"
+                value={this.state.confirmPassword}
+                onChange={event => this.handleConfirmPasswordChange(event.target.value)}
+                error={confirmPasswordError}
+                autoComplete="confirm-password"
+                margin="normal"
+                largeLabel
               />
             </div>
-            <span className="error">
-              { seedPhraseError }
-            </span>
-            <TextField
-              id="password"
-              label={t('newPassword')}
-              type="password"
-              className="first-time-flow__input"
-              value={this.state.password}
-              onChange={event => this.handlePasswordChange(event.target.value)}
-              error={passwordError}
-              autoComplete="new-password"
-              margin="normal"
-              largeLabel
-            />
-            <TextField
-              id="confirm-password"
-              label={t('confirmPassword')}
-              type="password"
-              className="first-time-flow__input"
-              value={this.state.confirmPassword}
-              onChange={event => this.handleConfirmPasswordChange(event.target.value)}
-              error={confirmPasswordError}
-              autoComplete="confirm-password"
-              margin="normal"
-              largeLabel
-            />
-            <button
-              className="button first-time-flow__button"
-              onClick={() => !disabled && this.onClick()}
-              disabled={disabled}
-            >
-              Import
-            </button>
+            <div>
+              <button
+                className="button first-time-flow__button"
+                onClick={() => !disabled && this.onClick()}
+                disabled={disabled}
+              >
+                Import
+              </button>
+            </div>
           </div>
         </div>
       </div>
