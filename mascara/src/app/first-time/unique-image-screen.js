@@ -27,12 +27,11 @@ class UniqueImageScreen extends Component {
               You’ll see this image everytime you need to confirm a transaction.
             </div>
             <button
-              className="first-time-flow__button"
+              className="button first-time-flow__button"
               onClick={() => this.props.history.push(INITIALIZE_NOTICE_ROUTE)}
             >
               Next
             </button>
-            <Breadcrumbs total={3} currentIndex={1} />
           </div>
         </div>
       </div>

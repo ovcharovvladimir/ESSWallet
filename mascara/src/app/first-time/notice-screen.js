@@ -96,13 +96,12 @@ class NoticeScreen extends Component {
                     skipHtml
                   />
                   <button
-                    className="first-time-flow__button"
+                    className="button first-time-flow__button"
                     onClick={atBottom && this.acceptTerms}
                     disabled={!atBottom}
                   >
                     Accept
                   </button>
-                  <Breadcrumbs total={3} currentIndex={2} />
                 </div>
               </div>
             </div>

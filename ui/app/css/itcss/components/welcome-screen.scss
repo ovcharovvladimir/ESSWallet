@@ -9,6 +9,8 @@
   flex: 1 0 auto;
   padding: 70px 0;
   background: $white;
+  max-width: 575px;
+  width: 100%;
 
   @media screen and (max-width: 575px) {
     padding: 24px;
