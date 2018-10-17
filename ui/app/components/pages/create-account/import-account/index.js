@@ -37,21 +37,6 @@ AccountImportSubview.prototype.render = function () {
   return (
     h('div.new-account-import-form', [
 
-      h('.new-account-import-disclaimer', [
-        h('span', this.context.t('importAccountMsg')),
-        h('span', {
-          style: {
-            cursor: 'pointer',
-            textDecoration: 'underline',
-          },
-          onClick: () => {
-            global.platform.openWindow({
-              url: 'https://consensys.zendesk.com/hc/en-us/articles/360004180111-What-are-imported-accounts-New-UI',
-            })
-          },
-        }, this.context.t('here')),
-      ]),
-
       h('div.new-account-import-form__select-section', [
 
         h('div.new-account-import-form__select-label', this.context.t('selectType')),
