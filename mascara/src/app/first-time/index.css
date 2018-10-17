@@ -56,18 +56,13 @@
 .first-view-main,
 .first-view-main__mascara {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
 }
 
 .first-view-main__mascara {
   justify-content: space-between;
-}
-
-@media screen and (min-width: 1281px) {
-  .first-view-main {
-    width: 62vw;
-  }
 }
 
 .mascara-info {
@@ -99,11 +94,6 @@
   min-height: 100vh;
 }
 
-.create-password,
-.import-account {
-  justify-content: space-between;
-}
-
 .import-account {
   max-width: initial;
 }
@@ -116,19 +106,16 @@
   .import-account,
   .buy-ether {
     padding: 24px;
-    display: flex;
-    flex-flow: column nowrap;
   }
 
-  .create-password__title,
-  .unique-image__title,
-  .tou__title,
-  .backup-phrase__title,
-  .import-account__title,
-  .buy-ether__title,
-  .tou__title,
-  .backup-phrase__title {
-    width: initial !important;
+  .first-time-flow__button {
+    margin-top: 33px;
+  }
+
+  .create-password,
+  .import-account,
+  .backup-phrase {
+    justify-content: space-between;
   }
 
   .alpha-warning,
@@ -171,24 +158,6 @@
     height: 30vh !important;
   }
 
-  .backup-phrase__content-wrapper {
-    flex-flow: column nowrap;
-  }
-
-  .backup-phrase__body-text {
-    width: initial !important;
-  }
-
-  .backup-phrase__secret {
-    width: initial !important;
-    padding: 12px !important;
-  }
-
-  .backup-phrase__secret-words {
-    font-size: 16px;
-    line-height: 22px;
-  }
-
   .backup-phrase__tips {
     margin: 40px 0 !important;
     width: initial !important;
@@ -199,10 +168,6 @@
     width: initial !important;
     height: initial !important;
     min-height: 190px;
-  }
-
-  .backup-phrase__confirm-seed-options {
-    width: initial !important;
   }
 }
 
@@ -225,8 +190,9 @@
   color: #46576e;
 }
 
-.create-password__title {
-  padding-top: 125px;
+.create-password__title,
+.backup-phrase__title {
+  padding-top: 105px;
 }
 
 .create-password label,
@@ -274,24 +240,11 @@
   margin-bottom: 10px;
 }
 
-.tou__title,
-.backup-phrase__title {
-  width: 480px;
-}
-
 .create-password__confirm-input {
   margin-top: 16px;
 }
 
-.unique-image__title,
-.tou__title,
-.backup-phrase__title,
-.buy-ether__title {
-  margin-top: 24px;
-}
-
 .unique-image__body-text,
-.backup-phrase__body-text,
 .buy-ether__body-text {
   color: #1B344D;
   font-size: 16px;
@@ -318,11 +271,7 @@
 }
 
 .unique-image__body-text +
-.unique-image__body-text,
-.backup-phrase__body-text +
-.backup-phrase__body-text,
-.backup-phrase__tips-text +
-.backup-phrase__tips-text {
+.unique-image__body-text {
   margin-top: 24px;
 }
 
@@ -343,86 +292,31 @@
 
 .backup-phrase__content-wrapper {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
   justify-content: space-between;
-}
-
-.backup-phrase__phrase {
-  flex-grow: .5;
-  min-width: 0;
-}
-
-.backup-phrase__next-button {
-  flex-grow: 1;
-  width: 100%;
-}
-
-.backup-phrase__body-text {
-  width: 450px;
-}
-
-.backup-phrase__tips {
-  margin-top: 40px;
-  width: 285px;
-  flex-grow: .5;
-  min-width: 0;
-}
-
-.backup-phrase__tips-text {
-  color: #5B5D67;
-  font-size: 16px;
-  line-height: 23px;
-  font-family: 'AvenirNext-Regular', sans-serif;
-  min-width: 0;
-}
-
-.backup-phrase__tips-text--link {
-  color: #2f9ae0;
-  cursor: pointer;
-}
-
-.backup-phrase__tips-text--link:hover {
-  color: #2f9ae0;
-}
-
-.backup-phrase__tips-text--strong {
-  font-weight: bold;
-}
-
-@media only screen and (max-width: 768px) {
-  .backup-phrase__content-wrapper {
-    flex-direction: column;
-  }
-
-  .backup-phrase__phrase {
-    flex: 1 0 auto;
-  }
-
-  .backup-phrase__tips {
-    width: 100%;
-    flex: 1 0 auto;
-  }
 }
 
 .backup-phrase__secret {
   position: relative;
   display: flex;
   justify-content: center;
-  width: 349px;
   border: 1px solid #CDCDCD;
   border-radius: 6px;
   background-color: #FFFFFF;
-  padding: 20px 0;
-  margin-top: 36px;
+  padding: 25px 15px;
+  margin-top: 33px;
 }
 
 .backup-phrase__secret-words {
-  width: 310px;
-  color: #5B5D67;
+  max-width: 310px;
+  width: 100%;
   font-family: 'AvenirNext-Regular', sans-serif;
-  font-size: 20px;
   line-height: 26px;
   text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #46576e;
 }
 
 .backup-phrase__secret-words--hidden {
@@ -455,19 +349,22 @@
   text-align: center;
   text-transform: uppercase;
   margin-top: 10px;
+  padding: 0px 3px 1px;
 }
 
 .import-account__back-button {
+  display: inline-block;
   margin-bottom: 10px;
+}
+
+.backup-phrase__back-button,
+.import-account__back-button {
+  color: #46576e;
 }
 
 .backup-phrase__back-button:hover,
 .import-account__back-button:hover {
-  color: #22232c;
-}
-
-.backup-phrase__back-button {
-  top: -30px;
+  color: #46576e;
 }
 
 .backup-phrase__confirm-secret,
@@ -493,9 +390,7 @@
 .backup-phrase__confirm-seed-options {
   display: flex;
   flex-flow: row wrap;
-  width: 465px;
   position: relative;
-  left: -7px;
 }
 
 .backup-phrase__confirm-seed-option {
@@ -521,9 +416,13 @@
   font-family: 'AvenirNext-Regular', sans-serif;
 }
 
-.import-account__selector-label {
-  color: #1B344D;
-  font-size: 16px;
+.import-account__selector-label,
+.backup-phrase__body-text {
+  font-family: 'AvenirNext-Regular', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.43;
+  color: #90a1b8;
 }
 
 .import-account__dropdown {
@@ -555,6 +454,7 @@
   display: flex;
   flex-flow: column nowrap;
   margin-top: 30px;
+  margin-bottom: 12px;
 }
 
 .import-account__input-error-message {
@@ -725,7 +625,7 @@
   font-family: 'AvenirNext-Medium', sans-serif;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 33px;
+  margin-top: 50px;
   border-radius: 2px;
   margin-bottom: 0;
   font-size: 13px;
