@@ -73,7 +73,7 @@ class ConfirmSeedScreen extends Component {
                     <div className="backup-phrase__body-text">
                       Please select each phrase in order to make sure it is correct.
                     </div>
-                    <div className="backup-phrase__confirm-secret">
+                    <div className="backup-phrase__confirm-secret scroll">
                       {selectedSeeds.map(([_, word], i) => (
                         <button
                           key={i}
