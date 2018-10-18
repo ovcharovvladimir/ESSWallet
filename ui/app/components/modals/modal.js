@@ -122,7 +122,7 @@ const MODALS = {
       display: 'flex',
     },
     laptopModalStyle: {
-      width: '850px',
+      width: '370px',
       top: 'calc(10% + 10px)',
       left: '0',
       right: '0',
