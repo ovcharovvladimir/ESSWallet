@@ -81,26 +81,16 @@ export default class UnlockPage extends Component {
   }
 
   renderSubmitButton () {
-    const style = {
-      backgroundColor: '#f7861c',
-      color: 'white',
-      marginTop: '20px',
-      height: '60px',
-      fontWeight: '400',
-      boxShadow: 'none',
-      borderRadius: '4px',
-    }
-
     return (
       <Button
         type="submit"
-        style={style}
         disabled={!this.state.password}
         fullWidth
         variant="raised"
         size="large"
         onClick={event => this.handleSubmit(event)}
         disableRipple
+        className="button unlock-page__button"
       >
         { this.context.t('login') }
       </Button>
@@ -113,64 +103,58 @@ export default class UnlockPage extends Component {
     const { markPasswordForgotten, history } = this.props
 
     return (
-      <div className="unlock-page__container">
-        <div className="unlock-page">
-          <div className="unlock-page__mascot-container">
-            <Mascot
-              animationEventEmitter={this.animationEventEmitter}
-              width="120"
-              height="120"
-            />
-          </div>
-          <h1 className="unlock-page__title">
-            { t('welcomeBack') }
-          </h1>
-          <div>{ t('unlockMessage') }</div>
-          <form
-            className="unlock-page__form"
-            onSubmit={event => this.handleSubmit(event)}
+      <div className="unlock-page">
+        <div className="unlock-page__logo"></div>
+        <h1 className="unlock-page__title">
+          { t('welcomeBack') }
+        </h1>
+        <div className="unlock-page__desc">
+          { t('unlockMessage') }
+        </div>
+        <form
+          className="unlock-page__form"
+          onSubmit={event => this.handleSubmit(event)}
+        >
+          <TextField
+            id="password"
+            label={t('password')}
+            type="password"
+            value={password}
+            onChange={event => this.handleInputChange(event)}
+            error={error}
+            autoFocus
+            autoComplete="current-password"
+            material
+            fullWidth
+          />
+        </form>
+        { this.renderSubmitButton() }
+        <div className="unlock-page__links">
+          <div
+            className="unlock-page__link"
+            onClick={() => {
+              markPasswordForgotten()
+              history.push(RESTORE_VAULT_ROUTE)
+
+              if (getEnvironmentType(window.location.href) === ENVIRONMENT_TYPE_POPUP) {
+                global.platform.openExtensionInBrowser()
+              }
+            }}
           >
-            <TextField
-              id="password"
-              label={t('password')}
-              type="password"
-              value={password}
-              onChange={event => this.handleInputChange(event)}
-              error={error}
-              autoFocus
-              autoComplete="current-password"
-              material
-              fullWidth
-            />
-          </form>
-          { this.renderSubmitButton() }
-          <div className="unlock-page__links">
-            <div
-              className="unlock-page__link"
-              onClick={() => {
-                markPasswordForgotten()
-                history.push(RESTORE_VAULT_ROUTE)
+            { t('restoreFromSeed') }
+          </div>
+          <div
+            className="unlock-page__link unlock-page__link--import"
+            onClick={() => {
+              markPasswordForgotten()
+              history.push(RESTORE_VAULT_ROUTE)
 
-                if (getEnvironmentType(window.location.href) === ENVIRONMENT_TYPE_POPUP) {
-                  global.platform.openExtensionInBrowser()
-                }
-              }}
-            >
-              { t('restoreFromSeed') }
-            </div>
-            <div
-              className="unlock-page__link unlock-page__link--import"
-              onClick={() => {
-                markPasswordForgotten()
-                history.push(RESTORE_VAULT_ROUTE)
-
-                if (getEnvironmentType(window.location.href) === ENVIRONMENT_TYPE_POPUP) {
-                  global.platform.openExtensionInBrowser()
-                }
-              }}
-            >
-              { t('importUsingSeed') }
-            </div>
+              if (getEnvironmentType(window.location.href) === ENVIRONMENT_TYPE_POPUP) {
+                global.platform.openExtensionInBrowser()
+              }
+            }}
+          >
+            { t('importUsingSeed') }
           </div>
         </div>
       </div>

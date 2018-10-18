@@ -1,36 +1,51 @@
 .unlock-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 357px;
-  padding: 30px;
-  font-weight: 400;
-  color: $silver-chalice;
+  max-width: 575px;
+  width: 100%;
+  padding: 70px 24px;
 
-  &__container {
-    background: $white;
-    display: flex;
-    align-self: stretch;
-    justify-content: center;
-    flex: 1 0 auto;
-    height: 100vh;
-  }
-
-  &__mascot-container {
-    margin-top: 24px;
+  &__logo {
+    width: 88px;
+    height: 92px;
+    margin: 0 auto 90px;
+    background: url("./images/logo/big-logo.svg");
+    background-size: cover;
+    background-position: center;
   }
 
   &__title {
-    margin-top: 5px;
-    font-size: 2rem;
-    font-weight: 800;
+    margin-bottom: 8px;
+    font-family: 'AvenirNext-Medium', sans-serif;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: normal;
+    letter-spacing: -1.1px;
+    color: $text-accent-saturated;
+  }
+
+  &__desc {
+    margin-bottom: 45px;
+    font-family: 'AvenirNext-Regular';
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
     color: $tundora;
   }
 
   &__form {
     width: 100%;
-    margin: 56px 0 8px;
+    margin-bottom: 62px;
+
+    label + div {
+      &:before {
+        border-bottom: 1px solid #eaeaea !important;
+      }
+      &:hover {
+        &:before {
+          border-bottom: 2px solid #eaeaea !important;
+        }
+      }
+    }
   }
 
   &__links {
@@ -39,14 +54,37 @@
   }
 
   &__link {
+    color: $tundora;
     cursor: pointer;
 
     &--import {
-      color: $ecstasy;
+      color: $background-primary-saturated;
     }
 
     &--use-classic {
       margin-top: 10px;
+    }
+  }
+
+  &__button {
+    border-radius: 2px;
+    background-color: $background-primary-saturated !important;
+    color: #ffffff !important;
+    padding: 13px 24px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .unlock-page {
+    padding: 24px;
+
+    &__logo{
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+
+    &__form {
+      margin-bottom: 45px;
     }
   }
 }
