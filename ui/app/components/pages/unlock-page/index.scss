@@ -24,7 +24,7 @@
 
   &__desc {
     margin-bottom: 45px;
-    font-family: 'AvenirNext-Regular';
+    font-family: 'AvenirNext-Regular', sans-serif;
     font-size: 16px;
     font-weight: normal;
     line-height: 1.38;
@@ -55,6 +55,7 @@
 
   &__link {
     color: $tundora;
+    font-family: 'AvenirNext-Regular', sans-serif;
     cursor: pointer;
 
     &--import {
