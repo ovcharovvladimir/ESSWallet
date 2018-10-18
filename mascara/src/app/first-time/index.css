@@ -101,12 +101,10 @@
 .import-account,
 .buy-ether {
   position: relative;
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 60px 24px 30px;
-  min-height: 100vh;
+  padding: 70px 24px;
   max-width: 575px;
   width: 100%;
+  min-height: 100vh;
 }
 
 @media only screen and (max-width: 575px) {
@@ -116,6 +114,8 @@
   .backup-phrase,
   .import-account,
   .buy-ether {
+    display: flex;
+    flex-flow: column nowrap;
     padding: 24px;
   }
 
@@ -667,10 +667,6 @@
   margin-bottom: 0;
   font-size: 13px;
   line-height: 21px;
-}
-
-button.first-time-flow__button[disabled] {
-  opacity: 1;
 }
 
 .first-time-flow__button--tertiary {
