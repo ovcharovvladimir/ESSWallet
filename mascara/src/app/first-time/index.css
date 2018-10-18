@@ -81,6 +81,19 @@
   font-size: 19px;
 }
 
+.backup-phrase__next-button {
+  width: 100px;
+  align-self: center;
+}
+
+.backup-phrase .first-time-flow__button {
+  min-width: 100px;
+  width: 100px;
+  margin: 30px auto auto;
+  height: 44px;
+  font-family: 'NotoSans-Bold', sans-serif;
+}
+
 .create-password,
 .unique-image,
 .tou,
@@ -111,8 +124,7 @@
   }
 
   .create-password,
-  .import-account,
-  .backup-phrase {
+  .import-account {
     justify-content: space-between;
   }
 
@@ -176,9 +188,11 @@
   color: #46576e;
 }
 
-.create-password__title,
-.backup-phrase__title {
+.create-password__title {
   padding-top: 105px;
+}
+.backup-phrase__title  {
+  padding: 10px;
 }
 
 .create-password label,
@@ -361,6 +375,39 @@
   background-color: #FFFFFF;
   margin: 33px 0;
   padding: 12px;
+  overflow: auto;
+}
+
+.backup-phrase__confirm-secret::-webkit-scrollbar-track {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.backup-phrase__confirm-secret::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: transparent;
+  background-color: transparent;
+  transition: all .4s;
+}
+
+.backup-phrase__confirm-secret:hover::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.70);
+  background-color: #7f7f7f;
+  transition: all .4s;
+
+}
+.backup-phrase__confirm-secret::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  transition: all .4s;
+  background-color: transparent;
+}
+
+.backup-phrase__confirm-secret:hover::-webkit-scrollbar {
+  transition: all .4s;
+  background-color: transparent;
 }
 
 .import-account__secret-phrase {
