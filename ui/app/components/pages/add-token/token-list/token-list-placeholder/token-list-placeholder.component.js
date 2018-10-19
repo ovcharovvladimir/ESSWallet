@@ -13,14 +13,7 @@ export default class TokenListPlaceholder extends Component {
         <div className="token-list-placeholder__text">
           { this.context.t('addAcquiredTokens') }
         </div>
-        <a
-          className="token-list-placeholder__link"
-          href="https://consensys.zendesk.com/hc/en-us/articles/360004135092"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          { this.context.t('learnMore') }
-        </a>
+
       </div>
     )
   }

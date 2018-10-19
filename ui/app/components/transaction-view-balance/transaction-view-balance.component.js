@@ -39,10 +39,10 @@ export default class TransactionViewBalance extends PureComponent {
             currency={ETH}
             numberOfDecimals={3}
           />
-          <CurrencyDisplay
+          {/* <CurrencyDisplay
             className="transaction-view-balance__secondary-balance"
             value={balance}
-          />
+          /> */}
         </div>
       )
   }
