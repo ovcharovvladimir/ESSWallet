@@ -40,16 +40,11 @@ export default class AccountListItem extends Component {
       onClick={() => handleClick({ name, address, balance })}
     >
 
+      {icon && <div className="account-list-item__icon">{ icon }</div>}
+
       <div className="account-list-item__top-row">
-        <Identicon
-          address={address}
-          className="account-list-item__identicon"
-          diameter={18}
-        />
 
         <div className="account-list-item__account-name">{ name || address }</div>
-
-        {icon && <div className="account-list-item__icon">{ icon }</div>}
 
       </div>
 

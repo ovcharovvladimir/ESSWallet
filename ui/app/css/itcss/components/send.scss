@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column nowrap;
   z-index: 25;
-  font-family: Roboto;
+  font-family: 'AvenirNext-Regular', sans-serif;
 
   @media screen and (max-width: $break-small) {
     width: 100%;
@@ -49,7 +49,7 @@
   border-radius: 50%;
   width: 70px;
   height: 70px;
-  border: 1px solid $alto;
+  border: 1px solid $tundora;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2);
   position: absolute;
   top: -35px;
@@ -77,7 +77,7 @@
     margin: 4px 0 20px;
     font-size: 16px;
     line-height: 22.4px;
-    font-family: Roboto;
+    font-family: 'AvenirNext-Regular', sans-serif;
   }
 
   .send-screen-gas-input {
@@ -110,8 +110,7 @@
     position: absolute;
     bottom: 4px;
     font-size: 12px;
-    line-height: 12px;
-    left: 8px;
+    line-height: 1.2;
     color: $red;
   }
 }
@@ -182,12 +181,12 @@
   height: 307px;
   background-color: $white;
   opacity: 1;
-  box-shadow: $alto 0 0 5px;
+  box-shadow: $tundora 0 0 5px;
   z-index: 1050;
   padding: 13px 19px;
   font-size: 16px;
   border-radius: 4px;
-  font-family: "Lato";
+  font-family: 'AvenirNext-Medium', sans-serif;
   font-weight: 500;
 }
 
@@ -200,7 +199,7 @@
   transform: rotate(45deg);
   left: 107px;
   top: 294px;
-  box-shadow: 2px 2px 2px $alto;
+  box-shadow: 2px 2px 2px $tundora;
 }
 
 .customize-gas-tooltip-container input[type="number"]::-webkit-inner-spin-button {
@@ -243,9 +242,9 @@
 .customize-gas-input {
   width: 178px;
   height: 28px;
-  border: 1px solid $alto;
+  border: 1px solid $tundora;
   font-size: 16px;
-  color: $nile-blue;
+  color: $text-accent-saturated;
   padding-left: 8px;
 }
 
@@ -317,7 +316,7 @@
   display: flex;
   flex-flow: column nowrap;
   z-index: 25;
-  font-family: Roboto;
+  font-family: 'AvenirNext-Regular', sans-serif;
 
   &__content {
     width: 498px;
@@ -410,7 +409,7 @@
     flex-flow: column nowrap;
     z-index: 25;
     align-items: center;
-    font-family: Roboto;
+    font-family: 'AvenirNext-Regular', sans-serif;
     position: relative;
 
     @media screen and (max-width: $break-small) {
@@ -434,7 +433,7 @@
     border-radius: 50%;
     width: 48px;
     height: 48px;
-    border: 1px solid $alto;
+    border: 1px solid $tundora;
     z-index: 25;
     padding: 4px;
     background-color: $white;
@@ -514,8 +513,9 @@
   }
 
   &__error {
+    font-family: 'AvenirNext-Regular', sans-serif;
     font-size: 12px;
-    line-height: 12px;
+    line-height: 1.2;
     left: 8px;
     color: $red;
   }
@@ -574,21 +574,22 @@
   }
 
   &__form-label {
-    color: $scorpion;
-    font-family: Roboto;
+    color: $text-accent-saturated;
+    font-family: 'AvenirNext-Regular', sans-serif;
     font-size: 16px;
     line-height: 22px;
     width: 88px;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   &__from-dropdown {
     height: 73px;
     width: 100%;
-    border: 1px solid $alto;
+    padding: 8px 25px 8px 10px;
+    border: 1px solid $tundora;
     border-radius: 4px;
     background-color: $white;
-    font-family: Roboto;
+    font-family: 'AvenirNext-Regular', sans-serif;
     line-height: 16px;
     font-size: 12px;
     color: $tundora;
@@ -606,15 +607,17 @@
     &__list {
       z-index: 1050;
       position: absolute;
-      height: 220px;
+      top: 100%;
+      right: 0;
+      left: 0;
+      max-height: 220px;
       width: 100%;
       border: 1px solid $geyser;
       border-radius: 4px;
       background-color: $white;
       box-shadow: 0 3px 6px 0 rgba(0 ,0 ,0 ,.11);
       margin-top: 11px;
-      margin-left: -1px;
-      overflow-y: scroll;
+      overflow-y: auto;
     }
   }
 
@@ -624,8 +627,9 @@
     &__down-caret {
       z-index: 1026;
       position: absolute;
-      top: 18px;
+      top: 50%;
       right: 12px;
+      margin-top: -9px;
     }
 
     &__qr-code {
@@ -643,7 +647,10 @@
     }
 
     &__input.with-qr {
-      padding-right: 65px;
+      padding-right: 25px;
+      &::placeholder {
+        color: $tundora;
+      }
     }
   }
 
@@ -653,12 +660,12 @@
       position: relative;
       height: 54px;
       width: 100%;
-      border: 1px solid $alto;
+      border: 1px solid $tundora;
       border-radius: 4px;
       background-color: $white;
       color: $tundora;
       padding: 10px;
-      font-family: Roboto;
+      font-family: 'AvenirNext-Regular', sans-serif;
       font-size: 16px;
       line-height: 21px;
     }
@@ -666,7 +673,7 @@
 
   &__amount-max {
     color: $curious-blue;
-    font-family: Roboto;
+    font-family: 'AvenirNext-Regular', sans-serif;
     font-size: 12px;
     left: 8px;
     border: none;
@@ -716,7 +723,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-top: 1px solid $alto;
+    border-top: 1px solid $tundora;
     background: $white;
     padding: 0 12px;
     flex-shrink: 0;
@@ -733,7 +740,7 @@
     border-radius: 4px;
     background-color: #FFFFFF;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14);
-    font-family: Roboto;
+    font-family: 'AvenirNext-Medium', sans-serif;
     display: flex;
     flex-flow: column;
 
@@ -745,6 +752,7 @@
     &__header {
       height: 52px;
       border-bottom: 1px solid $alto;
+      color: $text-accent-saturated;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -759,11 +767,14 @@
       margin-left: 19.25px;
     }
 
-    &__close::after {
-      content: '\00D7';
-      font-size: 1.8em;
-      color: $dusty-gray;
-      font-family: sans-serif;
+    &__close:after {
+      content: '';
+      display: inline-block;
+      background: url(images/cancel.svg) no-repeat center;
+      background-size: cover;
+      background-position: center;
+      width: 16px;
+      height: 16px;
       cursor: pointer;
       margin-right: 19.25px;
     }
@@ -776,7 +787,7 @@
 
     &__body {
       display: flex;
-      margin-bottom: 24px;
+      margin-bottom: 34px;
 
       @media screen and (max-width: $break-small) {
         flex-flow: column;
@@ -808,7 +819,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0 3px;
       cursor: pointer;
     }
 
@@ -831,7 +841,7 @@
     &__error-message {
       display: block;
       position: absolute;
-      top: -18px;
+      top: -22px;
       right: 0;
       font-size: 12px;
       line-height: 12px;
@@ -854,8 +864,8 @@
 
     &__title {
       height: 26px;
-      color: $tundora;
-      font-family: Roboto;
+      color: $text-accent-saturated;
+      font-family: 'AvenirNext-Regular', sans-serif;
       font-size: 20px;
       line-height: 26px;
       margin-top: 17px;
@@ -865,7 +875,7 @@
       height: 38px;
       width: 314px;
       color: $tundora;
-      font-family: Roboto;
+      font-family: 'AvenirNext-Regular', sans-serif;
       font-size: 14px;
       line-height: 19px;
       margin-top: 17px;
@@ -915,6 +925,30 @@
       display: none;
     }
   }
+
+  &__form--table {
+    display: table;
+    padding-top: 19px;
+
+    .send-v2 {
+      &__form-label,
+      &__form-field {
+        display: table-cell;
+        vertical-align: top;
+        padding: 6px;
+      }
+      &__form-label {
+        padding-top: 12px;
+        padding-left: 0;
+      }
+      &__form-field{
+        padding-right: 0;
+      }
+      &__form-row {
+        display: table-row;
+      }
+    }
+  }
 }
 
 .sliders-icon-container {
@@ -923,7 +957,7 @@
   justify-content: center;
   height: 24px;
   width: 24px;
-  border: 1px solid $curious-blue;
+  border: 1px solid $background-primary-saturated;
   border-radius: 4px;
   background-color: $white;
   position: absolute;
@@ -934,5 +968,5 @@
 }
 
 .sliders-icon {
-  color: $curious-blue;
+  color: $background-primary-saturated;
 }
