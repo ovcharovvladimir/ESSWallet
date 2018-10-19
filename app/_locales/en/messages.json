@@ -45,7 +45,7 @@
     "message": "Add Suggested Tokens"
   },
   "addAcquiredTokens": {
-    "message": "Add the tokens you've acquired using MetaMask"
+    "message": "Add the tokens you've acquired using Essentia Wallet"
   },
   "amount": {
     "message": "Amount"
@@ -1061,7 +1061,10 @@
     "message": "Buy with Shapeshift"
   },
   "showPrivateKeys": {
-    "message": "Show Private Keys"
+    "message": "Export Private key"
+  },
+  "showPrivateKeysDescription": {
+    "message": "Below your private key for export wallet to another application"
   },
   "showQRCode": {
     "message": "Show QR Code"

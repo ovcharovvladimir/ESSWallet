@@ -102,7 +102,6 @@ ExportPrivateKeyModal.prototype.renderButtons = function (privateKey, password, 
   return h('div.export-private-key-buttons', {}, [
     !privateKey && h(Button, {
       type: 'default',
-      large: true,
       className: 'export-private-key__button export-private-key__button--cancel',
       onClick: () => hideModal(),
     }, this.context.t('cancel')),
@@ -111,14 +110,12 @@ ExportPrivateKeyModal.prototype.renderButtons = function (privateKey, password, 
       ? (
           h(Button, {
           type: 'primary',
-          large: true,
           className: 'export-private-key__button',
           onClick: () => hideModal(),
         }, this.context.t('done'))
       ) : (
           h(Button, {
           type: 'primary',
-          large: true,
           className: 'export-private-key__button',
           onClick: () => this.exportAccountAndGetPrivateKey(this.state.password, address),
         }, this.context.t('confirm'))
@@ -149,17 +146,9 @@ ExportPrivateKeyModal.prototype.render = function () {
     backButtonAction: () => showAccountDetailModal(),
   }, [
 
-      h('span.account-name', name),
-
-      h(ReadOnlyInput, {
-        wrapperClass: 'ellip-address-wrapper',
-        inputClass: 'qr-ellip-address ellip-address',
-        value: checksumAddress(address),
-      }),
-
-      h('div.account-modal-divider'),
-
       h('span.modal-body-title', this.context.t('showPrivateKeys')),
+
+      h('span.modal-body-description', this.context.t('showPrivateKeysDescription')),
 
       h('div.private-key-password', {}, [
         this.renderPasswordLabel(privateKey),
