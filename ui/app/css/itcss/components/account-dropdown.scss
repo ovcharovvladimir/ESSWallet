@@ -1,5 +1,5 @@
 .account-dropdown-name {
-  font-family: Roboto;
+  font-family: 'AvenirNext-Regular', sans-serif;
 }
 
 .account-dropdown-balance {
@@ -9,7 +9,7 @@
 
 .account-dropdown-edit-button {
   color: $dusty-gray;
-  font-family: Roboto;
+  font-family: 'AvenirNext-Regular', sans-serif;
 
   &:hover {
     color: $white;
@@ -19,8 +19,6 @@
 .account-list-item {
   &__top-row {
     display: flex;
-    margin-top: 10px;
-    margin-left: 8px;
     position: relative;
   }
 
@@ -29,31 +27,29 @@
     border: none;
     background-color: transparent;
     color: #9b9b9b;
-    margin-left: 34px;
     margin-top: 4px;
     position: relative;
   }
 
   &__account-name {
     font-size: 16px;
-    margin-left: 8px;
   }
 
   &__icon {
     position: absolute;
     right: 12px;
-    top: 1px;
+    top: 50%;
+    margin-top: -9px;
   }
 
   &__account-primary-balance,
   &__account-secondary-balance {
-    font-family: Roboto;
-    line-height: 16px;
+    font-family: 'AvenirNext-Regular', sans-serif;
     font-size: 12px;
   }
 
   &__account-primary-balance {
-    color: $scorpion;
+    color: $text-accent-saturated;
     border: none;
     outline: 0 !important;
   }
@@ -63,13 +59,14 @@
   }
 
   &__account-address {
-    margin-left: 35px;
-    width: 80%;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   &__dropdown {
+    position: relative;
+    padding: 8px 10px;
+    color: $text-accent-saturated;
     &:hover {
       background: rgba($alto, .2);
       cursor: pointer;

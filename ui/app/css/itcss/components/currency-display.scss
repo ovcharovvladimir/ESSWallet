@@ -14,8 +14,8 @@
   }
 
   &__input {
-    color: $scorpion;
-    font-family: Roboto;
+    color: $text-accent-saturated;
+    font-family: 'AvenirNext-Regular', sans-serif;
     font-size: 16px;
     line-height: 22px;
     border: none;
@@ -67,8 +67,7 @@
   }
 
   &__currency-symbol {
-    margin-top: 1px;
-    color: $scorpion;
+    color: $tundora;
   }
 
   .react-numeric-input {

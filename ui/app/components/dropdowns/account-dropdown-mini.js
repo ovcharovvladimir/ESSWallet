@@ -72,4 +72,3 @@ AccountDropdownMini.prototype.render = function () {
   ])
 
 }
-
