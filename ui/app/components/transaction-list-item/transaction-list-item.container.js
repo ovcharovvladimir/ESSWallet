@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
   const { transaction: { txParams: { value, nonce, data } = {}, time } = {} } = ownProps
 
   const tokenData = data && getTokenData(data)
-  const nonceAndDate = nonce ? `#${hexToDecimal(nonce)} - ${formatDate(time)}` : formatDate(time)
+  // const nonceAndDate = nonce ? `#${hexToDecimal(nonce)} - ${formatDate(time)}` : formatDate(time)
+  const nonceAndDate = formatDate(time)
 
   return {
     value,

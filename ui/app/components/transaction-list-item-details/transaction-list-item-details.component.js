@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import SenderToRecipient from '../sender-to-recipient'
-import { CARDS_VARIANT } from '../sender-to-recipient/sender-to-recipient.constants'
+import { FIELDS_VARIANT } from '../sender-to-recipient/sender-to-recipient.constants'
 import TransactionActivityLog from '../transaction-activity-log'
 import TransactionBreakdown from '../transaction-breakdown'
 import Button from '../button'
@@ -50,56 +50,17 @@ export default class TransactionListItemDetails extends PureComponent {
 
     return (
       <div className="transaction-list-item-details">
-        <div className="transaction-list-item-details__header">
-          <div>Details</div>
-          <div className="transaction-list-item-details__header-buttons">
-            {
-              showRetry && (
-                <Button
-                  type="raised"
-                  onClick={this.handleRetry}
-                  className="transaction-list-item-details__header-button"
-                >
-                  { t('speedUp') }
-                </Button>
-              )
-            }
-            {
-              showCancel && (
-                <Button
-                  type="raised"
-                  onClick={this.handleCancel}
-                  className="transaction-list-item-details__header-button"
-                >
-                  { t('cancel') }
-                </Button>
-              )
-            }
-            <Button
-              type="raised"
-              onClick={this.handleEtherscanClick}
-              className="transaction-list-item-details__header-button"
-            >
-              <img src="/images/arrow-popout.svg" />
-            </Button>
-          </div>
+        <div className="transaction-list-item-details__col">
+          <TransactionBreakdown
+            transaction={transaction}
+          />
         </div>
-        <div className="transaction-list-item-details__sender-to-recipient-container">
+        <div className="transaction-list-item-details__col">
           <SenderToRecipient
-            variant={CARDS_VARIANT}
+            variant={FIELDS_VARIANT}
             addressOnly
             recipientAddress={to}
             senderAddress={from}
-          />
-        </div>
-        <div className="transaction-list-item-details__cards-container">
-          <TransactionBreakdown
-            transaction={transaction}
-            className="transaction-list-item-details__transaction-breakdown"
-          />
-          <TransactionActivityLog
-            transaction={transaction}
-            className="transaction-list-item-details__transaction-activity-log"
           />
         </div>
       </div>

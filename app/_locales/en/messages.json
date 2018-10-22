@@ -431,7 +431,7 @@
     "message": "Generating Seed..."
   },
   "gasPrice": {
-    "message": "Gas Price (GWEI)"
+    "message": "Gas Price"
   },
   "gasPriceCalculation": {
     "message": "We calculate the suggested gas prices based on network success rates."
@@ -491,7 +491,7 @@
     "message": "Hide Token?"
   },
   "history": {
-    "message": "History"
+    "message": "Transaction history"
   },
   "howToDeposit": {
     "message": "How would you like to deposit Ether?"

@@ -4,11 +4,12 @@ import classnames from 'classnames'
 import Identicon from '../identicon'
 import Tooltip from '../tooltip-v2'
 import copyToClipboard from 'copy-to-clipboard'
-import { DEFAULT_VARIANT, CARDS_VARIANT } from './sender-to-recipient.constants'
+import { DEFAULT_VARIANT, CARDS_VARIANT, FIELDS_VARIANT } from './sender-to-recipient.constants'
 
 const variantHash = {
   [DEFAULT_VARIANT]: 'sender-to-recipient--default',
   [CARDS_VARIANT]: 'sender-to-recipient--cards',
+  [FIELDS_VARIANT]: 'sender-to-recipient--fields',
 }
 
 export default class SenderToRecipient extends PureComponent {
@@ -18,7 +19,7 @@ export default class SenderToRecipient extends PureComponent {
     recipientName: PropTypes.string,
     recipientAddress: PropTypes.string,
     t: PropTypes.func,
-    variant: PropTypes.oneOf([DEFAULT_VARIANT, CARDS_VARIANT]),
+    variant: PropTypes.oneOf([DEFAULT_VARIANT, CARDS_VARIANT, FIELDS_VARIANT]),
     addressOnly: PropTypes.bool,
     assetImage: PropTypes.string,
   }
@@ -60,7 +61,14 @@ export default class SenderToRecipient extends PureComponent {
         onHidden={() => this.setState({ senderAddressCopied: false })}
       >
       <div className="sender-to-recipient__name">
-        { addressOnly ? `${t('from')}: ${senderAddress}` : senderName }
+        {
+          addressOnly
+            ? <span className="sender-to-recipient__pair">
+                <span className="sender-to-recipient__pair-key">{ t('from') }:</span>
+                <span className="sender-to-recipient__pair-val">{ senderAddress }</span>
+              </span>
+            : senderName
+        }
       </div>
     </Tooltip>
     )
@@ -103,7 +111,10 @@ export default class SenderToRecipient extends PureComponent {
           <div className="sender-to-recipient__name">
             {
               addressOnly
-                ? `${t('to')}: ${recipientAddress}`
+                ? <span className="sender-to-recipient__pair">
+                    <span className="sender-to-recipient__pair-key">{ t('to') }:</span>
+                    <span className="sender-to-recipient__pair-val">{ recipientAddress }</span>
+                  </span>
                 : (recipientName || this.context.t('newContract'))
             }
           </div>
