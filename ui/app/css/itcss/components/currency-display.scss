@@ -1,10 +1,9 @@
 .currency-display {
-  height: 54px;
+  // height: 54px;
   border: 1px solid $alto;
   border-radius: 4px;
   background-color: $white;
   color: $scorpion;
-  font-family: Roboto;
   font-size: 16px;
   padding: 8px 10px;
   position: relative;
@@ -41,6 +40,10 @@
     font-family: Roboto;
     font-size: 12px;
     line-height: 12px;
+  }
+
+  &__converted-value {
+    display: none;
   }
 
   &__input-wrapper {
