@@ -117,4 +117,39 @@
       }
     }
   }
+
+  &--fields {
+    .sender-to-recipient {
+
+      &__pair {
+        font-size: 14px;
+        display: flex;
+        margin-bottom: 7px;
+      }
+
+      &__pair-key {
+        margin-right: 12px;
+        font-family: 'AvenirNext-Regular', sans-serif;
+        font-weight: normal;
+        line-height: normal;
+        color: $text-secondary-inefficient;
+      }
+
+      &__pair-val {
+        font-family: 'AvenirNext-Medium';
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $text-accent-saturated;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      &__arrow-circle {
+        display: none;
+      }
+
+    }
+  }
 }

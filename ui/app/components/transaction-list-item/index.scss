@@ -1,78 +1,89 @@
 .transaction-list-item {
   box-sizing: border-box;
-  min-height: 74px;
-  border-bottom: 1px solid $geyser;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background: $white;
+  transition: all .2s linear;
+
+  &:not(:first-child) {
+    .transaction-list-item__grid {
+      border-top: 1px solid $background-accent-inefficient;
+    }
+  }
+
+  &.is-open {
+    .transaction-list-item__icon .fa {
+      transform: rotate(-180deg);
+      color: $text-primary-saturated;
+    }
+  }
 
   &__grid {
     cursor: pointer;
     width: 100%;
-    padding: 16px 20px;
+    padding: 14px 22px 14px 19px;
     display: grid;
-    grid-template-columns: 45px 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 28px;
     grid-template-areas:
-      "identicon action status primary-amount"
-      "identicon nonce status secondary-amount";
+      "nonce status primary-amount icon"
+      "action status primary-amount icon";
+    transition: all .2s linear;
 
     @media screen and (max-width: $break-small) {
-      padding: 8px 20px 12px;
-      grid-template-columns: 45px 5fr 3fr;
+      grid-template-columns: 5fr 3fr 28px;
       grid-template-areas:
-        "nonce nonce nonce"
-        "identicon action primary-amount"
-        "identicon status secondary-amount";
-    }
-
-    &:hover {
-      background: rgba($alto, .2);
-    }
-  }
-
-  &__identicon {
-    grid-area: identicon;
-    grid-row: 1 / span 2;
-    align-self: center;
-
-    @media screen and (max-width: $break-small) {
-      grid-row: 2 / span 2;
+        "nonce primary-amount icon"
+        "action primary-amount icon"
+        "status primary-amount icon";
     }
   }
 
   &__action {
     text-transform: capitalize;
-    padding: 0 8px 2px 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     grid-area: action;
     align-self: end;
+    font-family: 'AvenirNext-Medium', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    color: $text-accent-saturated;
+    padding: 4px 0;
+
+    @media screen and (min-width: $break-small) {
+      padding-right: 8px;
+    }
   }
 
   &__status {
     grid-area: status;
-    grid-row: 1 / span 2;
     align-self: center;
+    margin: 4px 0;
 
-    @media screen and (max-width: $break-small) {
-      grid-row: 3;
+    @media screen and (min-width: $break-small) {
+      margin-right: 5px;
     }
   }
 
   &__nonce {
-    font-size: .75rem;
-    color: #5e6064;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     grid-area: nonce;
     align-self: start;
+    padding: 4px 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: rgba(70, 87, 110, 0.54);
 
-    @media screen and (max-width: $break-small) {
-      padding-bottom: 4px;
+    @media screen and (min-width: $break-small) {
+      padding-right: 8px;
     }
   }
 
@@ -80,23 +91,16 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: 'AvenirNext-Bold', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    color: $text-accent-saturated;
+    align-self: center;
 
     &--primary {
       text-align: end;
       grid-area: primary-amount;
-      align-self: end;
-
-      @media screen and (max-width: $break-small) {
-        padding-bottom: 2px;
-      }
-    }
-
-    &--secondary {
-      text-align: end;
-      font-size: .75rem;
-      color: #5e6064;
-      grid-area: secondary-amount;
-      align-self: start;
     }
   }
 
@@ -114,8 +118,7 @@
   }
 
   &__details-container {
-    padding: 8px 16px 16px;
-    background: #f3f4f7;
+    padding: 14px 22px 18px 19px;
     width: 100%;
   }
 
@@ -126,6 +129,20 @@
     &--show {
       max-height: 1000px;
       transition: max-height 700ms ease-out;
+    }
+  }
+
+  &__icon {
+    grid-area: icon;
+    text-align: right;
+    font-size: 0;
+    align-self: center;
+    margin-top: -4px;
+
+    .fa {
+      font-size: 14px;
+      color: $text-secondary-inefficient;
+      transition: all .2s linear;
     }
   }
 }

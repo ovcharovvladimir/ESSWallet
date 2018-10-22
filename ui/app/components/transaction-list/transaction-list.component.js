@@ -66,13 +66,15 @@ export default class TransactionList extends PureComponent {
           <div className="transaction-list__header">
             { t('history') }
           </div>
+          <div>
           {
             completedTransactions.length > 0
-              ? completedTransactions.map((transaction, index) => (
-                  this.renderTransaction(transaction, index)
-                ))
-              : this.renderEmpty()
+            ? completedTransactions.map((transaction, index) => (
+                this.renderTransaction(transaction, index)
+              ))
+            : this.renderEmpty()
           }
+          </div>
         </div>
       </div>
     )
