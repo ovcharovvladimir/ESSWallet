@@ -148,7 +148,7 @@ DepositEtherModal.prototype.render = function () {
 
     ]),
 
-    h('.page-container__content scroll', {}, [
+    h('.page-container__content', {}, [
 
       h('div.deposit-ether-modal__buy-rows', [
 
