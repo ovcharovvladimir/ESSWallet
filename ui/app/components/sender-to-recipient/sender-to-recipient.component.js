@@ -4,10 +4,9 @@ import classnames from 'classnames'
 import Identicon from '../identicon'
 import Tooltip from '../tooltip-v2'
 import copyToClipboard from 'copy-to-clipboard'
-import { DEFAULT_VARIANT, CARDS_VARIANT } from './sender-to-recipient.constants'
+import { CARDS_VARIANT } from './sender-to-recipient.constants'
 
 const variantHash = {
-  [DEFAULT_VARIANT]: 'sender-to-recipient--default',
   [CARDS_VARIANT]: 'sender-to-recipient--cards',
 }
 
@@ -18,14 +17,11 @@ export default class SenderToRecipient extends PureComponent {
     recipientName: PropTypes.string,
     recipientAddress: PropTypes.string,
     t: PropTypes.func,
-    variant: PropTypes.oneOf([DEFAULT_VARIANT, CARDS_VARIANT]),
+    variant: PropTypes.oneOf([CARDS_VARIANT]),
     addressOnly: PropTypes.bool,
     assetImage: PropTypes.string,
   }
 
-  static defaultProps = {
-    variant: DEFAULT_VARIANT,
-  }
 
   static contextTypes = {
     t: PropTypes.func,
@@ -36,20 +32,8 @@ export default class SenderToRecipient extends PureComponent {
     recipientAddressCopied: false,
   }
 
-  renderSenderIdenticon () {
-    return !this.props.addressOnly && (
-      <div className="sender-to-recipient__sender-icon">
-        <Identicon
-          address={this.props.senderAddress}
-          diameter={24}
-        />
-      </div>
-    )
-  }
-
   renderSenderAddress () {
     const { t } = this.context
-    const { senderName, senderAddress, addressOnly } = this.props
 
     return (
       <Tooltip
@@ -59,30 +43,14 @@ export default class SenderToRecipient extends PureComponent {
         containerClassName="sender-to-recipient__tooltip-container"
         onHidden={() => this.setState({ senderAddressCopied: false })}
       >
-      <div className="sender-to-recipient__name">
-        { addressOnly ? `${t('from')}: ${senderAddress}` : senderName }
-      </div>
+
     </Tooltip>
-    )
-  }
-
-  renderRecipientIdenticon () {
-    const { recipientAddress, assetImage } = this.props
-
-    return !this.props.addressOnly && (
-      <div className="sender-to-recipient__sender-icon">
-        <Identicon
-          address={recipientAddress}
-          diameter={24}
-          image={assetImage}
-        />
-      </div>
     )
   }
 
   renderRecipientWithAddress () {
     const { t } = this.context
-    const { recipientName, recipientAddress, addressOnly } = this.props
+    const {recipientAddress} = this.props
 
     return (
       <div
@@ -92,7 +60,6 @@ export default class SenderToRecipient extends PureComponent {
           copyToClipboard(recipientAddress)
         }}
       >
-        { this.renderRecipientIdenticon() }
         <Tooltip
           position="bottom"
           title={this.state.recipientAddressCopied ? t('copiedExclamation') : t('copyAddress')}
@@ -100,13 +67,6 @@ export default class SenderToRecipient extends PureComponent {
           containerClassName="sender-to-recipient__tooltip-container"
           onHidden={() => this.setState({ recipientAddressCopied: false })}
         >
-          <div className="sender-to-recipient__name">
-            {
-              addressOnly
-                ? `${t('to')}: ${recipientAddress}`
-                : (recipientName || this.context.t('newContract'))
-            }
-          </div>
         </Tooltip>
       </div>
     )
@@ -146,21 +106,11 @@ export default class SenderToRecipient extends PureComponent {
   }
 
   render () {
-    const { senderAddress, recipientAddress, variant } = this.props
+    const { recipientAddress, variant } = this.props
 
     return (
       <div className={classnames(variantHash[variant])}>
-        <div
-          className={classnames('sender-to-recipient__party sender-to-recipient__party--sender')}
-          onClick={() => {
-            this.setState({ senderAddressCopied: true })
-            copyToClipboard(senderAddress)
-          }}
-        >
-          { this.renderSenderIdenticon() }
-          { this.renderSenderAddress() }
-        </div>
-        { this.renderArrow() }
+
         {
           recipientAddress
             ? this.renderRecipientWithAddress()

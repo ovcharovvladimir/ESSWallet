@@ -4,14 +4,12 @@ import classnames from 'classnames'
 import Identicon from '../../../identicon'
 
 const ConfirmPageContainerSummary = props => {
-  const { action, title, subtitle, hideSubtitle, className, identiconAddress, nonce, assetImage } = props
+  const { subtitle, hideSubtitle, className, identiconAddress, nonce, assetImage } = props
 
   return (
     <div className={classnames('confirm-page-container-summary', className)}>
       <div className="confirm-page-container-summary__action-row">
-        <div className="confirm-page-container-summary__action">
-          { action }
-        </div>
+
         {
           nonce && (
             <div className="confirm-page-container-summary__nonce">
