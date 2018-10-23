@@ -615,7 +615,7 @@
     "message": "seed words only have lowercase characters"
   },
   "mainnet": {
-    "message": "Essentia TestNet"
+    "message": "Essentia Main Network"
   },
   "menu": {
     "message": "Menu"
