@@ -296,7 +296,8 @@ const MODALS = {
       overflow: 'hidden'
     },
     laptopModalStyle: {
-      width: '720px',
+      maxWidth: '722px',
+      width: '100%',
       top: '80px',
       transform: 'none',
       left: '0',
@@ -317,15 +318,19 @@ const MODALS = {
       left: '0',
       right: '0',
       margin: '0 auto',
+      borderRadius: '4px',
+      overflow: 'hidden'
     },
     laptopModalStyle: {
-      width: '720px',
-      height: '377px',
+      maxWidth: '722px',
+      width: '100%',
       top: '80px',
       transform: 'none',
       left: '0',
       right: '0',
       margin: '0 auto',
+      borderRadius: '4px',
+      overflow: 'hidden'
     },
   },
 
