@@ -20,6 +20,9 @@ module.exports = function (address, network) {
       case 5678: // essentia test net
       link = `https://blockexplorer.essentia.network/account/${address}`
       break
+      case 4201: // essentia main net
+      link = `https://blockexplorer.essentia.network/account/${address}`
+      break
     default:
       link = ''
       break

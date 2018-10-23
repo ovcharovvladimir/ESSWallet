@@ -54,7 +54,7 @@ async function start () {
 
     console.log('useBetaCss', useBetaCss)
     // let css = NewMetaMaskUiCss()
-    let css = NewMetaMaskUiCss()
+    const css = NewMetaMaskUiCss()
     injectCss(css)
     // let deleteInjectedCss = injectCss(css)
     let newBetaUIState
@@ -62,9 +62,9 @@ async function start () {
     store.subscribe(() => {
       const state = store.getState()
       newBetaUIState = state.metamask.featureFlags.betaUI
-      console.log(11111, newBetaUIState, betaUIState)
+      // console.log(11111, newBetaUIState, betaUIState)
       if (newBetaUIState !== betaUIState) {
-        console.log(222222)
+       // console.log(222222)
         // deleteInjectedCss()
         // betaUIState = newBetaUIState
         // css = NewMetaMaskUiCss()

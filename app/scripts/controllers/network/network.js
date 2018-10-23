@@ -19,6 +19,7 @@ const {
   ROPSTEN,
   LOCALHOST,
   // ESSENTIA,
+  // ESSENTIAMAINNET,
 } = require('./enums')
 const INFURA_PROVIDER_TYPES = [ROPSTEN, RINKEBY, KOVAN, MAINNET]
 
@@ -27,7 +28,7 @@ const METAMASK_DEBUG = process.env.METAMASK_DEBUG
 const testMode = (METAMASK_DEBUG || env === 'test')
 
 const defaultProviderConfig = {
-  // type: testMode ? ESSENTIA : ESSENTIA,
+  // type: testMode ? ESSENTIAMAINNET : ESSENTIA,
   type: testMode ? MAINNET : ROPSTEN,
 }
 
@@ -90,9 +91,11 @@ module.exports = class NetworkController extends EventEmitter {
     if (!this._provider) {
       return log.warn('NetworkController - lookupNetwork aborted due to missing provider')
     }
+    console.log('11111111111')
     const ethQuery = new EthQuery(this._provider)
     ethQuery.sendAsync({ method: 'net_version' }, (err, network) => {
       if (err) return this.setNetworkState('loading')
+      console.log('web3.getNetwork returned ' + network)
       log.info('web3.getNetwork returned ' + network)
       this.setNetworkState(network)
     })
@@ -108,7 +111,7 @@ module.exports = class NetworkController extends EventEmitter {
 
   async setProviderType (type) {
     assert.notEqual(type, 'rpc', `NetworkController - cannot call "setProviderType" with type 'rpc'. use "setRpcTarget"`)
-    assert(INFURA_PROVIDER_TYPES.includes(type) || type === 'essentia', `NetworkController - Unknown rpc type "${type}"`)
+    assert(INFURA_PROVIDER_TYPES.includes(type) || type === 'essentia' || type === 'essentiaMainnet', `NetworkController - Unknown rpc type "${type}"`)
     const providerConfig = { type }
     this.providerConfig = providerConfig
   }
@@ -150,6 +153,8 @@ module.exports = class NetworkController extends EventEmitter {
       this._configureStandardProvider({ rpcUrl: rpcTarget })
     } else if (type === 'essentia') {
       this._configureStandardProvider({ rpcUrl: 'http://34.233.106.204:8545' })
+    } else if (type === 'essentiaMainnet') {
+      this._configureStandardProvider({ rpcUrl: 'http://18.224.247.56:8545' })
     } else {
       throw new Error(`NetworkController - _configureProvider - unknown type "${type}"`)
     }

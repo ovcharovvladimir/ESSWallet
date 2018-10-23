@@ -300,6 +300,8 @@ App.prototype.getNetworkName = function () {
     name = 'Main Ethereum Network'
   } else if (providerName === 'essentia') {
     name = 'Essentia Test Network'
+  } else if (providerName === 'essentiaMainnet') {
+    name = 'Main Essentia Network'
   } else if (providerName === 'kovan') {
     name = 'Kovan Test Network'
   } else if (providerName === 'rinkeby') {

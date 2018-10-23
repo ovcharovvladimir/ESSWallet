@@ -274,6 +274,20 @@ module.exports = class AppBar extends Component {
           : null,
       ]),
       h(DropdownMenuItem, {
+        key: 'essentiaMainnet',
+        closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+        onClick: () => dispatch(actions.setProviderType('essentiaMainnet')),
+        style: {
+          fontSize: '18px',
+        },
+      }, [
+        h('.menu-icon.red-dot'),
+        'Main Essentia Network',
+        providerType === 'essentiaMainnet'
+          ? h('.check', '✓')
+          : null,
+      ]),
+      h(DropdownMenuItem, {
         key: 'kovan',
         closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
         onClick: () => dispatch(actions.setProviderType('kovan')),

@@ -57,6 +57,12 @@ Network.prototype.render = function () {
   } else if (parseInt(networkNumber) === 5678) {
     hoverText = context.t('essentia')
     iconName = 'essentia-test-network'
+  } else if (providerName === 'essentiaMainnet') {
+    hoverText = context.t('essentiaMainnet')
+    iconName = 'essentia-main-network'
+  } else if (parseInt(networkNumber) === 4201) {
+    hoverText = context.t('essentiaMainnet')
+    iconName = 'essentia-main-network'
   } else if (providerName === 'kovan') {
     hoverText = context.t('kovan')
     iconName = 'kovan-test-network'
@@ -76,6 +82,7 @@ Network.prototype.render = function () {
         'kovan-test-network': providerName === 'kovan',
         'rinkeby-test-network': providerName === 'rinkeby',
         'essentia-test-network': providerName === 'essentia' || parseInt(networkNumber) === 5678,
+        'essentia-main-network': providerName === 'essentiaMainnet' || parseInt(networkNumber) === 4201,
       }),
       title: hoverText,
       onClick: (event) => {
@@ -102,6 +109,15 @@ Network.prototype.render = function () {
                 nonSelectBackgroundColor: '#ec2c50',
               }),
               h('.network-name', context.t('essentia')),
+              h('i.fa.fa-chevron-down.fa-lg.network-caret'),
+            ])
+            case 'essentia-main-network':
+            return h('.network-indicator', [
+              h(NetworkDropdownIcon, {
+                backgroundColor: '#e91550', // $crimson
+                nonSelectBackgroundColor: '#ec2c50',
+              }),
+              h('.network-name', context.t('essentiaMainnet')),
               h('i.fa.fa-chevron-down.fa-lg.network-caret'),
             ])
           case 'kovan-test-network':

@@ -130,6 +130,12 @@ class Settings extends Component {
         color = '#e91550'
         break
 
+        case 'essentiaMainnet':
+        title = this.context.t('currentNetwork')
+        value = this.context.t('essentiaMainnet')
+        color = '#e91550'
+        break
+
       case 'kovan':
         title = this.context.t('currentNetwork')
         value = this.context.t('kovan')

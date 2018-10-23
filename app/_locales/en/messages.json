@@ -615,7 +615,7 @@
     "message": "seed words only have lowercase characters"
   },
   "mainnet": {
-    "message": "Essentia Main Network"
+    "message": "Ethereum MainNet"
   },
   "menu": {
     "message": "Menu"
@@ -889,6 +889,9 @@
   "essentia": {
     "message": "Essentia Test Network"
   },
+  "essentiaMainnet": {
+    "message": "Essentia Main Network"
+  },
   "rpc": {
     "message": "Custom RPC"
   },
@@ -900,6 +903,9 @@
   },
   "connectingToEssentia": {
     "message": "Connecting to Essentia Test Network"
+  },
+  "connectingToEssentiaMainnet": {
+    "message": "Connecting to Essentia Main Network"
   },
   "connectingToKovan": {
     "message": "Connecting to Kovan Test Network"

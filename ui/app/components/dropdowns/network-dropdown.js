@@ -146,8 +146,27 @@ NetworkDropdown.prototype.render = function () {
           isSelected: providerType === 'essentia',
         }),
         h('span.network-name-item', {
-
         }, this.context.t('essentia')),
+      ]
+    ),
+
+    h(
+      DropdownMenuItem,
+      {
+        key: 'essentiaMainnet',
+        closeMenu: () => this.props.hideNetworkDropdown(),
+        onClick: () => props.setProviderType('essentiaMainnet'),
+        style: dropdownMenuItemStyle,
+      },
+      [
+        providerType === 'essentiaMainnet' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
+        h(NetworkDropdownIcon, {
+          backgroundColor: '#ff4a8d', // $wild-strawberry
+          isSelected: providerType === 'essentiaMainnet',
+        }),
+        h('span.network-name-item', {
+
+        }, this.context.t('kovan')),
       ]
     ),
 
@@ -167,7 +186,7 @@ NetworkDropdown.prototype.render = function () {
         }),
         h('span.network-name-item', {
 
-        }, this.context.t('kovan')),
+        }, this.context.t('rinkeby')),
       ]
     ),
 
@@ -184,25 +203,6 @@ NetworkDropdown.prototype.render = function () {
         h(NetworkDropdownIcon, {
           backgroundColor: '#f6c343', // $saffron
           isSelected: providerType === 'rinkeby',
-        }),
-        h('span.network-name-item', {
-
-        }, this.context.t('rinkeby')),
-      ]
-    ),
-    h(
-      DropdownMenuItem,
-      {
-        key: 'essentia',
-        closeMenu: () => this.props.hideNetworkDropdown(),
-        onClick: () => props.setProviderType('essentia'),
-        style: dropdownMenuItemStyle,
-      },
-      [
-        providerType === 'essentia' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
-        h(NetworkDropdownIcon, {
-          backgroundColor: '#f6c343', // $saffron
-          isSelected: providerType === 'essentia',
         }),
         h('span.network-name-item', {
 
@@ -225,7 +225,6 @@ NetworkDropdown.prototype.render = function () {
           innerBorder: '1px solid #46576e',
         }),
         h('span.network-name-item', {
-
         }, this.context.t('localhost')),
       ]
     ),
@@ -247,7 +246,6 @@ NetworkDropdown.prototype.render = function () {
           innerBorder: '1px solid #46576e',
         }),
         h('span.network-name-item', {
-
         }, this.context.t('customRPC')),
       ]
     ),
