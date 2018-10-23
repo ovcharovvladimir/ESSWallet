@@ -1,28 +1,24 @@
 .transaction-status {
   height: 26px;
-  width: 81px;
+  width: 79px;
   border-radius: 4px;
   background-color: #f0f0f0;
   color: #5e6064;
-  font-size: .625rem;
-  text-transform: uppercase;
   display: flex;
   justify-content: center;
-  align-items: center;
-
-  @media screen and (max-width: $break-small) {
-    height: 16px;
-    width: 70px;
-    font-size: .5rem;
-  }
+  font-family: 'AvenirNext-Regular', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 2;
+  text-align: center;
 
   &--confirmed {
-    background-color: #eafad7;
-    color: #609a1c;
+    background-color: #eefee9;
+    color: #23bc7b;
   }
 
   &--approved, &--submitted {
-    background-color: #FFF2DB;
-    color: #CA810A;
+    background-color: #fef6e9;
+    color: #f5a623;
   }
 }

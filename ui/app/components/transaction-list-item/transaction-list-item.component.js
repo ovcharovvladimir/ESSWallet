@@ -143,28 +143,24 @@ export default class TransactionListItem extends PureComponent {
       : txParams.to
 
     return (
-      <div className="transaction-list-item">
+      <div className={classnames('transaction-list-item', {
+            'is-open': showTransactionDetails,
+          })}>
         <div
           className="transaction-list-item__grid"
           onClick={this.handleClick}
         >
-          <Identicon
-            className="transaction-list-item__identicon"
-            address={toAddress}
-            diameter={34}
-            image={assetImages[toAddress]}
-          />
-          <TransactionAction
-            transaction={transaction}
-            methodData={methodData}
-            className="transaction-list-item__action"
-          />
           <div
             className="transaction-list-item__nonce"
             title={nonceAndDate}
           >
             { nonceAndDate }
           </div>
+          <TransactionAction
+            transaction={transaction}
+            methodData={methodData}
+            className="transaction-list-item__action"
+          />
           <TransactionStatus
             className="transaction-list-item__status"
             statusKey={transaction.status}
@@ -175,7 +171,11 @@ export default class TransactionListItem extends PureComponent {
             )}
           />
           { this.renderPrimaryCurrency() }
-          { this.renderSecondaryCurrency() }
+          <div
+            className="transaction-list-item__icon"
+            title="icon">
+            <span className="fa fa-chevron-down"></span>
+          </div>
         </div>
         <div className={classnames('transaction-list-item__expander', {
           'transaction-list-item__expander--show': showTransactionDetails,

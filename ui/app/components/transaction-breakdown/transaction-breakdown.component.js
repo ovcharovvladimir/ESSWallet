@@ -33,7 +33,7 @@ export default class TransactionBreakdown extends PureComponent {
     return (
       <div className={classnames('transaction-breakdown', className)}>
         <Card
-          title={t('transaction')}
+          overrideClassName
           className="transaction-breakdown__card"
         >
           <TransactionBreakdownRow title={t('amount')}>
@@ -44,7 +44,7 @@ export default class TransactionBreakdown extends PureComponent {
             />
           </TransactionBreakdownRow>
           <TransactionBreakdownRow
-            title={`${t('gasLimit')} (${t('units')})`}
+            title={`${t('gasLimit')}`}
             className="transaction-breakdown__row-title"
           >
             <HexToDecimal
@@ -68,10 +68,6 @@ export default class TransactionBreakdown extends PureComponent {
                 currency={ETH}
                 value={totalInHex}
                 numberOfDecimals={6}
-              />
-              <CurrencyDisplay
-                className="transaction-breakdown__value"
-                value={totalInHex}
               />
             </div>
           </TransactionBreakdownRow>

@@ -3,8 +3,8 @@
   flex-direction: column;
   flex: 1;
   overflow-y: hidden;
-  margin-top: 8px;
-  border-top: 1px solid $geyser;
+  margin-top: 10px;
+  border-top: 1px solid $background-accent-inefficient;
 
   &__completed-transactions {
     display: flex;
@@ -14,13 +14,16 @@
 
   &__header {
     flex: 0 0 auto;
-    font-size: .875rem;
-    color: $dusty-gray;
-    border-bottom: 1px solid $geyser;
-    padding: 8px 0 8px 20px;
+    padding: 21px 19px;
+    text-transform: uppercase;
+    font-family: 'AvenirNext-Bold', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: normal;
+    color: $text-secondary-inefficient;
 
     @media screen and (max-width: $break-small) {
-      padding: 8px 0 8px 16px;
+      padding: 10px 0 10px 16px;
     }
   }
 
