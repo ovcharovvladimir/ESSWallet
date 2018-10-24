@@ -11,7 +11,7 @@ class TabBar extends Component {
       h('.tab-bar', {}, [
         tabs.map(({ key, content }) => {
           return h('div', {
-            className: classnames('tab-bar__tab pointer', {
+            className: classnames('tab-bar__tab', {
               'tab-bar__tab--active': isActive(key, content),
             }),
             onClick: () => onSelect(key),

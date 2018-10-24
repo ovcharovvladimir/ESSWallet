@@ -127,7 +127,7 @@ export default class SettingsTab extends PureComponent {
           <span>{ t('newRPC') }</span>
         </div>
         <div className="settings-page__content-item">
-          <div className="settings-page__content-item-col">
+          <div className="settings-page__content-item-row">
             <TextField
               type="text"
               id="new-rpc"
@@ -143,7 +143,7 @@ export default class SettingsTab extends PureComponent {
               margin="none"
             />
             <div
-              className="settings-tab__rpc-save-button"
+              className="button btn-primary settings-tab__rpc-save-button"
               onClick={e => {
                 e.preventDefault()
                 this.validateRpc(newRpc)
@@ -218,10 +218,9 @@ export default class SettingsTab extends PureComponent {
           <span>{ t('revealSeedWords') }</span>
         </div>
         <div className="settings-page__content-item">
-          <div className="settings-page__content-item-col">
+          <div className="settings-page__content-item-row">
             <Button
-              type="secondary"
-              large
+              type="primary"
               onClick={event => {
                 event.preventDefault()
                 history.push(REVEAL_SEED_ROUTE)
@@ -345,15 +344,8 @@ export default class SettingsTab extends PureComponent {
     return (
       <div className="settings-page__content">
         { warning && <div className="settings-tab__error">{ warning }</div> }
-        { this.renderCurrentConversion() }
-        { this.renderCurrentLocale() }
         { this.renderNewRpcUrl() }
-        { this.renderStateLogs() }
         { this.renderSeedWords() }
-        { !isMascara && this.renderOldUI() }
-        { this.renderResetAccount() }
-        { this.renderBlockieOptIn() }
-        { this.renderHexDataOptIn() }
       </div>
     )
   }

@@ -15,7 +15,7 @@
 }
 
 .tab-bar__tab--active {
-  border-color: $black;
+  border-bottom: 2px solid $text-primary-saturated;
 }
 
 .tab-bar__grow-tab {

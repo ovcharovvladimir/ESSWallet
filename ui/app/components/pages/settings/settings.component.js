@@ -30,18 +30,12 @@ export default class SettingsPage extends PureComponent {
           <TabBar
             tabs={[
               { content: this.context.t('settings'), key: SETTINGS_ROUTE },
-              { content: this.context.t('info'), key: INFO_ROUTE },
             ]}
             isActive={key => matchPath(location.pathname, { path: key, exact: true })}
             onSelect={key => history.push(key)}
           />
         </div>
         <Switch>
-          <Route
-            exact
-            path={INFO_ROUTE}
-            component={InfoTab}
-          />
           <Route
             exact
             path={SETTINGS_ROUTE}
