@@ -43,7 +43,7 @@ function getProvider (type) {
     case 'ropsten':
       return 'https://ropsten.infura.io/'
     case 'essentia':
-    return 'http://34.233.106.204:8545/'
+    return 'http://18.217.38.48:8545/'
     case 'essentiaMainnet':
     return 'http://18.224.247.56:8545/'
     default:

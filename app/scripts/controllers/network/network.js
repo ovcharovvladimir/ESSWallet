@@ -18,8 +18,8 @@ const {
   MAINNET,
   ROPSTEN,
   LOCALHOST,
-  // ESSENTIA,
-  // ESSENTIAMAINNET,
+  ESSENTIA,
+  ESSENTIAMAINNET,
 } = require('./enums')
 const INFURA_PROVIDER_TYPES = [ROPSTEN, RINKEBY, KOVAN, MAINNET]
 
@@ -28,8 +28,8 @@ const METAMASK_DEBUG = process.env.METAMASK_DEBUG
 const testMode = (METAMASK_DEBUG || env === 'test')
 
 const defaultProviderConfig = {
-  // type: testMode ? ESSENTIAMAINNET : ESSENTIA,
-  type: testMode ? MAINNET : ROPSTEN,
+  type: testMode ? ESSENTIAMAINNET : ESSENTIA,
+  // type: testMode ? MAINNET : ROPSTEN,
 }
 
 module.exports = class NetworkController extends EventEmitter {
@@ -152,7 +152,7 @@ module.exports = class NetworkController extends EventEmitter {
     } else if (type === 'rpc') {
       this._configureStandardProvider({ rpcUrl: rpcTarget })
     } else if (type === 'essentia') {
-      this._configureStandardProvider({ rpcUrl: 'http://34.233.106.204:8545' })
+      this._configureStandardProvider({ rpcUrl: 'http://18.217.38.48:8545' })
     } else if (type === 'essentiaMainnet') {
       this._configureStandardProvider({ rpcUrl: 'http://18.224.247.56:8545' })
     } else {

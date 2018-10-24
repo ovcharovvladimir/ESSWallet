@@ -6,7 +6,7 @@ const LOCALHOST = 'localhost'
 const ESSENTIA = 'essentia'
 const ESSENTIAMAINNET = 'essentiaMainnet'
 const ROPSTEN = 'ropsten'
-const ESSENTIA_RPC_URL = 'http://34.233.106.204:8545'
+const ESSENTIA_RPC_URL = 'http://18.217.38.48:8545'
 const ESSENTIAMAINNET_RPC_URL = 'http://18.224.247.56:8545'
 
 const MAINNET_CODE = 1
