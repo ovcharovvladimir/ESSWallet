@@ -111,6 +111,10 @@ input.form-control {
   &--error {
     border: 1px solid $monzo;
   }
+
+  &:focus {
+    border: 1px solid $text-primary-saturated;
+  }
 }
 
 .hide-text-overflow {
