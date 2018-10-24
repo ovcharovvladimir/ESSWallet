@@ -64,7 +64,7 @@ export function getValueFromWeiHex ({
     fromNumericBase: 'hex',
     toNumericBase: 'dec',
     fromCurrency: 'ETH',
-    toCurrency,
+    toCurrency: 'ETH',
     numberOfDecimals,
     fromDenomination: 'WEI',
     toDenomination,

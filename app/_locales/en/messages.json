@@ -988,7 +988,7 @@
     "message": "Send Tokens"
   },
   "sentEther": {
-    "message": "sent ether"
+    "message": "sent ESS"
   },
   "sentTokens": {
     "message": "sent tokens"
