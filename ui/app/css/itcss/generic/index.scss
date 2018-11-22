@@ -155,3 +155,15 @@ input.form-control {
   background-color: transparent;
 }
 // !Scroll
+
+// form send
+.send-v2__gas-fee-display .is-amount-wrapper {
+  display: none;
+}
+.currency-display__currency-symbol {
+  display: none;
+}
+.send-v2__gas-fee-display .currency-display__currency-symbol {
+  display: block;
+}
+// !form send
