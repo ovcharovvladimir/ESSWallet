@@ -174,6 +174,7 @@ CurrencyDisplay.prototype.render = function () {
           step,
         }),
 
+        h('span.is-amount-wrapper', 'ESS'),
         h('span.currency-display__currency-symbol', primaryCurrency),
 
       ]),

@@ -268,7 +268,7 @@
     "message": "Decimals of Precision"
   },
   "defaultNetwork": {
-    "message": "The default network for Ether transactions is Main Net."
+    "message": "The default network for Essentia transactions is Main Net."
   },
   "deleteAccount": {
     "message": "Delete Account"
@@ -287,10 +287,10 @@
     "description": "Tells the user what coin they have selected to deposit with shapeshift"
   },
   "depositEth": {
-    "message": "Deposit Eth"
+    "message": "Deposit ESS"
   },
   "depositEther": {
-    "message": "Deposit Ether"
+    "message": "Deposit ESS"
   },
   "depositFiat": {
     "message": "Deposit with Fiat"
@@ -311,10 +311,10 @@
     "message": "Direct Deposit"
   },
   "directDepositEther": {
-    "message": "Directly Deposit Ether"
+    "message": "Directly Deposit ESS"
   },
   "directDepositEtherExplainer": {
-    "message": "If you already have some Ether, the quickest way to get Ether in your new wallet by direct deposit."
+    "message": "If you already have some ESS, the quickest way to get Essentia in your new wallet by direct deposit."
   },
   "done": {
     "message": "Done"
@@ -982,7 +982,7 @@
     "message": "Send"
   },
   "sendETH": {
-    "message": "Send ETH"
+    "message": "Send ESS"
   },
   "sendTokens": {
     "message": "Send Tokens"
@@ -997,7 +997,7 @@
     "message": "Separate each word with a single space"
   },
   "onlySendToEtherAddress": {
-    "message": "Only send ETH to an Ethereum address."
+    "message": "Only send ESS to an Essentia address."
   },
   "onlySendTokensToAccountAddress": {
     "message": "Only send $1 to an Ethereum account address.",
