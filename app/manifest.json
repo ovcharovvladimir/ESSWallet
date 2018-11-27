@@ -60,10 +60,10 @@
     "clipboardWrite",
     "http://localhost:8545/",
     "https://*.infura.io/",
-    "activeTab",
     "webRequest",
     "*://*.eth/",
-    "notifications"
+    "notifications",
+    "https://blockexplorer.essentia.network/*"
   ],
   "web_accessible_resources": [
     "inpage.js",
