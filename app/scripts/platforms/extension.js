@@ -62,7 +62,7 @@ class ExtensionPlatform {
     this._subscribeToNotificationClicked()
 
     // const url = explorerLink(txMeta.hash, parseInt(txMeta.metamaskNetworkId))
-    const url = 'http://blockexplorer.essentia.network/transaction/' + txMeta.hash
+    const url = 'http://testnet.essentia.network/transaction/' + txMeta.hash
     const nonce = parseInt(txMeta.txParams.nonce, 16)
 
     const title = 'Confirmed transaction'

@@ -18,10 +18,10 @@ module.exports = function (address, network) {
       link = `https://kovan.etherscan.io/address/${address}`
       break
       case 5678: // essentia test net
-      link = `https://blockexplorer.essentia.network/account/${address}`
+      link = `https://testnet.essentia.network/account/${address}`
       break
       case 4201: // essentia main net
-      link = `https://blockexplorer.essentia.network/account/${address}`
+      link = `https://testnet.essentia.network/account/${address}`
       break
     default:
       link = ''

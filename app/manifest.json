@@ -63,7 +63,7 @@
     "webRequest",
     "*://*.eth/",
     "notifications",
-    "https://blockexplorer.essentia.network/*"
+    "https://testnet.essentia.network/*"
   ],
   "web_accessible_resources": [
     "inpage.js",
