@@ -89,7 +89,7 @@
 .backup-phrase .first-time-flow__button {
   min-width: 100px;
   width: 100px;
-  margin: 30px auto auto;
+  margin: 20px auto auto;
   height: 44px;
   font-family: 'NotoSans-Bold', sans-serif;
 }
@@ -179,7 +179,7 @@
 .backup-phrase__title,
 .import-account__title,
 .buy-ether__title {
-  margin-bottom: 36px;
+  margin-bottom: 20px;
   font-family: 'AvenirNext-Medium', sans-serif;
   font-size: 34px;
   font-weight: 500;
@@ -190,9 +190,6 @@
 
 .create-password__title {
   padding-top: 105px;
-}
-.backup-phrase__title  {
-  padding: 10px;
 }
 
 .create-password label,
@@ -373,7 +370,7 @@
   border: 1px solid #CDCDCD;
   border-radius: 6px;
   background-color: #FFFFFF;
-  margin: 33px 0;
+  margin: 25px 0;
   padding: 12px;
   overflow: auto;
 }

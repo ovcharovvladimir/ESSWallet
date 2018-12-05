@@ -194,22 +194,22 @@ WalletView.prototype.render = function () {
 
     this.renderWalletBalance(),
 
-    h('.wallet-view__add-token-wrapper', {
-      style: {},
-    },
-    [
-      h('.wallet-view__token-text', {}, this.context.t('tokens')),
+    // h('.wallet-view__add-token-wrapper', {
+    //   style: {},
+    // },
+    // [
+    //   h('.wallet-view__token-text', {}, this.context.t('tokens')),
+    //
+    //   h('span.wallet-view__add-token', {
+    //     onClick: () => {
+    //       history.push(ADD_TOKEN_ROUTE)
+    //       sidebarOpen && hideSidebar()
+    //     },
+    //   }),
+    // ]),
 
-      h('span.wallet-view__add-token', {
-        onClick: () => {
-          history.push(ADD_TOKEN_ROUTE)
-          sidebarOpen && hideSidebar()
-        },
-      }),
-    ]),
 
-
-    h(TokenList),
+    // h(TokenList),
   ])
 }
 
