@@ -373,6 +373,7 @@
   margin: 25px 0;
   padding: 12px;
   overflow: auto;
+  resize: none;
 }
 
 .backup-phrase__confirm-secret::-webkit-scrollbar-track {

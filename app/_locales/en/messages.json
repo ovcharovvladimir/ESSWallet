@@ -520,7 +520,7 @@
     "description": "status showing that an account has been fully loaded into the keyring"
   },
   "importUsingSeed": {
-    "message": "Import using account seed phrase"
+    "message": "Import using mnemonic"
   },
   "infoHelp": {
     "message": "Info & Help"
@@ -839,7 +839,7 @@
     "message": "Restore Vault"
   },
   "restoreAccountWithSeed": {
-    "message": "Restore your Account with Seed Phrase"
+    "message": "Restore your Account with Mnemonic"
   },
   "required": {
     "message": "Required"

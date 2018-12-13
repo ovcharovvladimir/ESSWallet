@@ -179,7 +179,7 @@ class CreatePasswordScreen extends Component {
                   history.push(INITIALIZE_IMPORT_WITH_SEED_PHRASE_ROUTE)
                 }}
               >
-                Import with seed phrase
+                Import with mnemonic
               </a>
               { /* }
               <a

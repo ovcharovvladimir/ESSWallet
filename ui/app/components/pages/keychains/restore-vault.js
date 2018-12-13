@@ -125,7 +125,7 @@ class RestoreVaultPage extends Component {
               { this.context.t('secretPhrase') }
             </div>
             <div className="import-account__input-wrapper">
-              <label className="import-account__input-label">Wallet Seed</label>
+              <label className="import-account__input-label">Wallet Mnemonic</label>
               <textarea
                 className="import-account__secret-phrase"
                 onChange={e => this.handleSeedPhraseChange(e.target.value)}
